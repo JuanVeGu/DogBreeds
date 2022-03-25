@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol DogBreedsBusinessLogic {
+    func loadDogBreeds(request: DogBreeds.LoadDogBreeds.Request)
+}
+
+class DogBreedsInteractor: DogBreedsBusinessLogic {
+    func loadDogBreeds(request: DogBreeds.LoadDogBreeds.Request) {
+        
+    }
+}

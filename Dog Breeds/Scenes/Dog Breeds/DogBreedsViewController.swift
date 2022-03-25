@@ -8,10 +8,17 @@
 import UIKit
 
 class DogBreedsViewController: UIViewController {
+    var interactor: DogBreedsBusinessLogic?
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func fetchDogBreeds() {
+        let request = DogBreeds.LoadDogBreeds.Request()
+        interactor?.loadDogBreeds(request: request)
     }
 }
 

@@ -10,9 +10,9 @@ import UIKit
 extension DogBreedsViewController {
     func configurator() -> UIViewController {
         let view = self
-//        let interactor = ViewInteractor()
+        let interactor = DogBreedsInteractor()
 //        let presenter = ViewPresenter()
-//        view.interactor = interactor
+        view.interactor = interactor
 //        interactor.presenter = presenter
 //        presenter.view = view
         return view
