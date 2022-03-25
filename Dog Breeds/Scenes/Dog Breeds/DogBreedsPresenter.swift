@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol DogBreedsPresentationLogic {
+    func presentDogBreeds(response: DogBreeds.LoadDogBreeds.Response?)
+}
+
+class DogBreedsPresenter: DogBreedsPresentationLogic {
+    func presentDogBreeds(response: DogBreeds.LoadDogBreeds.Response?) {
+        
+    }
+}

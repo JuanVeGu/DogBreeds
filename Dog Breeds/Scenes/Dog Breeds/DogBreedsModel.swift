@@ -10,7 +10,12 @@ import Foundation
 enum DogBreeds {
     enum LoadDogBreeds {
         struct Request {}
-        struct Response {}
+        
+        struct Response: Codable {
+            let message: [String]
+            let status: String
+        }
+        
         struct ViewModel {}
     }
 }

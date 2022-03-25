@@ -27,6 +27,10 @@
 		75C26FCB27EE17C10047CFB7 /* BreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FCA27EE17C10047CFB7 /* BreedModel.swift */; };
 		75C26FDC27EE225B0047CFB7 /* DogBreedsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FDB27EE225B0047CFB7 /* DogBreedsViewTests.swift */; };
 		75C26FDF27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FDE27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift */; };
+		75C26FE527EE2A720047CFB7 /* DogBreedsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FE427EE2A720047CFB7 /* DogBreedsInteractorTests.swift */; };
+		75C26FE727EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FE627EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift */; };
+		75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FE927EE40CA0047CFB7 /* Seeds.swift */; };
+		75C26FEC27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FEB27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		75C26FD027EE21AD0047CFB7 /* Dog Breeds Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dog Breeds Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C26FDB27EE225B0047CFB7 /* DogBreedsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsViewTests.swift; sourceTree = "<group>"; };
 		75C26FDE27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsInteractorSpy.swift; sourceTree = "<group>"; };
+		75C26FE427EE2A720047CFB7 /* DogBreedsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsInteractorTests.swift; sourceTree = "<group>"; };
+		75C26FE627EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsPresenterSpy.swift; sourceTree = "<group>"; };
+		75C26FE927EE40CA0047CFB7 /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
+		75C26FEB27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsWorkerSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +186,9 @@
 		75C26FD127EE21AD0047CFB7 /* Dog Breeds Tests */ = {
 			isa = PBXGroup;
 			children = (
+				75C26FE827EE2FD50047CFB7 /* Worker */,
 				75C26FD927EE21FC0047CFB7 /* Scenes */,
+				75C26FE927EE40CA0047CFB7 /* Seeds.swift */,
 			);
 			path = "Dog Breeds Tests";
 			sourceTree = "<group>";
@@ -196,6 +206,7 @@
 			children = (
 				75C26FDD27EE26AC0047CFB7 /* Spy */,
 				75C26FDB27EE225B0047CFB7 /* DogBreedsViewTests.swift */,
+				75C26FE427EE2A720047CFB7 /* DogBreedsInteractorTests.swift */,
 			);
 			path = "Dog Breeds";
 			sourceTree = "<group>";
@@ -204,8 +215,17 @@
 			isa = PBXGroup;
 			children = (
 				75C26FDE27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift */,
+				75C26FE627EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift */,
+				75C26FEB27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift */,
 			);
 			path = Spy;
+			sourceTree = "<group>";
+		};
+		75C26FE827EE2FD50047CFB7 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Worker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,7 +352,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				75C26FDC27EE225B0047CFB7 /* DogBreedsViewTests.swift in Sources */,
+				75C26FE727EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift in Sources */,
+				75C26FE527EE2A720047CFB7 /* DogBreedsInteractorTests.swift in Sources */,
 				75C26FDF27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift in Sources */,
+				75C26FEC27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift in Sources */,
+				75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

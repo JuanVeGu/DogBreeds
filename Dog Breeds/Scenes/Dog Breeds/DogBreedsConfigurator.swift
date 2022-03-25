@@ -11,9 +11,9 @@ extension DogBreedsViewController {
     func configurator() -> UIViewController {
         let view = self
         let interactor = DogBreedsInteractor()
-//        let presenter = ViewPresenter()
+        let presenter = DogBreedsPresenter()
         view.interactor = interactor
-//        interactor.presenter = presenter
+        interactor.presenter = presenter
 //        presenter.view = view
         return view
     }

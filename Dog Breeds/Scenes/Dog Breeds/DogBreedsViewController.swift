@@ -14,6 +14,7 @@ class DogBreedsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchDogBreeds()
     }
     
     func fetchDogBreeds() {
