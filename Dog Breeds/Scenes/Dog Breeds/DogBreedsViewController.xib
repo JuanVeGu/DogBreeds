@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DogBreedsViewController" customModule="Dog_Breeds" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="ahq-ca-vGV" id="bdW-8Z-pUO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

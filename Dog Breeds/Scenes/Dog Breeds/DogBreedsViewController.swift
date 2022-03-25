@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol DogBreedsDisplayLogic: AnyObject {
+    func displayBreeds(viewModel: DogBreeds.LoadDogBreeds.ViewModel)
+}
+
 class DogBreedsViewController: UIViewController {
     var interactor: DogBreedsBusinessLogic?
+    var breeds: [String] = []
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,14 +26,26 @@ class DogBreedsViewController: UIViewController {
         let request = DogBreeds.LoadDogBreeds.Request()
         interactor?.loadDogBreeds(request: request)
     }
+    
 }
 
 extension DogBreedsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return breeds.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
+    
+}
+
+extension DogBreedsViewController: DogBreedsDisplayLogic {
+    func displayBreeds(viewModel: DogBreeds.LoadDogBreeds.ViewModel) {
+        DispatchQueue.main.async {
+            self.breeds = viewModel.breeds
+            self.tableView.reloadData()
+        }
+    }
+    
 }

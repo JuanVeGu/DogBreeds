@@ -16,6 +16,8 @@ enum DogBreeds {
             let status: String
         }
         
-        struct ViewModel {}
+        struct ViewModel {
+            let breeds: [String]
+        }
     }
 }

@@ -14,7 +14,8 @@ extension DogBreedsViewController {
         let presenter = DogBreedsPresenter()
         view.interactor = interactor
         interactor.presenter = presenter
-//        presenter.view = view
+        presenter.view = view
+        
         return view
     }
 }

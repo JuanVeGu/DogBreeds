@@ -12,7 +12,12 @@ protocol DogBreedsPresentationLogic {
 }
 
 class DogBreedsPresenter: DogBreedsPresentationLogic {
+    weak var view: DogBreedsDisplayLogic?
+    
     func presentDogBreeds(response: DogBreeds.LoadDogBreeds.Response?) {
+        if let response = response {
+            view?.displayBreeds(viewModel: DogBreeds.LoadDogBreeds.ViewModel(breeds: response.message))
+        }
         
     }
 }
