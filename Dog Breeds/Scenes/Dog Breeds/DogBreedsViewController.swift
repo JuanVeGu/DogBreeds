@@ -19,7 +19,13 @@ class DogBreedsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         fetchDogBreeds()
+    }
+    
+    func setupTableView() {
+        tableView.register(BreedViewCell.nib(), forCellReuseIdentifier: BreedViewCell.breedCellId)
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     func fetchDogBreeds() {
@@ -35,7 +41,12 @@ extension DogBreedsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: BreedViewCell.breedCellId, for: indexPath) as! BreedViewCell
+        
+        let breed = breeds[indexPath.row]
+        cell.setup(with: breed)
+        
+        return cell
     }
     
 }
