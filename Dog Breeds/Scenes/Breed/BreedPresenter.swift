@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol BreedPresentationLogic {
+    func presentBreedImages(response: Breed.LoadBreedImages.Response?)
+}
+
+class BreedPresenter: BreedPresentationLogic {
+    func presentBreedImages(response: Breed.LoadBreedImages.Response?) {
+        
+    }
+}

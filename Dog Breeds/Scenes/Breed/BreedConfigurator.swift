@@ -11,7 +11,9 @@ extension BreedViewController {
     func configurator() -> UIViewController {
         let view = self
         let interactor = BreedInteractor()
+        let presenter = BreedPresenter()
         view.interactor = interactor
+        interactor.presenter = presenter
         
         return view
     }

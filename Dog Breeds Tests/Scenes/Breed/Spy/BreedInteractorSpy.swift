@@ -9,9 +9,9 @@ import Foundation
 @testable import Dog_Breeds
 
 class BreedInteractorSpy: BreedBusinessLogic {
-    var loadBreedImagesIsCalled = false
+    var loadBreedImagesCalled = false
     
-    func loadBreedImages(request: Breed.LoadBreed.Request) {
-        loadBreedImagesIsCalled = true
+    func loadBreedImages(request: Breed.LoadBreedImages.Request) {
+        loadBreedImagesCalled = true
     }
 }

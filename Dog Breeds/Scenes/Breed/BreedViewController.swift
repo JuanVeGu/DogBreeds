@@ -15,7 +15,7 @@ class BreedViewController: UIViewController {
     }
     
     func fetchBreedImages() {
-        let request = Breed.LoadBreed.Request()
+        let request = Breed.LoadBreedImages.Request(breedName: "schnauzer")
         interactor?.loadBreedImages(request: request)
     }
 

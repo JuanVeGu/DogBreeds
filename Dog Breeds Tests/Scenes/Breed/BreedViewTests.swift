@@ -24,7 +24,7 @@ class BreedViewTests: XCTestCase {
         // when
         sut.fetchBreedImages()
         // then
-        XCTAssert(interactorSpy.loadBreedImagesIsCalled)
+        XCTAssert(interactorSpy.loadBreedImagesCalled)
     }
 
     override func tearDownWithError() throws {
