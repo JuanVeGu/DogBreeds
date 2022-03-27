@@ -19,6 +19,8 @@ class DogBreedsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Dog Breeds"
+        
         setupTableView()
         fetchDogBreeds()
     }
