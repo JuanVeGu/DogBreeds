@@ -18,6 +18,5 @@ class DogBreedsPresenter: DogBreedsPresentationLogic {
         if let response = response {
             view?.displayBreeds(viewModel: DogBreeds.LoadDogBreeds.ViewModel(breeds: response.message))
         }
-        
     }
 }

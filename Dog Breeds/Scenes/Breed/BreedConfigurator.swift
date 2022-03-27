@@ -14,6 +14,7 @@ extension BreedViewController {
         let presenter = BreedPresenter()
         view.interactor = interactor
         interactor.presenter = presenter
+        presenter.view = view
         
         return view
     }

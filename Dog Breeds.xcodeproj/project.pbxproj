@@ -11,6 +11,8 @@
 		757081F327F0D345007CDD3A /* BreedInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081F227F0D345007CDD3A /* BreedInteractorSpy.swift */; };
 		757081F527F0D5FB007CDD3A /* BreedInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081F427F0D5FB007CDD3A /* BreedInteractorTests.swift */; };
 		757081F727F0D60B007CDD3A /* BreedPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081F627F0D60B007CDD3A /* BreedPresenterSpy.swift */; };
+		757081FB27F0E0C0007CDD3A /* BreedViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081FA27F0E0BF007CDD3A /* BreedViewSpy.swift */; };
+		757081FD27F0E0D9007CDD3A /* BreedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081FC27F0E0D9007CDD3A /* BreedPresenterTests.swift */; };
 		75ABC76B27E961ED00C4F1C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ABC76A27E961ED00C4F1C8 /* AppDelegate.swift */; };
 		75ABC77427E961F000C4F1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75ABC77327E961F000C4F1C8 /* Assets.xcassets */; };
 		75ABC77727E961F000C4F1C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75ABC77527E961F000C4F1C8 /* LaunchScreen.storyboard */; };
@@ -56,6 +58,8 @@
 		757081F227F0D345007CDD3A /* BreedInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInteractorSpy.swift; sourceTree = "<group>"; };
 		757081F427F0D5FB007CDD3A /* BreedInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInteractorTests.swift; sourceTree = "<group>"; };
 		757081F627F0D60B007CDD3A /* BreedPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPresenterSpy.swift; sourceTree = "<group>"; };
+		757081FA27F0E0BF007CDD3A /* BreedViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewSpy.swift; sourceTree = "<group>"; };
+		757081FC27F0E0D9007CDD3A /* BreedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPresenterTests.swift; sourceTree = "<group>"; };
 		75ABC76727E961ED00C4F1C8 /* Dog Breeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Breeds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75ABC76A27E961ED00C4F1C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75ABC77327E961F000C4F1C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				757081EF27F0D24B007CDD3A /* Spy */,
 				757081F027F0D269007CDD3A /* BreedViewTests.swift */,
 				757081F427F0D5FB007CDD3A /* BreedInteractorTests.swift */,
+				757081FC27F0E0D9007CDD3A /* BreedPresenterTests.swift */,
 			);
 			path = Breed;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				757081F227F0D345007CDD3A /* BreedInteractorSpy.swift */,
 				757081F627F0D60B007CDD3A /* BreedPresenterSpy.swift */,
+				757081FA27F0E0BF007CDD3A /* BreedViewSpy.swift */,
 			);
 			path = Spy;
 			sourceTree = "<group>";
@@ -408,7 +414,9 @@
 				75C26FEE27EE47990047CFB7 /* DogBreedsPresenterTests.swift in Sources */,
 				75C26FDF27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift in Sources */,
 				75C26FEC27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift in Sources */,
+				757081FB27F0E0C0007CDD3A /* BreedViewSpy.swift in Sources */,
 				757081F127F0D269007CDD3A /* BreedViewTests.swift in Sources */,
+				757081FD27F0E0D9007CDD3A /* BreedPresenterTests.swift in Sources */,
 				757081F727F0D60B007CDD3A /* BreedPresenterSpy.swift in Sources */,
 				757081F527F0D5FB007CDD3A /* BreedInteractorTests.swift in Sources */,
 				75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */,

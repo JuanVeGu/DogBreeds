@@ -18,6 +18,8 @@ enum Breed {
             let status: String
         }
         
-        struct ViewModel {}
+        struct ViewModel {
+            let images: [String]
+        }
     }
 }
