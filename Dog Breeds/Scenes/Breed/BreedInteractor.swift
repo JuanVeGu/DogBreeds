@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+protocol BreedBusinessLogic {
+    func loadBreedImages(request: Breed.LoadBreed.Request)
+}
+
+class BreedInteractor: BreedBusinessLogic {
+    func loadBreedImages(request: Breed.LoadBreed.Request) {
+        
+    }
+    
+}

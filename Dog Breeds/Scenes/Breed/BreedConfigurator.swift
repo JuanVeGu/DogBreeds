@@ -10,6 +10,9 @@ import UIKit
 extension BreedViewController {
     func configurator() -> UIViewController {
         let view = self
+        let interactor = BreedInteractor()
+        view.interactor = interactor
+        
         return view
     }
 }
