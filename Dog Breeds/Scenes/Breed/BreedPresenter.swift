@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+protocol BreedPresentationLogic {
+    func presentBreedImages(response: Breed.LoadBreedImages.Response?)
+}
+
+class BreedPresenter: BreedPresentationLogic {
+    weak var view: BreedDisplayLogic?
+    
+    func presentBreedImages(response: Breed.LoadBreedImages.Response?) {
+        if let response = response {
+            view?.displayBreedImages(viewModel: Breed.LoadBreedImages.ViewModel(images: response.message))
+        }
+    }
+}
