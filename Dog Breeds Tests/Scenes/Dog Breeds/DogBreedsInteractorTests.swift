@@ -22,7 +22,7 @@ class DogBreedsInteractorTests: XCTestCase {
         // given
         sut.presenter = presenterSpy
         let response = Seeds.dogBreedsResponse
-        let dogBreedsWorker = DogBreedsWorkerSpy(urlString: "https://dog.ceo/api/breeds/list")
+        let dogBreedsWorker = DogBreedsWorkerSpy()
         sut.worker = dogBreedsWorker
         // when
         let request = DogBreeds.LoadDogBreeds.Request()

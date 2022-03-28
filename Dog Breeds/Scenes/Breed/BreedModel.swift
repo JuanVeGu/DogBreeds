@@ -8,9 +8,18 @@
 import Foundation
 
 enum Breed {
-    enum LoadBreed {
-        struct Request {}
-        struct Response {}
-        struct ViewModel {}
+    enum LoadBreedImages {
+        struct Request {
+            let breedName: String
+        }
+        
+        struct Response: Codable {
+            let message: [String]
+            let status: String
+        }
+        
+        struct ViewModel {
+            let images: [String]
+        }
     }
 }

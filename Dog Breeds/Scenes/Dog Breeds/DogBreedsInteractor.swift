@@ -13,7 +13,7 @@ protocol DogBreedsBusinessLogic {
 
 class DogBreedsInteractor: DogBreedsBusinessLogic {
     var presenter: DogBreedsPresentationLogic!
-    var worker = DogBreedsWorker(urlString: "https://dog.ceo/api/breeds/list")
+    var worker = DogBreedsWorker()
     
     func loadDogBreeds(request: DogBreeds.LoadDogBreeds.Request) {
         worker.fetchDogBreeds { [self] response in

@@ -10,10 +10,16 @@ import Foundation
 
 class DogBreedsWorkerSpy: DogBreedsWorker {
     var fetchDogBreedsCalled = false
+    var fetchBreedImagesCalled = false
     
     override func fetchDogBreeds(completionBlock: @escaping (DogBreeds.LoadDogBreeds.Response?) -> Void) {
         fetchDogBreedsCalled = true
         completionBlock(Seeds.dogBreedsResponse)
+    }
+    
+    override func fetchBreedImages(breedName: String, completionBlock: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
+        fetchBreedImagesCalled = true
+        completionBlock(Seeds.breedImages)
     }
     
 }

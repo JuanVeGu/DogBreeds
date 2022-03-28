@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+protocol BreedBusinessLogic {
+    func loadBreedImages(request: Breed.LoadBreedImages.Request)
+}
+
+class BreedInteractor: BreedBusinessLogic {
+    var presenter: BreedPresentationLogic?
+    var worker = DogBreedsWorker()
+    
+    func loadBreedImages(request: Breed.LoadBreedImages.Request) {
+        worker.fetchBreedImages(breedName: request.breedName, completionBlock: { [self] response in
+            presenter?.presentBreedImages(response: response)
+        })
+    }
+    
+}
