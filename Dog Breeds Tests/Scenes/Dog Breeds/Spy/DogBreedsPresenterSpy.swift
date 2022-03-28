@@ -11,12 +11,17 @@ import Foundation
 class DogBreedsPresenterSpy: DogBreedsPresentationLogic {
     var dogBreeds: [String]?
     var presentDogBreedsCalled = false
+    var presentBreedImagesCalled = false
     
     func presentDogBreeds(response: DogBreeds.LoadDogBreeds.Response?) {
         if let response = response {
             presentDogBreedsCalled = true
             dogBreeds = response.message
         }
+    }
+    
+    func presentBreedImages(response: DogBreeds.GoToImages.Response) {
+        presentBreedImagesCalled = true
     }
     
 }

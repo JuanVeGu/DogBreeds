@@ -9,10 +9,13 @@ import UIKit
 
 protocol DogBreedsDisplayLogic: AnyObject {
     func displayBreeds(viewModel: DogBreeds.LoadDogBreeds.ViewModel)
+    func displayBreedImages(viewModel: DogBreeds.GoToImages.ViewModel)
 }
 
 class DogBreedsViewController: UIViewController {
     var interactor: DogBreedsBusinessLogic?
+    var router: (NSObjectProtocol & DogBreedsRoutingLogic & DogBreedsDataPassing)?
+    
     var breeds: [String] = []
     
     @IBOutlet weak var tableView: UITableView!
@@ -51,6 +54,12 @@ extension DogBreedsViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let breedName = breeds[indexPath.row]
+        interactor?.goToBreedImages(request: DogBreeds.GoToImages.Request(breedName: breedName))
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
 
 extension DogBreedsViewController: DogBreedsDisplayLogic {
@@ -59,6 +68,10 @@ extension DogBreedsViewController: DogBreedsDisplayLogic {
             self.breeds = viewModel.breeds
             self.tableView.reloadData()
         }
+    }
+    
+    func displayBreedImages(viewModel: DogBreeds.GoToImages.ViewModel) {
+        router?.routeToBreedImages()
     }
     
 }

@@ -13,13 +13,15 @@ protocol BreedDisplayLogic: AnyObject {
 
 class BreedViewController: UIViewController {
     var interactor: BreedBusinessLogic?
+    var router: (NSObjectProtocol & BreedRoutingLogic & BreedDataPassing)?
+    
     var images: [String] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "schnauzer"
+        title = router?.dataStore?.breedName
         
         setupCollectionView()
         fetchBreedImages()
@@ -30,7 +32,7 @@ class BreedViewController: UIViewController {
     }
     
     func fetchBreedImages() {
-        let request = Breed.LoadBreedImages.Request(breedName: "schnauzer")
+        let request = Breed.LoadBreedImages.Request()
         interactor?.loadBreedImages(request: request)
     }
 
