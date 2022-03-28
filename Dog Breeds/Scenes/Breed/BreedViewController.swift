@@ -19,6 +19,14 @@ class BreedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "schnauzer"
+        
+        setupCollectionView()
+        fetchBreedImages()
+    }
+    
+    func setupCollectionView() {
+        collectionView.register(BreedImageViewCell.nib(), forCellWithReuseIdentifier: BreedImageViewCell.imageCellId)
     }
     
     func fetchBreedImages() {
@@ -34,7 +42,11 @@ extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BreedImageViewCell.imageCellId, for: indexPath) as! BreedImageViewCell
+        let urlImage = images[indexPath.row]
+        cell.setup(with: urlImage)
+        
+        return cell
     }
     
 }
