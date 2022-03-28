@@ -25,7 +25,8 @@ class BreedInteractorTests: XCTestCase {
         let dogBreedsWorker = DogBreedsWorkerSpy()
         sut.worker = dogBreedsWorker
         // when
-        let request = Breed.LoadBreedImages.Request(breedName: "schnauzer")
+        let request = Breed.LoadBreedImages.Request()
+        sut.breedName = "schnauzer"
         sut.loadBreedImages(request: request)
         // then
         XCTAssert(dogBreedsWorker.fetchBreedImagesCalled, "fetchBreedImages() was not called")

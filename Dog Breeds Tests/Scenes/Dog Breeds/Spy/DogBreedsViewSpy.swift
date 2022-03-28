@@ -11,9 +11,14 @@ import Foundation
 class DogBreedsViewSpy: DogBreedsDisplayLogic {
     var viewModel: DogBreeds.LoadDogBreeds.ViewModel!
     var viewDogBreedsCalled = false
+    var displayBreedImagesViewCalled = false
     
     func displayBreeds(viewModel: DogBreeds.LoadDogBreeds.ViewModel) {
         viewDogBreedsCalled = true
         self.viewModel = viewModel
+    }
+    
+    func displayBreedImages(viewModel: DogBreeds.GoToImages.ViewModel) {
+        displayBreedImagesViewCalled = true
     }
 }

@@ -8,13 +8,17 @@
 import UIKit
 
 extension DogBreedsViewController {
-    func configurator() -> UIViewController {
+    func configurator() -> DogBreedsViewController {
         let view = self
         let interactor = DogBreedsInteractor()
         let presenter = DogBreedsPresenter()
+        let router = DogBreedsRouter()
         view.interactor = interactor
+        view.router = router
         interactor.presenter = presenter
         presenter.view = view
+        router.viewController = view
+        router.dataStore = interactor
         
         return view
     }

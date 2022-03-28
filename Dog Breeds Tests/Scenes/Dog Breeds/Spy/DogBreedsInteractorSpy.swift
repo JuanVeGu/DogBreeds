@@ -10,8 +10,13 @@ import Foundation
 
 class DogBreedsInteractorSpy: DogBreedsBusinessLogic {
     var loadDogBreedsCalled = false
+    var goToBreedImagesCalled = false
     
     func loadDogBreeds(request: DogBreeds.LoadDogBreeds.Request) {
         loadDogBreedsCalled = true
+    }
+    
+    func goToBreedImages(request: DogBreeds.GoToImages.Request) {
+        goToBreedImagesCalled = true
     }
 }

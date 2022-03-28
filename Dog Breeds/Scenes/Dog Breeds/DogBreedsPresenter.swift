@@ -9,6 +9,7 @@ import Foundation
 
 protocol DogBreedsPresentationLogic {
     func presentDogBreeds(response: DogBreeds.LoadDogBreeds.Response?)
+    func presentBreedImages(response: DogBreeds.GoToImages.Response)
 }
 
 class DogBreedsPresenter: DogBreedsPresentationLogic {
@@ -18,5 +19,9 @@ class DogBreedsPresenter: DogBreedsPresentationLogic {
         if let response = response {
             view?.displayBreeds(viewModel: DogBreeds.LoadDogBreeds.ViewModel(breeds: response.message))
         }
+    }
+    
+    func presentBreedImages(response: DogBreeds.GoToImages.Response) {
+        view?.displayBreedImages(viewModel: DogBreeds.GoToImages.ViewModel())
     }
 }

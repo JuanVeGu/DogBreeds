@@ -20,4 +20,12 @@ enum DogBreeds {
             let breeds: [String]
         }
     }
+    
+    enum GoToImages {
+        struct Request {
+            let breedName: String
+        }
+        struct Response { }
+        struct ViewModel {}
+    }
 }
