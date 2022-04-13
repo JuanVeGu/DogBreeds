@@ -13,14 +13,14 @@ class DogBreedsPresenterSpy: DogBreedsPresentationLogic {
     var presentDogBreedsCalled = false
     var presentBreedImagesCalled = false
     
-    func presentDogBreeds(response: DogBreeds.LoadDogBreeds.Response?) {
+    func presentDogBreeds(response: ListBreed.LoadDogBreeds.Response?) {
         if let response = response {
             presentDogBreedsCalled = true
             dogBreeds = response.message
         }
     }
     
-    func presentBreedImages(response: DogBreeds.GoToImages.Response) {
+    func presentBreedImages(response: ListBreed.GoToImages.Response) {
         presentBreedImagesCalled = true
     }
     
