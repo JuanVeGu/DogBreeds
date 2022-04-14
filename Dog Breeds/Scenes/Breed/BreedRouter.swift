@@ -9,11 +9,6 @@ import UIKit
 
 @objc protocol BreedRoutingLogic { }
 
-protocol BreedDataPassing {
-    var dataStore: BreedDataStore? { get }
-}
-
-class BreedRouter: NSObject, BreedRoutingLogic, BreedDataPassing {
+class BreedRouter: NSObject, BreedRoutingLogic {
     weak var viewController: BreedViewController?
-    var dataStore: BreedDataStore?
 }

@@ -10,11 +10,13 @@ import XCTest
 
 class BreedInteractorTests: XCTestCase {
     var sut: BreedInteractor!
+    var dogBreedsWorker: DogBreedsWorkerSpy!
     var presenterSpy: BreedPresenterSpy!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = BreedInteractor()
+        dogBreedsWorker = DogBreedsWorkerSpy(breedRestAPI: BreedRestApi(url: "https://dog.ceo/api/breed/schnauzer/images"))
+        sut = BreedInteractor(worker: dogBreedsWorker)
         presenterSpy = BreedPresenterSpy()
     }
 
@@ -22,11 +24,8 @@ class BreedInteractorTests: XCTestCase {
         // given
         sut.presenter = presenterSpy
         let response = Seeds.breedImages
-        let dogBreedsWorker = DogBreedsWorkerSpy()
-        sut.worker = dogBreedsWorker
         // when
         let request = Breed.LoadBreedImages.Request()
-        sut.breedName = "schnauzer"
         sut.loadBreedImages(request: request)
         // then
         XCTAssert(dogBreedsWorker.fetchBreedImagesCalled, "fetchBreedImages() was not called")

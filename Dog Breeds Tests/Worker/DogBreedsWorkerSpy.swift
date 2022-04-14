@@ -17,7 +17,7 @@ class DogBreedsWorkerSpy: DogBreedsWorker {
         completionBlock(Seeds.dogBreedsResponse)
     }
     
-    override func fetchBreedImages(breedName: String, completionBlock: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
+    override func fetchBreedImages(completionBlock: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
         fetchBreedImagesCalled = true
         completionBlock(Seeds.breedImages)
     }
