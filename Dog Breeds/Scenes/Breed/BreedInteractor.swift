@@ -11,25 +11,18 @@ protocol BreedBusinessLogic {
     func loadBreedImages(request: Breed.LoadBreedImages.Request)
 }
 
-protocol BreedDataStore {
-  var breedName: String? { get set }
-}
-
-class BreedInteractor: BreedBusinessLogic, BreedDataStore {
+class BreedInteractor: BreedBusinessLogic {
     var presenter: BreedPresentationLogic?
-    var worker = DogBreedsWorker()
+    private let worker: DogBreedsWorker
     
-    var breedName: String?
+    init(worker: DogBreedsWorker) {
+        self.worker = worker
+    }
     
     func loadBreedImages(request: Breed.LoadBreedImages.Request) {
-        if let name = breedName {
-            worker.fetchBreedImages(breedName: name, completionBlock: { [self] response in
-                presenter?.presentBreedImages(response: response)
-            })
-        } else {
-            // TODO: Agregar alerta de dato faltante
+        worker.fetchBreedImages { [self] response in
+            presenter?.presentBreedImages(response: response)
         }
-        
     }
     
 }

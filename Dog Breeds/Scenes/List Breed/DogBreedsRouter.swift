@@ -20,19 +20,14 @@ class DogBreedsRouter: NSObject, DogBreedsRoutingLogic, DogBreedsDataPassing {
     var dataStore: DogBreedsDataStore?
     
     func routeToBreedImages() {
-        let destinationVC = BreedViewController().configurator()
-        var destinationDS = destinationVC.router!.dataStore!
-        passDataToBreedImages(source: dataStore!, destination: &destinationDS)
-        navigateToBreedImages(source: viewController!, destination: destinationVC)
+        if let viewController = viewController, let router = viewController.router, let dataStore = router.dataStore, let breedName = dataStore.breedName {
+            let destinationVC = BreedViewController().configurator(breedName: breedName)
+            navigateToBreedImages(source: viewController, destination: destinationVC)
+        }
     }
     
     // MARK: Navigation
     func navigateToBreedImages(source: DogBreedsViewController, destination: BreedViewController) {
         source.show(destination, sender: nil)
-    }
-    
-    // MARK: Passing data
-    func passDataToBreedImages(source: DogBreedsDataStore, destination: inout BreedDataStore) {
-        destination.breedName = source.breedName
     }
 }

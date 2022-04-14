@@ -8,8 +8,8 @@
 import Foundation
 
 protocol DogBreedsBusinessLogic {
-    func loadDogBreeds(request: DogBreeds.LoadDogBreeds.Request)
-    func goToBreedImages(request: DogBreeds.GoToImages.Request)
+    func loadDogBreeds(request: ListBreed.LoadDogBreeds.Request)
+    func goToBreedImages(request: ListBreed.GoToImages.Request)
 }
 
 protocol DogBreedsDataStore {
@@ -18,18 +18,22 @@ protocol DogBreedsDataStore {
 
 class DogBreedsInteractor: DogBreedsBusinessLogic, DogBreedsDataStore {
     var presenter: DogBreedsPresentationLogic!
-    var worker = DogBreedsWorker()
+    private let worker: DogBreedsWorker
     
     var breedName: String?
     
-    func loadDogBreeds(request: DogBreeds.LoadDogBreeds.Request) {
+    init(worker: DogBreedsWorker) {
+        self.worker = worker
+    }
+    
+    func loadDogBreeds(request: ListBreed.LoadDogBreeds.Request) {
         worker.fetchDogBreeds { [self] response in
             presenter.presentDogBreeds(response: response)
         }
     }
     
-    func goToBreedImages(request: DogBreeds.GoToImages.Request) {
+    func goToBreedImages(request: ListBreed.GoToImages.Request) {
         breedName = request.breedName
-        presenter.presentBreedImages(response: DogBreeds.GoToImages.Response())
+        presenter.presentBreedImages(response: ListBreed.GoToImages.Response())
     }
 }

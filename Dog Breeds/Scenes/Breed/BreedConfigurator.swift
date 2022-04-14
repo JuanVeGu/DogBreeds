@@ -8,9 +8,13 @@
 import UIKit
 
 extension BreedViewController {
-    func configurator() -> BreedViewController {
+    func configurator(breedName: String) -> BreedViewController {
         let view = self
-        let interactor = BreedInteractor()
+        view.title = breedName
+        
+        let interactor = BreedInteractor(
+            worker: DogBreedsWorker(breedRestAPI: BreedRestApi(url: "https://dog.ceo/api/breed/\(breedName)/images"))
+        )
         let presenter = BreedPresenter()
         let router = BreedRouter()
         view.interactor = interactor
@@ -18,7 +22,6 @@ extension BreedViewController {
         interactor.presenter = presenter
         presenter.view = view
         router.viewController = view
-        router.dataStore = interactor
         
         return view
     }
