@@ -16,7 +16,7 @@ class ListBreedRestApi: ListBreedRestApiProtocol {
         self.url = url
     }
     
-    func fetchDogBreeds(completionHandler: @escaping (ListBreed.LoadDogBreeds.Response?) -> Void) {
+    func fetchDogBreeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void) {
         guard let url = URL(string: self.url) else {
             return
         }
@@ -25,7 +25,7 @@ class ListBreedRestApi: ListBreedRestApiProtocol {
             if let _ = error {
                 completionHandler(nil)
                 return
-            } else if let data = data, let response = try? JSONDecoder().decode(ListBreed.LoadDogBreeds.Response.self, from: data) {
+            } else if let data = data, let response = try? JSONDecoder().decode(ListBreeds.LoadDogBreeds.Response.self, from: data) {
                 completionHandler(response)
             } else {
                 completionHandler(nil)

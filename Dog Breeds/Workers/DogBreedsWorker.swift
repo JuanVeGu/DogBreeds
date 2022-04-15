@@ -16,7 +16,7 @@ class DogBreedsWorker {
         self.breedRestAPI = breedRestAPI
     }
     
-    func fetchDogBreeds(completionBlock: @escaping (ListBreed.LoadDogBreeds.Response?) -> Void) {
+    func fetchDogBreeds(completionBlock: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void) {
         self.listBreedRestAPI?.fetchDogBreeds(completionHandler: { response in
             completionBlock(response)
         })

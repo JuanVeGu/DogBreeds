@@ -12,11 +12,11 @@ class DogBreedsInteractorSpy: DogBreedsBusinessLogic {
     var loadDogBreedsCalled = false
     var goToBreedImagesCalled = false
     
-    func loadDogBreeds(request: ListBreed.LoadDogBreeds.Request) {
+    func loadDogBreeds(request: ListBreeds.LoadDogBreeds.Request) {
         loadDogBreedsCalled = true
     }
     
-    func goToBreedImages(request: ListBreed.GoToImages.Request) {
+    func goToBreedImages(request: ListBreeds.GoToImages.Request) {
         goToBreedImagesCalled = true
     }
 }

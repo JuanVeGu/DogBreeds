@@ -12,7 +12,7 @@ class DogBreedsWorkerSpy: DogBreedsWorker {
     var fetchDogBreedsCalled = false
     var fetchBreedImagesCalled = false
     
-    override func fetchDogBreeds(completionBlock: @escaping (ListBreed.LoadDogBreeds.Response?) -> Void) {
+    override func fetchDogBreeds(completionBlock: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void) {
         fetchDogBreedsCalled = true
         completionBlock(Seeds.dogBreedsResponse)
     }

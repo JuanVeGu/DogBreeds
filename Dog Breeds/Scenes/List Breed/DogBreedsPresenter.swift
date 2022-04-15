@@ -8,20 +8,20 @@
 import Foundation
 
 protocol DogBreedsPresentationLogic {
-    func presentDogBreeds(response: ListBreed.LoadDogBreeds.Response?)
-    func presentBreedImages(response: ListBreed.GoToImages.Response)
+    func presentDogBreeds(response: ListBreeds.LoadDogBreeds.Response?)
+    func presentBreedImages(response: ListBreeds.GoToImages.Response)
 }
 
 class DogBreedsPresenter: DogBreedsPresentationLogic {
     weak var view: DogBreedsDisplayLogic?
     
-    func presentDogBreeds(response: ListBreed.LoadDogBreeds.Response?) {
+    func presentDogBreeds(response: ListBreeds.LoadDogBreeds.Response?) {
         if let response = response {
-            view?.displayBreeds(viewModel: ListBreed.LoadDogBreeds.ViewModel(breeds: response.message))
+            view?.displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel(breeds: response.message))
         }
     }
     
-    func presentBreedImages(response: ListBreed.GoToImages.Response) {
-        view?.displayBreedImages(viewModel: ListBreed.GoToImages.ViewModel())
+    func presentBreedImages(response: ListBreeds.GoToImages.Response) {
+        view?.displayBreedImages(viewModel: ListBreeds.GoToImages.ViewModel())
     }
 }

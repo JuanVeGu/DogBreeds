@@ -8,8 +8,8 @@
 import UIKit
 
 protocol DogBreedsDisplayLogic: AnyObject {
-    func displayBreeds(viewModel: ListBreed.LoadDogBreeds.ViewModel)
-    func displayBreedImages(viewModel: ListBreed.GoToImages.ViewModel)
+    func displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel)
+    func displayBreedImages(viewModel: ListBreeds.GoToImages.ViewModel)
 }
 
 class DogBreedsViewController: UIViewController {
@@ -34,7 +34,7 @@ class DogBreedsViewController: UIViewController {
     }
     
     func fetchDogBreeds() {
-        let request = ListBreed.LoadDogBreeds.Request()
+        let request = ListBreeds.LoadDogBreeds.Request()
         interactor?.loadDogBreeds(request: request)
     }
     
@@ -56,21 +56,21 @@ extension DogBreedsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let breedName = breeds[indexPath.row]
-        interactor?.goToBreedImages(request: ListBreed.GoToImages.Request(breedName: breedName))
+        interactor?.goToBreedImages(request: ListBreeds.GoToImages.Request(breedName: breedName))
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
 
 extension DogBreedsViewController: DogBreedsDisplayLogic {
-    func displayBreeds(viewModel: ListBreed.LoadDogBreeds.ViewModel) {
+    func displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel) {
         DispatchQueue.main.async {
             self.breeds = viewModel.breeds
             self.tableView.reloadData()
         }
     }
     
-    func displayBreedImages(viewModel: ListBreed.GoToImages.ViewModel) {
+    func displayBreedImages(viewModel: ListBreeds.GoToImages.ViewModel) {
         router?.routeToBreedImages()
     }
     

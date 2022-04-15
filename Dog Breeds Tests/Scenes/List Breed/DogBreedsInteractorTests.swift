@@ -25,7 +25,7 @@ class DogBreedsInteractorTests: XCTestCase {
         sut.presenter = presenterSpy
         let response = Seeds.dogBreedsResponse
         // when
-        let request = ListBreed.LoadDogBreeds.Request()
+        let request = ListBreeds.LoadDogBreeds.Request()
         sut.loadDogBreeds(request: request)
         // then
         XCTAssert(dogBreedsWorker.fetchDogBreedsCalled, "fetchDogBreeds() was not called")

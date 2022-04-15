@@ -9,7 +9,7 @@ import Foundation
 @testable import Dog_Breeds
 
 struct Seeds {
-    static let dogBreedsResponse = ListBreed.LoadDogBreeds.Response(message: [
+    static let dogBreedsResponse = ListBreeds.LoadDogBreeds.Response(message: [
         "affenpinscher",
         "african",
         "airedale",

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ListBreed {
+enum ListBreeds {
     enum LoadDogBreeds {
         struct Request {}
         
