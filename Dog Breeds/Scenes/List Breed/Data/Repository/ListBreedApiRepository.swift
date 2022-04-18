@@ -7,10 +7,10 @@
 
 import Foundation
 
-class ListBreedApiRepository: ListBreedApiRepositoryProtocol {
-    private let listBreedRestApi: ListBreedRestApiProtocol
+class ListBreedApiRepository: ListBreedRepository {
+    private let listBreedRestApi: ListBreedRestApi
     
-    init(listBreedRestApi: ListBreedRestApiProtocol) {
+    init(listBreedRestApi: ListBreedRestApi) {
         self.listBreedRestApi = listBreedRestApi
     }
     

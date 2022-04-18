@@ -8,9 +8,9 @@
 import Foundation
 
 struct ListBreedUseCase {
-    private let listBreedRepository: ListBreedApiRepositoryProtocol
+    private let listBreedRepository: ListBreedRepository
     
-    init(listBreedRepository: ListBreedApiRepositoryProtocol) {
+    init(listBreedRepository: ListBreedRepository) {
         self.listBreedRepository = listBreedRepository
     }
     

@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ListBreedApiRepositoryProtocol {
+protocol ListBreedRepository {
     func fetchDogBreeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void)
 }

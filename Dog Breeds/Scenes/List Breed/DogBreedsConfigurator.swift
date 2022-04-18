@@ -13,7 +13,7 @@ extension DogBreedsViewController {
         let interactor = DogBreedsInteractor(
             useCase: ListBreedUseCase(
                 listBreedRepository: ListBreedApiRepository(
-                    listBreedRestApi: ListBreedRestApi(url: "https://dog.ceo/api/breeds/list")
+                    listBreedRestApi: ListBreedURLSessionRestApi(url: "https://dog.ceo/api/breeds/list")
                 )
             )
         )
