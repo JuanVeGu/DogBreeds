@@ -7,13 +7,19 @@
 
 import Foundation
 
-protocol DogBreedsPresentationLogic {
+protocol ListBreedPresentationLogic {
+    func attach(view: ListBreedDisplayLogic)
+    
     func presentDogBreeds(response: ListBreeds.LoadDogBreeds.Response?)
     func presentBreedImages(response: ListBreeds.GoToImages.Response)
 }
 
-class DogBreedsPresenter: DogBreedsPresentationLogic {
-    weak var view: DogBreedsDisplayLogic?
+class ListBreedPresenter: ListBreedPresentationLogic {
+    weak var view: ListBreedDisplayLogic?
+    
+    func attach(view: ListBreedDisplayLogic) {
+        self.view = view
+    }
     
     func presentDogBreeds(response: ListBreeds.LoadDogBreeds.Response?) {
         if let response = response {

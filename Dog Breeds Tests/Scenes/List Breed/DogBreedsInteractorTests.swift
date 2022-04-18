@@ -9,14 +9,14 @@ import XCTest
 @testable import Dog_Breeds
 
 class DogBreedsInteractorTests: XCTestCase {
-    var sut: DogBreedsInteractor!
+    var sut: ListBreedInteractor!
     var dogBreedsWorker: DogBreedsWorkerSpy!
     var presenterSpy: DogBreedsPresenterSpy!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
         dogBreedsWorker = DogBreedsWorkerSpy(listBreedRestAPI: ListBreedURLSessionRestApi(url: "https://dog.ceo/api/breeds/list"))
-        sut = DogBreedsInteractor(worker: dogBreedsWorker)
+        sut = ListBreedInteractor(worker: dogBreedsWorker)
         presenterSpy = DogBreedsPresenterSpy()
     }
     

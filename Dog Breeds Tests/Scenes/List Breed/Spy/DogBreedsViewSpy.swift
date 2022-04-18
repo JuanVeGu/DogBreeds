@@ -8,7 +8,7 @@
 import Foundation
 @testable import Dog_Breeds
 
-class DogBreedsViewSpy: DogBreedsDisplayLogic {
+class DogBreedsViewSpy: ListBreedDisplayLogic {
     var viewModel: ListBreeds.LoadDogBreeds.ViewModel!
     var viewDogBreedsCalled = false
     var displayBreedImagesViewCalled = false

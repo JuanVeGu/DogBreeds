@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+class ListBreedServiceLocator {
+    var listBreedUseCase: ListBreedUseCase {
+        return ListBreedUseCase(listBreedRepository: listBreedRepository)
+    }
+    
+    private var listBreedRepository: ListBreedRepository {
+        return ListBreedApiRepository(listBreedRestApi: listBreedRestApi)
+    }
+    
+    private var listBreedRestApi: ListBreedRestApi {
+        return ListBreedURLSessionRestApi(url: "https://dog.ceo/api/breeds/list")
+    }
+}

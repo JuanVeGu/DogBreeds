@@ -7,22 +7,33 @@
 
 import UIKit
 
-protocol DogBreedsDisplayLogic: AnyObject {
+protocol ListBreedDisplayLogic: AnyObject {
     func displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel)
     func displayBreedImages(viewModel: ListBreeds.GoToImages.ViewModel)
 }
 
-class DogBreedsViewController: UIViewController {
-    var interactor: DogBreedsBusinessLogic?
-    var router: (NSObjectProtocol & DogBreedsRoutingLogic & DogBreedsDataPassing)?
+class ListBreedViewController: UIViewController {
+    private let interactor: ListBreedBusinessLogic
+    let router: (NSObjectProtocol & ListBreedRoutingLogic & ListBreedDataPassing)
     
     var breeds: [String] = []
     
     @IBOutlet weak var tableView: UITableView!
     
+    init(interactor: ListBreedBusinessLogic, router: (NSObjectProtocol & ListBreedRoutingLogic & ListBreedDataPassing)) {
+        self.interactor = interactor
+        self.router = router
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Dog Breeds"
+        interactor.attach(view: self)
         
         setupTableView()
         fetchDogBreeds()
@@ -35,12 +46,11 @@ class DogBreedsViewController: UIViewController {
     
     func fetchDogBreeds() {
         let request = ListBreeds.LoadDogBreeds.Request()
-        interactor?.loadDogBreeds(request: request)
+        interactor.loadDogBreeds(request: request)
     }
-    
 }
 
-extension DogBreedsViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListBreedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return breeds.count
     }
@@ -56,13 +66,12 @@ extension DogBreedsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let breedName = breeds[indexPath.row]
-        interactor?.goToBreedImages(request: ListBreeds.GoToImages.Request(breedName: breedName))
+        interactor.goToBreedImages(request: ListBreeds.GoToImages.Request(breedName: breedName))
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
 
-extension DogBreedsViewController: DogBreedsDisplayLogic {
+extension ListBreedViewController: ListBreedDisplayLogic {
     func displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel) {
         DispatchQueue.main.async {
             self.breeds = viewModel.breeds
@@ -71,7 +80,7 @@ extension DogBreedsViewController: DogBreedsDisplayLogic {
     }
     
     func displayBreedImages(viewModel: ListBreeds.GoToImages.ViewModel) {
-        router?.routeToBreedImages()
+        router.routeToBreedImages()
     }
     
 }

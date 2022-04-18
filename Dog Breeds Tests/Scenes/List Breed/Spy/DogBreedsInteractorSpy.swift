@@ -8,7 +8,7 @@
 import Foundation
 @testable import Dog_Breeds
 
-class DogBreedsInteractorSpy: DogBreedsBusinessLogic {
+class DogBreedsInteractorSpy: ListBreedBusinessLogic {
     var loadDogBreedsCalled = false
     var goToBreedImagesCalled = false
     
