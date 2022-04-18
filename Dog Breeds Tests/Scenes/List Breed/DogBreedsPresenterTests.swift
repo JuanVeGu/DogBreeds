@@ -9,12 +9,12 @@ import XCTest
 @testable import Dog_Breeds
 
 class DogBreedsPresenterTests: XCTestCase {
-    var sut: DogBreedsPresenter!
+    var sut: ListBreedPresenter!
     var viewSpy: DogBreedsViewSpy!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = DogBreedsPresenter()
+        sut = ListBreedPresenter()
         viewSpy = DogBreedsViewSpy()
     }
     

@@ -13,14 +13,14 @@ protocol BreedBusinessLogic {
 
 class BreedInteractor: BreedBusinessLogic {
     var presenter: BreedPresentationLogic?
-    private let worker: DogBreedsWorker
+    private let useCase: BreedImageUseCase
     
-    init(worker: DogBreedsWorker) {
-        self.worker = worker
+    init(useCase: BreedImageUseCase) {
+        self.useCase = useCase
     }
     
     func loadBreedImages(request: Breed.LoadBreedImages.Request) {
-        worker.fetchBreedImages { [self] response in
+        useCase.fetchBreedImages { [self] response in
             presenter?.presentBreedImages(response: response)
         }
     }

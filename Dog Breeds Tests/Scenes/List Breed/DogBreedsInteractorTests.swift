@@ -9,14 +9,14 @@ import XCTest
 @testable import Dog_Breeds
 
 class DogBreedsInteractorTests: XCTestCase {
-    var sut: DogBreedsInteractor!
+    var sut: ListBreedInteractor!
     var dogBreedsWorker: DogBreedsWorkerSpy!
     var presenterSpy: DogBreedsPresenterSpy!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        dogBreedsWorker = DogBreedsWorkerSpy(listBreedRestAPI: ListBreedRestApi(url: "https://dog.ceo/api/breeds/list"))
-        sut = DogBreedsInteractor(worker: dogBreedsWorker)
+        dogBreedsWorker = DogBreedsWorkerSpy(listBreedRestAPI: ListBreedURLSessionRestApi(url: "https://dog.ceo/api/breeds/list"))
+        sut = ListBreedInteractor(worker: dogBreedsWorker)
         presenterSpy = DogBreedsPresenterSpy()
     }
     
@@ -25,7 +25,7 @@ class DogBreedsInteractorTests: XCTestCase {
         sut.presenter = presenterSpy
         let response = Seeds.dogBreedsResponse
         // when
-        let request = ListBreed.LoadDogBreeds.Request()
+        let request = ListBreeds.LoadDogBreeds.Request()
         sut.loadDogBreeds(request: request)
         // then
         XCTAssert(dogBreedsWorker.fetchDogBreedsCalled, "fetchDogBreeds() was not called")
