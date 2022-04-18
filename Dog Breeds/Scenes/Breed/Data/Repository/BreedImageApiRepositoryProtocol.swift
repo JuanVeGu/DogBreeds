@@ -8,5 +8,5 @@
 import Foundation
 
 protocol BreedImageApiRepositoryProtocol {
-    
+    func fetchBreedImages(completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void)
 }

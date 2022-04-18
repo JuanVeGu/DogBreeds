@@ -9,8 +9,16 @@ import Foundation
 
 struct BreedImageUseCase {
     private let breedImageRepository: BreedImageApiRepositoryProtocol
+    private let breedName: String
     
-    init(breedImageRepository: BreedImageApiRepositoryProtocol) {
+    init(breedName: String, breedImageRepository: BreedImageApiRepositoryProtocol) {
+        self.breedName = breedName
         self.breedImageRepository = breedImageRepository
+    }
+    
+    func fetchBreedImages(completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
+        self.breedImageRepository.fetchBreedImages { response in
+            completionHandler(response)
+        }
     }
 }

@@ -13,4 +13,10 @@ class BreedImageApiRepository: BreedImageApiRepositoryProtocol {
     init(breedImageRestApi: BreedRestApiProtocol) {
         self.breedImageRestApi = breedImageRestApi
     }
+    
+    func fetchBreedImages(completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
+        self.breedImageRestApi.fetchBreedImages { response in
+            completionHandler(response)
+        }
+    }
 }

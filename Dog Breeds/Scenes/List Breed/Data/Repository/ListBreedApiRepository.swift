@@ -13,4 +13,10 @@ class ListBreedApiRepository: ListBreedApiRepositoryProtocol {
     init(listBreedRestApi: ListBreedRestApiProtocol) {
         self.listBreedRestApi = listBreedRestApi
     }
+    
+    func fetchDogBreeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void) {
+        self.listBreedRestApi.fetchDogBreeds { response in
+            completionHandler(response)
+        }
+    }
 }

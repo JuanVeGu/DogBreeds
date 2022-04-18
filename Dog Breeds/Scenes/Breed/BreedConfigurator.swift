@@ -13,7 +13,12 @@ extension BreedViewController {
         view.title = breedName
         
         let interactor = BreedInteractor(
-            worker: DogBreedsWorker(breedRestAPI: BreedRestApi(url: "https://dog.ceo/api/breed/\(breedName)/images"))
+            useCase: BreedImageUseCase(
+                breedName: breedName,
+                breedImageRepository: BreedImageApiRepository(
+                    breedImageRestApi: BreedRestApi(url: "https://dog.ceo/api/breed/\(breedName)/images")
+                )
+            )
         )
         let presenter = BreedPresenter()
         let router = BreedRouter()

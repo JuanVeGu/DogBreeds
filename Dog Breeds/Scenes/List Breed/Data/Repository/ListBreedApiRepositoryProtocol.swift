@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ListBreedApiRepositoryProtocol {
-    
+    func fetchDogBreeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void)
 }

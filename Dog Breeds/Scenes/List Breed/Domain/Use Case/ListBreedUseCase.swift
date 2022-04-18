@@ -14,7 +14,9 @@ struct ListBreedUseCase {
         self.listBreedRepository = listBreedRepository
     }
     
-    func breeds(completionHandler: @escaping ([String]) -> Void) {
-        
+    func breeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void) {
+        listBreedRepository.fetchDogBreeds { response in
+            completionHandler(response)
+        }
     }
 }

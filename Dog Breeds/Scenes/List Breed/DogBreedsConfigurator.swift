@@ -11,7 +11,11 @@ extension DogBreedsViewController {
     func configurator() -> DogBreedsViewController {
         let view = self
         let interactor = DogBreedsInteractor(
-            worker: DogBreedsWorker(listBreedRestAPI: ListBreedRestApi(url: "https://dog.ceo/api/breeds/list"))
+            useCase: ListBreedUseCase(
+                listBreedRepository: ListBreedApiRepository(
+                    listBreedRestApi: ListBreedRestApi(url: "https://dog.ceo/api/breeds/list")
+                )
+            )
         )
         let presenter = DogBreedsPresenter()
         let router = DogBreedsRouter()

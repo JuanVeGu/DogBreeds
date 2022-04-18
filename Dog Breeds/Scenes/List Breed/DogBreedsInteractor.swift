@@ -18,16 +18,16 @@ protocol DogBreedsDataStore {
 
 class DogBreedsInteractor: DogBreedsBusinessLogic, DogBreedsDataStore {
     var presenter: DogBreedsPresentationLogic!
-    private let worker: DogBreedsWorker
+    private let useCase: ListBreedUseCase
     
     var breedName: String?
     
-    init(worker: DogBreedsWorker) {
-        self.worker = worker
+    init(useCase: ListBreedUseCase) {
+        self.useCase = useCase
     }
     
     func loadDogBreeds(request: ListBreeds.LoadDogBreeds.Request) {
-        worker.fetchDogBreeds { [self] response in
+        useCase.breeds { [self] response in
             presenter.presentDogBreeds(response: response)
         }
     }

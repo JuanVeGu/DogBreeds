@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct ListBreedsssss: Decodable {
+struct ListBreed: Decodable {
     let breed: [String]
 }
