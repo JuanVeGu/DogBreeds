@@ -9,14 +9,21 @@ import Foundation
 
 class ListBreedApiRepository: ListBreedRepository {
     private let listBreedRestApi: ListBreedRestApi
+    private let modelMapper: Mapper<ListBreed, ListBreeds.LoadDogBreeds.Response>
     
-    init(listBreedRestApi: ListBreedRestApi) {
+    init(listBreedRestApi: ListBreedRestApi, modelMapper: Mapper<ListBreed, ListBreeds.LoadDogBreeds.Response>) {
         self.listBreedRestApi = listBreedRestApi
+        self.modelMapper = modelMapper
     }
     
-    func fetchDogBreeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void) {
+    func fetchDogBreeds(completionHandler: @escaping (ListBreed?) -> Void) {
         self.listBreedRestApi.fetchDogBreeds { response in
-            completionHandler(response)
+            if let response = response {
+                let model = self.modelMapper.reverseMap(value: response)
+                completionHandler(model)
+            } else {
+                completionHandler(nil)
+            }
         }
     }
 }

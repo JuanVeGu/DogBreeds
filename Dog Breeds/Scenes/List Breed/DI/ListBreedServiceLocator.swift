@@ -13,7 +13,10 @@ class ListBreedServiceLocator {
     }
     
     private var listBreedRepository: ListBreedRepository {
-        return ListBreedApiRepository(listBreedRestApi: listBreedRestApi)
+        return ListBreedApiRepository(
+            listBreedRestApi: listBreedRestApi,
+            modelMapper: ListBreedEntityToListBreedModelMapper()
+        )
     }
     
     private var listBreedRestApi: ListBreedRestApi {

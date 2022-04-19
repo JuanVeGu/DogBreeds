@@ -34,8 +34,8 @@ class ListBreedInteractor: ListBreedBusinessLogic, ListBreedDataStore {
     }
     
     func loadDogBreeds(request: ListBreeds.LoadDogBreeds.Request) {
-        useCase.breeds { [self] response in
-            presenter.presentDogBreeds(response: response)
+        useCase.breeds { [self] listBreed in
+            presenter.presentDogBreeds(listBreed: listBreed)
         }
     }
     

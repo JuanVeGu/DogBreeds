@@ -10,7 +10,7 @@ import Foundation
 protocol ListBreedPresentationLogic {
     func attach(view: ListBreedDisplayLogic)
     
-    func presentDogBreeds(response: ListBreeds.LoadDogBreeds.Response?)
+    func presentDogBreeds(listBreed: ListBreed?)
     func presentBreedImages(response: ListBreeds.GoToImages.Response)
 }
 
@@ -21,9 +21,9 @@ class ListBreedPresenter: ListBreedPresentationLogic {
         self.view = view
     }
     
-    func presentDogBreeds(response: ListBreeds.LoadDogBreeds.Response?) {
-        if let response = response {
-            view?.displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel(breeds: response.message))
+    func presentDogBreeds(listBreed: ListBreed?) {
+        if let listBreed = listBreed {
+            view?.displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel(breeds: listBreed.breed))
         }
     }
     

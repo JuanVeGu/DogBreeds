@@ -57,6 +57,8 @@
 		E43466742808F0C700FF91F3 /* BreedImageApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43466732808F0C700FF91F3 /* BreedImageApiRepository.swift */; };
 		E4F3E14E280F041300F1223B /* BreedServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E14D280F041300F1223B /* BreedServiceLocator.swift */; };
 		E4F3E150280F160400F1223B /* BreedImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E14F280F160400F1223B /* BreedImageFactory.swift */; };
+		E4F3E154280F2E8C00F1223B /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E153280F2E8C00F1223B /* Mapper.swift */; };
+		E4F3E156280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E155280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		E43466732808F0C700FF91F3 /* BreedImageApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageApiRepository.swift; sourceTree = "<group>"; };
 		E4F3E14D280F041300F1223B /* BreedServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedServiceLocator.swift; sourceTree = "<group>"; };
 		E4F3E14F280F160400F1223B /* BreedImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageFactory.swift; sourceTree = "<group>"; };
+		E4F3E153280F2E8C00F1223B /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		E4F3E155280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedEntityToListBreedModelMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,7 @@
 		75C26FB427ED6CA30047CFB7 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E4F3E151280F2E7700F1223B /* Core */,
 				75ABC76A27E961ED00C4F1C8 /* AppDelegate.swift */,
 			);
 			path = App;
@@ -450,6 +455,23 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		E4F3E151280F2E7700F1223B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3E152280F2E7D00F1223B /* Mapper */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E4F3E152280F2E7D00F1223B /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3E153280F2E8C00F1223B /* Mapper.swift */,
+				E4F3E155280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -562,6 +584,7 @@
 				7577D60427F0FDE00016E0C7 /* BreedImageViewCell.swift in Sources */,
 				75C26FB827EDEFC20047CFB7 /* BreedViewController.swift in Sources */,
 				E4F3E150280F160400F1223B /* BreedImageFactory.swift in Sources */,
+				E4F3E154280F2E8C00F1223B /* Mapper.swift in Sources */,
 				7577D60827F149C00016E0C7 /* UIImageView+DogBreeds.swift in Sources */,
 				75C26FCB27EE17C10047CFB7 /* BreedModel.swift in Sources */,
 				75C26FB127ED6BFC0047CFB7 /* ListBreedPresenter.swift in Sources */,
@@ -577,6 +600,7 @@
 				E43466672808DAE500FF91F3 /* ListBreedUseCase.swift in Sources */,
 				E434666E2808EFC300FF91F3 /* BreedImage.swift in Sources */,
 				75ABC76B27E961ED00C4F1C8 /* AppDelegate.swift in Sources */,
+				E4F3E156280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift in Sources */,
 				E43466702808F01700FF91F3 /* BreedImageUseCase.swift in Sources */,
 				75D4883D27EF614900BF6355 /* BreedViewCell.swift in Sources */,
 				E434665528077C7E00FF91F3 /* BreedImageRestApi.swift in Sources */,
