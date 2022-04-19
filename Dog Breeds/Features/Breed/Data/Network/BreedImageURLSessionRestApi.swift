@@ -14,7 +14,7 @@ class BreedImageURLSessionRestApi: BreedImageRestApi {
         self.urlSession = urlSession
     }
     
-    func fetchBreedImages(breedName:String, completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
         guard let url = URL(string: "https://dog.ceo/api/breed/\(breedName)/images") else {
             return
         }
