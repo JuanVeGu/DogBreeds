@@ -1,5 +1,5 @@
 //
-//  BreedRestApi.swift
+//  BreedImageURLSessionRestApi.swift
 //  Dog Breeds
 //
 //  Created by Mobdev 6 on 13-04-22.
@@ -7,17 +7,15 @@
 
 import Foundation
 
-class BreedRestApi: BreedRestApiProtocol {
+class BreedImageURLSessionRestApi: BreedImageRestApi {
     private let urlSession: URLSession
-    private let url: String
     
-    init(urlSession: URLSession = .shared, url: String) {
+    init(urlSession: URLSession = .shared) {
         self.urlSession = urlSession
-        self.url = url
     }
     
-    func fetchBreedImages(completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
-        guard let url = URL(string: self.url) else {
+    func fetchBreedImages(breedName:String, completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
+        guard let url = URL(string: "https://dog.ceo/api/breed/\(breedName)/images") else {
             return
         }
         

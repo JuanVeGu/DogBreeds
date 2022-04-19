@@ -8,20 +8,30 @@
 import Foundation
 
 protocol BreedBusinessLogic {
+    func attach(view: BreedDisplayLogic)
     func loadBreedImages(request: Breed.LoadBreedImages.Request)
 }
 
 class BreedInteractor: BreedBusinessLogic {
-    var presenter: BreedPresentationLogic?
+    private let presenter: BreedPresentationLogic
     private let useCase: BreedImageUseCase
     
-    init(useCase: BreedImageUseCase) {
+    init(presenter: BreedPresentationLogic, useCase: BreedImageUseCase) {
+        self.presenter = presenter
         self.useCase = useCase
     }
     
+    func attach(view: BreedDisplayLogic) {
+        presenter.attach(view: view)
+    }
+    
     func loadBreedImages(request: Breed.LoadBreedImages.Request) {
-        useCase.fetchBreedImages { [self] response in
-            presenter?.presentBreedImages(response: response)
+        guard let name = request.name else {
+            return
+        }
+        
+        useCase.fetchBreedImages(breedName: name) { [self] response in
+            presenter.presentBreedImages(response: response)
         }
     }
     

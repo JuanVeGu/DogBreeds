@@ -12,16 +12,30 @@ protocol BreedDisplayLogic: AnyObject {
 }
 
 class BreedViewController: UIViewController {
-    var interactor: BreedBusinessLogic?
-    var router: (NSObjectProtocol & BreedRoutingLogic)?
+    private let interactor: BreedBusinessLogic
+    let router: (NSObjectProtocol & BreedRoutingLogic)
+    
+    var breedName: String?
     
     var images: [String] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
+    init(interactor: BreedBusinessLogic, router: (NSObjectProtocol & BreedRoutingLogic)) {
+        self.interactor = interactor
+        self.router = router
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interactor.attach(view: self)
         setupCollectionView()
         fetchBreedImages()
     }
@@ -31,8 +45,8 @@ class BreedViewController: UIViewController {
     }
     
     func fetchBreedImages() {
-        let request = Breed.LoadBreedImages.Request()
-        interactor?.loadBreedImages(request: request)
+        let request = Breed.LoadBreedImages.Request(name: breedName)
+        interactor.loadBreedImages(request: request)
     }
 
 }

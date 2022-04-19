@@ -7,15 +7,15 @@
 
 import Foundation
 
-class BreedImageApiRepository: BreedImageApiRepositoryProtocol {
-    private let breedImageRestApi: BreedRestApiProtocol
+class BreedImageApiRepository: BreedImageRepository {
+    private let breedImageRestApi: BreedImageRestApi
     
-    init(breedImageRestApi: BreedRestApiProtocol) {
+    init(breedImageRestApi: BreedImageRestApi) {
         self.breedImageRestApi = breedImageRestApi
     }
     
-    func fetchBreedImages(completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
-        self.breedImageRestApi.fetchBreedImages { response in
+    func fetchBreedImages(breedName:String, completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
+        self.breedImageRestApi.fetchBreedImages(breedName: breedName) { response in
             completionHandler(response)
         }
     }
