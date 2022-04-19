@@ -8,11 +8,16 @@
 import Foundation
 
 protocol BreedPresentationLogic {
+    func attach(view: BreedDisplayLogic)
     func presentBreedImages(response: Breed.LoadBreedImages.Response?)
 }
 
 class BreedPresenter: BreedPresentationLogic {
     weak var view: BreedDisplayLogic?
+    
+    func attach(view: BreedDisplayLogic) {
+        self.view = view
+    }
     
     func presentBreedImages(response: Breed.LoadBreedImages.Response?) {
         if let response = response {

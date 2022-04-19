@@ -15,7 +15,7 @@ class BreedInteractorTests: XCTestCase {
 
     override func setUpWithError() throws {
         try super.setUpWithError()
-        dogBreedsWorker = DogBreedsWorkerSpy(breedRestAPI: BreedRestApi(url: "https://dog.ceo/api/breed/schnauzer/images"))
+        dogBreedsWorker = DogBreedsWorkerSpy(breedRestAPI: BreedImageURLSessionRestApi(url: "https://dog.ceo/api/breed/schnauzer/images"))
         sut = BreedInteractor(worker: dogBreedsWorker)
         presenterSpy = BreedPresenterSpy()
     }

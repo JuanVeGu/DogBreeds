@@ -9,7 +9,9 @@ import Foundation
 
 enum Breed {
     enum LoadBreedImages {
-        struct Request { }
+        struct Request {
+            let name: String?
+        }
         
         struct Response: Codable {
             let message: [String]
