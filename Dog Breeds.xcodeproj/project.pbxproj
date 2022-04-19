@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		757081F127F0D269007CDD3A /* BreedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081F027F0D269007CDD3A /* BreedViewTests.swift */; };
-		757081F327F0D345007CDD3A /* BreedInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081F227F0D345007CDD3A /* BreedInteractorSpy.swift */; };
-		757081F527F0D5FB007CDD3A /* BreedInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081F427F0D5FB007CDD3A /* BreedInteractorTests.swift */; };
-		757081F727F0D60B007CDD3A /* BreedPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081F627F0D60B007CDD3A /* BreedPresenterSpy.swift */; };
-		757081FB27F0E0C0007CDD3A /* BreedViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081FA27F0E0BF007CDD3A /* BreedViewSpy.swift */; };
-		757081FD27F0E0D9007CDD3A /* BreedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757081FC27F0E0D9007CDD3A /* BreedPresenterTests.swift */; };
 		7577D60427F0FDE00016E0C7 /* BreedImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577D60227F0FDE00016E0C7 /* BreedImageViewCell.swift */; };
 		7577D60527F0FDE00016E0C7 /* BreedImageViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7577D60327F0FDE00016E0C7 /* BreedImageViewCell.xib */; };
 		7577D60827F149C00016E0C7 /* UIImageView+DogBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577D60727F149C00016E0C7 /* UIImageView+DogBreeds.swift */; };
@@ -31,14 +25,7 @@
 		75C26FC127EDF0B60047CFB7 /* BreedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FC027EDF0B60047CFB7 /* BreedRouter.swift */; };
 		75C26FC927EE17AA0047CFB7 /* ListBreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FC827EE17AA0047CFB7 /* ListBreedModel.swift */; };
 		75C26FCB27EE17C10047CFB7 /* BreedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FCA27EE17C10047CFB7 /* BreedModel.swift */; };
-		75C26FDC27EE225B0047CFB7 /* DogBreedsViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FDB27EE225B0047CFB7 /* DogBreedsViewTests.swift */; };
-		75C26FDF27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FDE27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift */; };
-		75C26FE527EE2A720047CFB7 /* DogBreedsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FE427EE2A720047CFB7 /* DogBreedsInteractorTests.swift */; };
-		75C26FE727EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FE627EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift */; };
 		75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FE927EE40CA0047CFB7 /* Seeds.swift */; };
-		75C26FEC27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FEB27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift */; };
-		75C26FEE27EE47990047CFB7 /* DogBreedsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FED27EE47990047CFB7 /* DogBreedsPresenterTests.swift */; };
-		75C26FF027EE484D0047CFB7 /* DogBreedsViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FEF27EE484D0047CFB7 /* DogBreedsViewSpy.swift */; };
 		75D4883D27EF614900BF6355 /* BreedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4883B27EF614900BF6355 /* BreedViewCell.swift */; };
 		75D4883E27EF614900BF6355 /* BreedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D4883C27EF614900BF6355 /* BreedViewCell.xib */; };
 		E42B451C280DAD3B00A2E4CC /* ListBreedServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B451B280DAD3B00A2E4CC /* ListBreedServiceLocator.swift */; };
@@ -57,6 +44,11 @@
 		E43466742808F0C700FF91F3 /* BreedImageApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43466732808F0C700FF91F3 /* BreedImageApiRepository.swift */; };
 		E4F3E14E280F041300F1223B /* BreedServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E14D280F041300F1223B /* BreedServiceLocator.swift */; };
 		E4F3E150280F160400F1223B /* BreedImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E14F280F160400F1223B /* BreedImageFactory.swift */; };
+		E4F3E154280F2E8C00F1223B /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E153280F2E8C00F1223B /* Mapper.swift */; };
+		E4F3E156280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E155280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift */; };
+		E4F3E159280F4F6900F1223B /* ListBreedApiRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E158280F4F6900F1223B /* ListBreedApiRepositoryTests.swift */; };
+		E4F3E15C280F627C00F1223B /* ListBreedRestApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E15B280F627C00F1223B /* ListBreedRestApiMock.swift */; };
+		E4F3E15E280F64B800F1223B /* BreedImageEntityToBreedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F3E15D280F64B800F1223B /* BreedImageEntityToBreedImageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,12 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		757081F027F0D269007CDD3A /* BreedViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewTests.swift; sourceTree = "<group>"; };
-		757081F227F0D345007CDD3A /* BreedInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInteractorSpy.swift; sourceTree = "<group>"; };
-		757081F427F0D5FB007CDD3A /* BreedInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInteractorTests.swift; sourceTree = "<group>"; };
-		757081F627F0D60B007CDD3A /* BreedPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPresenterSpy.swift; sourceTree = "<group>"; };
-		757081FA27F0E0BF007CDD3A /* BreedViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewSpy.swift; sourceTree = "<group>"; };
-		757081FC27F0E0D9007CDD3A /* BreedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPresenterTests.swift; sourceTree = "<group>"; };
 		7577D60227F0FDE00016E0C7 /* BreedImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageViewCell.swift; sourceTree = "<group>"; };
 		7577D60327F0FDE00016E0C7 /* BreedImageViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedImageViewCell.xib; sourceTree = "<group>"; };
 		7577D60727F149C00016E0C7 /* UIImageView+DogBreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DogBreeds.swift"; sourceTree = "<group>"; };
@@ -97,14 +83,7 @@
 		75C26FC827EE17AA0047CFB7 /* ListBreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedModel.swift; sourceTree = "<group>"; };
 		75C26FCA27EE17C10047CFB7 /* BreedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedModel.swift; sourceTree = "<group>"; };
 		75C26FD027EE21AD0047CFB7 /* Dog Breeds Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dog Breeds Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		75C26FDB27EE225B0047CFB7 /* DogBreedsViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsViewTests.swift; sourceTree = "<group>"; };
-		75C26FDE27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsInteractorSpy.swift; sourceTree = "<group>"; };
-		75C26FE427EE2A720047CFB7 /* DogBreedsInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsInteractorTests.swift; sourceTree = "<group>"; };
-		75C26FE627EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsPresenterSpy.swift; sourceTree = "<group>"; };
 		75C26FE927EE40CA0047CFB7 /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
-		75C26FEB27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsWorkerSpy.swift; sourceTree = "<group>"; };
-		75C26FED27EE47990047CFB7 /* DogBreedsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsPresenterTests.swift; sourceTree = "<group>"; };
-		75C26FEF27EE484D0047CFB7 /* DogBreedsViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsViewSpy.swift; sourceTree = "<group>"; };
 		75D4883B27EF614900BF6355 /* BreedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewCell.swift; sourceTree = "<group>"; };
 		75D4883C27EF614900BF6355 /* BreedViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedViewCell.xib; sourceTree = "<group>"; };
 		E42B451B280DAD3B00A2E4CC /* ListBreedServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedServiceLocator.swift; sourceTree = "<group>"; };
@@ -123,6 +102,11 @@
 		E43466732808F0C700FF91F3 /* BreedImageApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageApiRepository.swift; sourceTree = "<group>"; };
 		E4F3E14D280F041300F1223B /* BreedServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedServiceLocator.swift; sourceTree = "<group>"; };
 		E4F3E14F280F160400F1223B /* BreedImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageFactory.swift; sourceTree = "<group>"; };
+		E4F3E153280F2E8C00F1223B /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		E4F3E155280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedEntityToListBreedModelMapper.swift; sourceTree = "<group>"; };
+		E4F3E158280F4F6900F1223B /* ListBreedApiRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedApiRepositoryTests.swift; sourceTree = "<group>"; };
+		E4F3E15B280F627C00F1223B /* ListBreedRestApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedRestApiMock.swift; sourceTree = "<group>"; };
+		E4F3E15D280F64B800F1223B /* BreedImageEntityToBreedImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageEntityToBreedImageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,27 +127,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		757081EE27F0D245007CDD3A /* Breed */ = {
-			isa = PBXGroup;
-			children = (
-				757081EF27F0D24B007CDD3A /* Spy */,
-				757081F027F0D269007CDD3A /* BreedViewTests.swift */,
-				757081F427F0D5FB007CDD3A /* BreedInteractorTests.swift */,
-				757081FC27F0E0D9007CDD3A /* BreedPresenterTests.swift */,
-			);
-			path = Breed;
-			sourceTree = "<group>";
-		};
-		757081EF27F0D24B007CDD3A /* Spy */ = {
-			isa = PBXGroup;
-			children = (
-				757081F227F0D345007CDD3A /* BreedInteractorSpy.swift */,
-				757081F627F0D60B007CDD3A /* BreedPresenterSpy.swift */,
-				757081FA27F0E0BF007CDD3A /* BreedViewSpy.swift */,
-			);
-			path = Spy;
-			sourceTree = "<group>";
-		};
 		7577D60127F0FDBA0016E0C7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,20 +166,20 @@
 			isa = PBXGroup;
 			children = (
 				75C26FB427ED6CA30047CFB7 /* App */,
-				75C26FAC27ED64220047CFB7 /* Scenes */,
+				75C26FAC27ED64220047CFB7 /* Features */,
 				7577D60627F149A60016E0C7 /* Extension */,
 				75C26FC727EDF37C0047CFB7 /* Resources */,
 			);
 			path = "Dog Breeds";
 			sourceTree = "<group>";
 		};
-		75C26FAC27ED64220047CFB7 /* Scenes */ = {
+		75C26FAC27ED64220047CFB7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
 				75C26FAD27ED642F0047CFB7 /* List Breed */,
 				75C26FB527EDEF050047CFB7 /* Breed */,
 			);
-			path = Scenes;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		75C26FAD27ED642F0047CFB7 /* List Breed */ = {
@@ -240,6 +203,7 @@
 		75C26FB427ED6CA30047CFB7 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E4F3E151280F2E7700F1223B /* Core */,
 				75ABC76A27E961ED00C4F1C8 /* AppDelegate.swift */,
 			);
 			path = App;
@@ -276,7 +240,6 @@
 		75C26FD127EE21AD0047CFB7 /* Dog Breeds Tests */ = {
 			isa = PBXGroup;
 			children = (
-				75C26FE827EE2FD50047CFB7 /* Worker */,
 				75C26FD927EE21FC0047CFB7 /* Scenes */,
 				75C26FE927EE40CA0047CFB7 /* Seeds.swift */,
 			);
@@ -286,39 +249,9 @@
 		75C26FD927EE21FC0047CFB7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				757081EE27F0D245007CDD3A /* Breed */,
-				75C26FDA27EE22080047CFB7 /* List Breed */,
+				E4F3E157280F4EE800F1223B /* List Breed */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		75C26FDA27EE22080047CFB7 /* List Breed */ = {
-			isa = PBXGroup;
-			children = (
-				75C26FDD27EE26AC0047CFB7 /* Spy */,
-				75C26FDB27EE225B0047CFB7 /* DogBreedsViewTests.swift */,
-				75C26FE427EE2A720047CFB7 /* DogBreedsInteractorTests.swift */,
-				75C26FED27EE47990047CFB7 /* DogBreedsPresenterTests.swift */,
-			);
-			path = "List Breed";
-			sourceTree = "<group>";
-		};
-		75C26FDD27EE26AC0047CFB7 /* Spy */ = {
-			isa = PBXGroup;
-			children = (
-				75C26FDE27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift */,
-				75C26FE627EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift */,
-				75C26FEF27EE484D0047CFB7 /* DogBreedsViewSpy.swift */,
-			);
-			path = Spy;
-			sourceTree = "<group>";
-		};
-		75C26FE827EE2FD50047CFB7 /* Worker */ = {
-			isa = PBXGroup;
-			children = (
-				75C26FEB27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift */,
-			);
-			path = Worker;
 			sourceTree = "<group>";
 		};
 		75D4883A27EF612100BF6355 /* Cells */ = {
@@ -450,6 +383,41 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
+		E4F3E151280F2E7700F1223B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3E152280F2E7D00F1223B /* Mapper */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E4F3E152280F2E7D00F1223B /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3E153280F2E8C00F1223B /* Mapper.swift */,
+				E4F3E155280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift */,
+				E4F3E15D280F64B800F1223B /* BreedImageEntityToBreedImageModel.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		E4F3E157280F4EE800F1223B /* List Breed */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3E15A280F616F00F1223B /* Mocks */,
+				E4F3E158280F4F6900F1223B /* ListBreedApiRepositoryTests.swift */,
+			);
+			path = "List Breed";
+			sourceTree = "<group>";
+		};
+		E4F3E15A280F616F00F1223B /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E4F3E15B280F627C00F1223B /* ListBreedRestApiMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -562,6 +530,7 @@
 				7577D60427F0FDE00016E0C7 /* BreedImageViewCell.swift in Sources */,
 				75C26FB827EDEFC20047CFB7 /* BreedViewController.swift in Sources */,
 				E4F3E150280F160400F1223B /* BreedImageFactory.swift in Sources */,
+				E4F3E154280F2E8C00F1223B /* Mapper.swift in Sources */,
 				7577D60827F149C00016E0C7 /* UIImageView+DogBreeds.swift in Sources */,
 				75C26FCB27EE17C10047CFB7 /* BreedModel.swift in Sources */,
 				75C26FB127ED6BFC0047CFB7 /* ListBreedPresenter.swift in Sources */,
@@ -570,6 +539,7 @@
 				E42B451E280E05B400A2E4CC /* ListBreedFactory.swift in Sources */,
 				E43466742808F0C700FF91F3 /* BreedImageApiRepository.swift in Sources */,
 				75C26FB327ED6C080047CFB7 /* ListBreedRouter.swift in Sources */,
+				E4F3E15E280F64B800F1223B /* BreedImageEntityToBreedImageModel.swift in Sources */,
 				E4F3E14E280F041300F1223B /* BreedServiceLocator.swift in Sources */,
 				75C26FAF27ED6BF10047CFB7 /* ListBreedInteractor.swift in Sources */,
 				75C26FC927EE17AA0047CFB7 /* ListBreedModel.swift in Sources */,
@@ -577,6 +547,7 @@
 				E43466672808DAE500FF91F3 /* ListBreedUseCase.swift in Sources */,
 				E434666E2808EFC300FF91F3 /* BreedImage.swift in Sources */,
 				75ABC76B27E961ED00C4F1C8 /* AppDelegate.swift in Sources */,
+				E4F3E156280F31CF00F1223B /* ListBreedEntityToListBreedModelMapper.swift in Sources */,
 				E43466702808F01700FF91F3 /* BreedImageUseCase.swift in Sources */,
 				75D4883D27EF614900BF6355 /* BreedViewCell.swift in Sources */,
 				E434665528077C7E00FF91F3 /* BreedImageRestApi.swift in Sources */,
@@ -591,20 +562,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75C26FDC27EE225B0047CFB7 /* DogBreedsViewTests.swift in Sources */,
-				75C26FE727EE2AF30047CFB7 /* DogBreedsPresenterSpy.swift in Sources */,
-				757081F327F0D345007CDD3A /* BreedInteractorSpy.swift in Sources */,
-				75C26FE527EE2A720047CFB7 /* DogBreedsInteractorTests.swift in Sources */,
-				75C26FEE27EE47990047CFB7 /* DogBreedsPresenterTests.swift in Sources */,
-				75C26FDF27EE26C10047CFB7 /* DogBreedsInteractorSpy.swift in Sources */,
-				75C26FEC27EE42F10047CFB7 /* DogBreedsWorkerSpy.swift in Sources */,
-				757081FB27F0E0C0007CDD3A /* BreedViewSpy.swift in Sources */,
-				757081F127F0D269007CDD3A /* BreedViewTests.swift in Sources */,
-				757081FD27F0E0D9007CDD3A /* BreedPresenterTests.swift in Sources */,
-				757081F727F0D60B007CDD3A /* BreedPresenterSpy.swift in Sources */,
-				757081F527F0D5FB007CDD3A /* BreedInteractorTests.swift in Sources */,
 				75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */,
-				75C26FF027EE484D0047CFB7 /* DogBreedsViewSpy.swift in Sources */,
+				E4F3E15C280F627C00F1223B /* ListBreedRestApiMock.swift in Sources */,
+				E4F3E159280F4F6900F1223B /* ListBreedApiRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
