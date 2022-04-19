@@ -9,7 +9,7 @@ import Foundation
 
 protocol BreedPresentationLogic {
     func attach(view: BreedDisplayLogic)
-    func presentBreedImages(response: Breed.LoadBreedImages.Response?)
+    func presentBreedImages(breedImage: BreedImage?)
 }
 
 class BreedPresenter: BreedPresentationLogic {
@@ -19,9 +19,9 @@ class BreedPresenter: BreedPresentationLogic {
         self.view = view
     }
     
-    func presentBreedImages(response: Breed.LoadBreedImages.Response?) {
-        if let response = response {
-            view?.displayBreedImages(viewModel: Breed.LoadBreedImages.ViewModel(images: response.message))
+    func presentBreedImages(breedImage: BreedImage?) {
+        if let breedImage = breedImage {
+            view?.displayBreedImages(viewModel: Breed.LoadBreedImages.ViewModel(images: breedImage.images))
         }
     }
 }

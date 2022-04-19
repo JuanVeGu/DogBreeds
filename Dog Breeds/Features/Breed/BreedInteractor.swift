@@ -30,8 +30,8 @@ class BreedInteractor: BreedBusinessLogic {
             return
         }
         
-        useCase.fetchBreedImages(breedName: name) { [self] response in
-            presenter.presentBreedImages(response: response)
+        useCase.fetchBreedImages(breedName: name) { [self] breedImage in
+            presenter.presentBreedImages(breedImage: breedImage)
         }
     }
     

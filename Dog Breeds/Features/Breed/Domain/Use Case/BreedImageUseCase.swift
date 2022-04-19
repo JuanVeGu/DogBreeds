@@ -14,7 +14,7 @@ struct BreedImageUseCase {
         self.breedImageRepository = breedImageRepository
     }
     
-    func fetchBreedImages(breedName: String, completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImage?) -> Void) {
         self.breedImageRepository.fetchBreedImages(breedName: breedName) { response in
             completionHandler(response)
         }
