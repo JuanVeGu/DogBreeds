@@ -28,6 +28,9 @@
 		75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FE927EE40CA0047CFB7 /* Seeds.swift */; };
 		75D4883D27EF614900BF6355 /* BreedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4883B27EF614900BF6355 /* BreedViewCell.swift */; };
 		75D4883E27EF614900BF6355 /* BreedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75D4883C27EF614900BF6355 /* BreedViewCell.xib */; };
+		E429BCD5281045F400F12D5D /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCD4281045F400F12D5D /* MockURLProtocol.swift */; };
+		E429BCD92810478100F12D5D /* ListBreedURLSessionRestApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCD82810478100F12D5D /* ListBreedURLSessionRestApiTests.swift */; };
+		E429BCDB2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCDA2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift */; };
 		E42B451C280DAD3B00A2E4CC /* ListBreedServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B451B280DAD3B00A2E4CC /* ListBreedServiceLocator.swift */; };
 		E42B451E280E05B400A2E4CC /* ListBreedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B451D280E05B400A2E4CC /* ListBreedFactory.swift */; };
 		E434665028075BB100FF91F3 /* ListBreedRestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434664F28075BB100FF91F3 /* ListBreedRestApi.swift */; };
@@ -88,6 +91,9 @@
 		75C26FE927EE40CA0047CFB7 /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		75D4883B27EF614900BF6355 /* BreedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewCell.swift; sourceTree = "<group>"; };
 		75D4883C27EF614900BF6355 /* BreedViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedViewCell.xib; sourceTree = "<group>"; };
+		E429BCD4281045F400F12D5D /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		E429BCD82810478100F12D5D /* ListBreedURLSessionRestApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedURLSessionRestApiTests.swift; sourceTree = "<group>"; };
+		E429BCDA2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageURLSessionRestApiTests.swift; sourceTree = "<group>"; };
 		E42B451B280DAD3B00A2E4CC /* ListBreedServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedServiceLocator.swift; sourceTree = "<group>"; };
 		E42B451D280E05B400A2E4CC /* ListBreedFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedFactory.swift; sourceTree = "<group>"; };
 		E434664F28075BB100FF91F3 /* ListBreedRestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedRestApi.swift; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 			children = (
 				75C26FD927EE21FC0047CFB7 /* Features */,
 				75C26FE927EE40CA0047CFB7 /* Seeds.swift */,
+				E429BCD4281045F400F12D5D /* MockURLProtocol.swift */,
 			);
 			path = "Dog Breeds Tests";
 			sourceTree = "<group>";
@@ -411,6 +418,7 @@
 			children = (
 				E4F3E15A280F616F00F1223B /* Mocks */,
 				E4F3E158280F4F6900F1223B /* ListBreedApiRepositoryTests.swift */,
+				E429BCD82810478100F12D5D /* ListBreedURLSessionRestApiTests.swift */,
 			);
 			path = "List Breed";
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 			children = (
 				E4F3E160280F686500F1223B /* Mocks */,
 				E4F3E165280F68E400F1223B /* BreedImageApiRepositoryTest.swift */,
+				E429BCDA2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift */,
 			);
 			path = Breed;
 			sourceTree = "<group>";
@@ -584,8 +593,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E429BCDB2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift in Sources */,
 				75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */,
+				E429BCD5281045F400F12D5D /* MockURLProtocol.swift in Sources */,
 				E4F3E166280F68E400F1223B /* BreedImageApiRepositoryTest.swift in Sources */,
+				E429BCD92810478100F12D5D /* ListBreedURLSessionRestApiTests.swift in Sources */,
 				E4F3E164280F689D00F1223B /* BreedImageRestApiMock.swift in Sources */,
 				E4F3E15C280F627C00F1223B /* ListBreedRestApiMock.swift in Sources */,
 				E4F3E159280F4F6900F1223B /* ListBreedApiRepositoryTests.swift in Sources */,

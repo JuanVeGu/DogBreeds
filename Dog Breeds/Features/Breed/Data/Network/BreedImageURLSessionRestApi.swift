@@ -15,14 +15,18 @@ class BreedImageURLSessionRestApi: BreedImageRestApi {
     }
     
     func fetchBreedImages(breedName: String, completionHandler: @escaping (Breed.LoadBreedImages.Response?) -> Void) {
-        guard let url = URL(string: "https://dog.ceo/api/breed/\(breedName)/images") else {
-            return
+        var urlString = ""
+        if breedName.isEmpty == false {
+            urlString = "https://dog.ceo/api/breed/\(breedName)/images"
         }
         
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        guard let url = URL(string: urlString) else {
+            return completionHandler(nil)
+        }
+        
+        let dataTask = self.urlSession.dataTask(with: url) { (data, response, error) in
             if let _ = error {
                 completionHandler(nil)
-                return
             } else if let data = data, let response = try? JSONDecoder().decode(Breed.LoadBreedImages.Response.self, from: data) {
                 completionHandler(response)
             } else {

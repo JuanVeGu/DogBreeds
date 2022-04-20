@@ -24,7 +24,6 @@ class ListBreedURLSessionRestApi: ListBreedRestApi {
         let dataTask = self.urlSession.dataTask(with: url) { (data, response, error) in
             if let _ = error {
                 completionHandler(nil)
-                return
             } else if let data = data, let response = try? JSONDecoder().decode(ListBreeds.LoadDogBreeds.Response.self, from: data) {
                 completionHandler(response)
             } else {

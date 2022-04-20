@@ -24,8 +24,8 @@ class BreedImageApiRepositoryTest: XCTestCase {
         super.tearDown()
     }
     
-    func testFail() {
-        let expectation = expectation(description: "testFail")
+    func testBreedImagesShouldBeReturnNil() {
+        let expectation = expectation(description: "testBreedImagesShouldBeReturnNil")
         restApi.shouldFail = true
         sut.fetchBreedImages(breedName: "") { images in
             XCTAssertNil(images)
@@ -35,8 +35,8 @@ class BreedImageApiRepositoryTest: XCTestCase {
         wait(for: [expectation], timeout: 1)
     }
     
-    func testSuccess() {
-        let expectation = expectation(description: "testSuccess")
+    func testShouldBeReturnAListWithImages() {
+        let expectation = expectation(description: "testShouldBeReturnAListWithImages")
         restApi.shouldFail = false
         sut.fetchBreedImages(breedName: "") { images in
             XCTAssertNotNil(images)
