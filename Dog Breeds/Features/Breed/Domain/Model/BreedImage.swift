@@ -7,6 +7,10 @@
 
 import Foundation
 
-struct BreedImage {
+struct BreedImage: Decodable, Equatable {
     let images: [String]
+    
+    static func ==(lhs: BreedImage, rhs: BreedImage) -> Bool {
+        return lhs.images == rhs.images
+    }
 }

@@ -16,7 +16,7 @@ class BreedImageApiRepository: BreedImageRepository {
         self.modelMapper = modelMapper
     }
     
-    func fetchBreedImages(breedName:String, completionHandler: @escaping (BreedImage?) -> Void) {
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImage?) -> Void) {
         self.breedImageRestApi.fetchBreedImages(breedName: breedName) { response in
             if let response = response {
                 let model = self.modelMapper.reverseMap(value: response)

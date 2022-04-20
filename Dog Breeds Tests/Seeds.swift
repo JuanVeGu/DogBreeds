@@ -20,17 +20,6 @@ struct Seeds {
         "beagle",
         "bluetick",
         "borzoi",
-        "bouvier",
-        "boxer",
-        "brabancon",
-        "briard",
-        "buhund",
-        "bulldog",
-        "bullterrier",
-        "cattledog",
-        "chihuahua",
-        "chow",
-        "clumber",
     ], status: "success")
     
     static let breedImages = Breed.LoadBreedImages.Response(message: [
@@ -43,10 +32,17 @@ struct Seeds {
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_10832.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_10982.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_11006.jpg",
-        "https://images.dog.ceo/breeds/hound-afghan/n02088094_11172.jpg",
-        "https://images.dog.ceo/breeds/hound-afghan/n02088094_11182.jpg",
-        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1126.jpg",
-        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1128.jpg",
-        "https://images.dog.ceo/breeds/hound-afghan/n02088094_11432.jpg",
     ], status: "success")
+    
+    static let responseError = ResponseError(
+        code: 404,
+        status: "error",
+        message: "Breed not found (master breed does not exist)"
+    )
+}
+
+struct ResponseError: Codable {
+    let code: Int
+    let status: String
+    let message: String
 }

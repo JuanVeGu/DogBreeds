@@ -8,5 +8,5 @@
 import Foundation
 
 protocol BreedImageRepository {
-    func fetchBreedImages(breedName:String, completionHandler: @escaping (BreedImage?) -> Void)
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImage?) -> Void)
 }
