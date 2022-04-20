@@ -7,6 +7,10 @@
 
 import Foundation
 
-struct ListBreed: Decodable {
+struct ListBreed: Decodable, Equatable {
     let breed: [String]
+    
+    static func ==(lhs: ListBreed, rhs: ListBreed) -> Bool {
+        return lhs.breed == rhs.breed
+    }
 }
