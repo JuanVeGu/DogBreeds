@@ -8,9 +8,9 @@
 import UIKit
 
 class BreedImageViewCell: UICollectionViewCell {
-    @IBOutlet weak var breedImage: UIImageView!
+    @IBOutlet weak var breedImage: ImageCache!
     
-    static let imageCellId: String = "BreedImageViewCell"
+    static let imageCellId = String(describing: BreedImageViewCell.self)
     
     static func nib() -> UINib {
         return UINib(nibName: imageCellId, bundle: .main)
@@ -21,12 +21,10 @@ class BreedImageViewCell: UICollectionViewCell {
     }
     
     func setup(with urlImage: String) {
-        if let url = URL(string: urlImage) {
-            breedImage.load(url: url)
-        } else {
-            breedImage.image = UIImage(named: "dog-default")
-        }
-        
+        breedImage.load(urlImage: urlImage)
     }
-
+    
+    override func prepareForReuse() {
+        breedImage.cancelLoadingImage()
+    }
 }

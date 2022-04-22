@@ -40,7 +40,7 @@ class ListBreedViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableView.register(BreedViewCell.nib(), forCellReuseIdentifier: BreedViewCell.breedCellId)
+        tableView.register(BreedViewCell.self, forCellReuseIdentifier: BreedViewCell.breedCellId)
         tableView.rowHeight = UITableView.automaticDimension
     }
     

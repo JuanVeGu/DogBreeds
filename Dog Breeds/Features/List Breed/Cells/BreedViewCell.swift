@@ -8,24 +8,34 @@
 import UIKit
 
 class BreedViewCell: UITableViewCell {
-    @IBOutlet weak var breedName: UILabel!
+    let breedName = UILabel()
     
-    static let breedCellId: String = "BreedViewCell"
+    static let breedCellId = String(describing: BreedViewCell.self)
     
-    static func nib() -> UINib {
-        return UINib(nibName: breedCellId, bundle: .main)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupComponents()
+        setupConstraints()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupComponents() {
+        contentView.addAutoLayout(breedName)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            breedName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12.0),
+            breedName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12.0),
+            breedName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12.0),
+            breedName.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12.0),
+        ])
     }
     
     func setup(with breed: String) {
         breedName.text = breed
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
 }
