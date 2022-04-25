@@ -8,23 +8,47 @@
 import UIKit
 
 class BreedImageViewCell: UICollectionViewCell {
-    @IBOutlet weak var breedImage: ImageCache!
+    static let cellId = String(describing: BreedImageViewCell.self)
     
-    static let imageCellId = String(describing: BreedImageViewCell.self)
+    private let breedImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     
-    static func nib() -> UINib {
-        return UINib(nibName: imageCellId, bundle: .main)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupComponents()
+        setupConstraints()
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with urlImage: String) {
-        breedImage.load(urlImage: urlImage)
+    private func setupComponents() {
+        contentView.addAutoLayout(breedImage)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            breedImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            breedImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+            breedImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            breedImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+        ])
+    }
+    
+    func setup(with image: UIImage) {
+        UIView.animate(withDuration: 0.2) {
+            self.breedImage.image = image
+            self.contentView.alpha = 1.0
+        }
     }
     
     override func prepareForReuse() {
-        breedImage.cancelLoadingImage()
+        contentView.alpha = 0.0
     }
 }
+
