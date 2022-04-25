@@ -12,6 +12,7 @@ protocol BreedDisplayLogic: AnyObject {
 }
 
 class BreedViewController: UIViewController {
+    private let imageCache = ImageCache()
     private let interactor: BreedBusinessLogic
     let router: (NSObjectProtocol & BreedRoutingLogic)
     
@@ -19,7 +20,13 @@ class BreedViewController: UIViewController {
     
     var images: [String] = []
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    private let collectionView: UICollectionView = {
+        let viewLayout = UICollectionViewFlowLayout()
+        viewLayout.itemSize = CGSize(width: 128, height: 128)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
+        collectionView.backgroundColor = .white
+        return collectionView
+    }()
     
     init(interactor: BreedBusinessLogic, router: (NSObjectProtocol & BreedRoutingLogic)) {
         self.interactor = interactor
@@ -36,34 +43,44 @@ class BreedViewController: UIViewController {
         super.viewDidLoad()
         
         interactor.attach(view: self)
-        setupCollectionView()
+        prepareCollectionView()
         fetchBreedImages()
     }
     
-    func setupCollectionView() {
-        collectionView.register(BreedImageViewCell.nib(), forCellWithReuseIdentifier: BreedImageViewCell.imageCellId)
+    func prepareCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(BreedImageViewCell.self, forCellWithReuseIdentifier: BreedImageViewCell.cellId)
+        view.addAutoLayout(collectionView)
+        
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
     }
     
     func fetchBreedImages() {
         let request = Breed.LoadBreedImages.Request(name: breedName)
         interactor.loadBreedImages(request: request)
     }
-
 }
 
-extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BreedImageViewCell.imageCellId, for: indexPath) as! BreedImageViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BreedImageViewCell.cellId, for: indexPath) as! BreedImageViewCell
         let urlImage = images[indexPath.row]
-        cell.setup(with: urlImage)
+        self.imageCache.load(urlImage: urlImage) { image in
+            cell.setup(with: image)
+        }
         
         return cell
     }
-    
 }
 
 extension BreedViewController: BreedDisplayLogic {
