@@ -18,7 +18,7 @@ class ListBreedViewController: UIViewController {
     
     var breeds: [String] = []
     
-    @IBOutlet weak var tableView: UITableView!
+    let tableView = UITableView()
     
     init(interactor: ListBreedBusinessLogic, router: (NSObjectProtocol & ListBreedRoutingLogic & ListBreedDataPassing)) {
         self.interactor = interactor
@@ -35,16 +35,25 @@ class ListBreedViewController: UIViewController {
         super.viewDidLoad()
         interactor.attach(view: self)
         
-        setupTableView()
+        prepareTableView()
         fetchDogBreeds()
     }
     
-    func setupTableView() {
-        tableView.register(BreedViewCell.nib(), forCellReuseIdentifier: BreedViewCell.breedCellId)
-        tableView.rowHeight = UITableView.automaticDimension
+    private func prepareTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(BreedViewCell.self, forCellReuseIdentifier: BreedViewCell.breedCellId)
+        view.addAutoLayout(tableView)
+        
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
     }
     
-    func fetchDogBreeds() {
+    private func fetchDogBreeds() {
         let request = ListBreeds.LoadDogBreeds.Request()
         interactor.loadDogBreeds(request: request)
     }
