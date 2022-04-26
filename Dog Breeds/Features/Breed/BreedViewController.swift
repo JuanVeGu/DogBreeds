@@ -81,6 +81,12 @@ extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let vc = BreedDetailViewController(dataSource: BreedDetailDataSource())
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension BreedViewController: BreedDisplayLogic {
