@@ -19,7 +19,7 @@ class BreedDetailViewCell: UITableViewCell {
     
     private let breedNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16.0, weight: .semibold)
+        label.font = .systemFont(ofSize: 18.0, weight: .semibold)
         return label
     }()
     
@@ -58,10 +58,10 @@ class BreedDetailViewCell: UITableViewCell {
             containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4.0),
             
             breedImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            breedImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
             breedImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-            breedImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
+            breedImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             breedImageView.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.2),
+            breedImageView.heightAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.2),
             
             breedNameLabel.leadingAnchor.constraint(equalTo: breedImageView.trailingAnchor, constant: 5.0),
             breedNameLabel.topAnchor.constraint(equalTo: containerView.topAnchor),
@@ -74,9 +74,9 @@ class BreedDetailViewCell: UITableViewCell {
         ])
     }
     
-    func setup(with image: UIImage) {
-        self.breedImageView.load(urlImage: "https://images.dog.ceo/breeds/schnauzer-giant/n02097130_1070.jpg")
-        self.breedNameLabel.text = "BreedName"
+    func setup(with detail: BreedDetail) {
+        self.breedImageView.load(urlImage: detail.urlImage)
+        self.breedNameLabel.text = detail.name
         self.breedDescriptionLabel.text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     }
 }

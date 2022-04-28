@@ -10,6 +10,7 @@ import Foundation
 protocol BreedBusinessLogic {
     func attach(view: BreedDisplayLogic)
     func loadBreedImages(request: Breed.LoadBreedImages.Request)
+    func goToBreedDetail(request: Breed.GoToBreedDetail.Request)
 }
 
 class BreedInteractor: BreedBusinessLogic {
@@ -33,6 +34,12 @@ class BreedInteractor: BreedBusinessLogic {
         useCase.fetchBreedImages(breedName: name) { [self] breedImage in
             presenter.presentBreedImages(breedImage: breedImage)
         }
+    }
+    
+    func goToBreedDetail(request: Breed.GoToBreedDetail.Request) {
+        presenter.presentBreedDetail(
+            response: Breed.GoToBreedDetail.Response(name: request.name, urlImage: request.urlImage)
+        )
     }
     
 }

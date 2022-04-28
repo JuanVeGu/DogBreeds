@@ -19,7 +19,7 @@ class BreedImageFactory {
         
         let view = BreedViewController(
             interactor: BreedInteractor(
-                presenter: BreedPresenter(),
+                presenter: BreedPresenter(viewModelMapper: ImageToBreedDetailViewModelMapper()),
                 useCase: self.serviceLocator.breedUseCase
             ),
             router: router

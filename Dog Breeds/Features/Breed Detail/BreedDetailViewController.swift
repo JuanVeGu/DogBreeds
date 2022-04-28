@@ -9,11 +9,14 @@ import UIKit
 
 class BreedDetailViewController: UIViewController {
     private let dataSource: BreedDetailDataSource
+    private let delegate: BreedDetailDelegate
     
     let tableView = UITableView()
+    var breedDetailList: [BreedDetail] = []
     
-    init(dataSource: BreedDetailDataSource) {
+    init(dataSource: BreedDetailDataSource, delegate: BreedDetailDelegate) {
         self.dataSource = dataSource
+        self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,8 +32,11 @@ class BreedDetailViewController: UIViewController {
     
     private func prepareTableView() {
         tableView.dataSource = dataSource
-        dataSource.viewController = self
+        tableView.delegate = delegate
         tableView.register(BreedDetailViewCell.self, forCellReuseIdentifier: BreedDetailViewCell.cellId)
+        
+        dataSource.viewController = self
+        delegate.viewController = self
         view.addAutoLayout(tableView)
         
         NSLayoutConstraint.activate([
