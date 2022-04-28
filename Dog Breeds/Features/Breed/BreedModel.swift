@@ -22,4 +22,20 @@ enum Breed {
             let images: [String]
         }
     }
+    
+    enum GoToBreedDetail {
+        struct Request {
+            let name: String?
+            let urlImage: String
+        }
+        
+        struct Response {
+            let name: String?
+            let urlImage: String
+        }
+        
+        struct ViewModel {
+            let breedDetailList: [BreedDetail]
+        }
+    }
 }

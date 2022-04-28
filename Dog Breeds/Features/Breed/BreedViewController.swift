@@ -9,6 +9,7 @@ import UIKit
 
 protocol BreedDisplayLogic: AnyObject {
     func displayBreedImages(viewModel: Breed.LoadBreedImages.ViewModel)
+    func displayBreedDetail(viewModel: BreedDetail)
 }
 
 class BreedViewController: UIViewController {
@@ -81,6 +82,13 @@ extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let urlImage = images[indexPath.row]
+        let request = Breed.GoToBreedDetail.Request(name: title, urlImage: urlImage)
+        interactor.goToBreedDetail(request: request)
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
 }
 
 extension BreedViewController: BreedDisplayLogic {
@@ -91,4 +99,13 @@ extension BreedViewController: BreedDisplayLogic {
         }
     }
     
+    func displayBreedDetail(viewModel: BreedDetail) {
+        let vc = BreedDetailViewController(
+            dataSource: BreedDetailDataSource(),
+            delegate: BreedDetailDelegate()
+        )
+        vc.title = title
+        vc.breedDetailList.append(viewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
