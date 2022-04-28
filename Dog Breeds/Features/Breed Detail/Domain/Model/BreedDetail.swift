@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BreedDetail {
+struct BreedDetail: Equatable {
     let name: String?
     let urlImage: String
 }
