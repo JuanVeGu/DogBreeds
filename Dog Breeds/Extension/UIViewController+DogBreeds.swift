@@ -29,3 +29,11 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
+
+extension UINavigationController {
+    func changePrefersLargeTitles(with value: Bool) {
+        if #available(iOS 11.0, *) {
+            self.navigationBar.prefersLargeTitles = value
+        }
+    }
+}

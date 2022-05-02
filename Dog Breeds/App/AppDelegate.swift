@@ -17,9 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = UINavigationController(
             rootViewController: ListBreedFactory(serviceLocator: ListBreedServiceLocator()).viewController()
         )
-        if #available(iOS 11.0, *) {
-            navigationController.navigationBar.prefersLargeTitles = true
-        }
+        navigationController.changePrefersLargeTitles(with: true)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
