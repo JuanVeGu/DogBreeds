@@ -12,7 +12,7 @@ class BreedDetailViewController: UIViewController {
     private let delegate: BreedDetailDelegate
     
     let tableView = UITableView()
-    var breedDetailList: [BreedDetail] = []
+    var breedDetail: BreedDetail?
     
     init(dataSource: BreedDetailDataSource, delegate: BreedDetailDelegate) {
         self.dataSource = dataSource
@@ -30,10 +30,20 @@ class BreedDetailViewController: UIViewController {
         prepareTableView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.changePrefersLargeTitles(with: true)
+        super.viewWillDisappear(animated)
+    }
+    
     private func prepareTableView() {
+        tableView.allowsSelection = false
+        tableView.separatorStyle = .none
         tableView.dataSource = dataSource
         tableView.delegate = delegate
-        tableView.register(BreedDetailViewCell.self, forCellReuseIdentifier: BreedDetailViewCell.cellId)
+        
+        tableView.register(TitleViewCell.self, forCellReuseIdentifier: TitleViewCell.cellId)
+        tableView.register(ImageViewCell.self, forCellReuseIdentifier: ImageViewCell.cellId)
+        tableView.register(DescriptionViewCell.self, forCellReuseIdentifier: DescriptionViewCell.cellId)
         
         dataSource.viewController = self
         delegate.viewController = self

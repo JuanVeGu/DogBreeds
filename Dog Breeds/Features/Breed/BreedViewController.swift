@@ -104,8 +104,9 @@ extension BreedViewController: BreedDisplayLogic {
             dataSource: BreedDetailDataSource(),
             delegate: BreedDetailDelegate()
         )
-        vc.title = title
-        vc.breedDetailList.append(viewModel)
+        vc.breedDetail = viewModel
+        
+        self.navigationController?.changePrefersLargeTitles(with: false)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
