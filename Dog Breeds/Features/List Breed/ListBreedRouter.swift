@@ -21,7 +21,7 @@ class ListBreedRouter: NSObject, ListBreedRoutingLogic, ListBreedDataPassing {
     
     func routeToBreedImages() {
         if let viewController = viewController, let dataStore = viewController.router.dataStore, let breedName = dataStore.breedName {
-            let destinationVC = BreedImageFactory(serviceLocator: BreedServiceLocator()).viewController(breedName: breedName)
+            let destinationVC = ViewControllerFactory.viewController(type: .breedImagelist, breedName: breedName)
             navigateToBreedImages(source: viewController, destination: destinationVC)
         }
     }

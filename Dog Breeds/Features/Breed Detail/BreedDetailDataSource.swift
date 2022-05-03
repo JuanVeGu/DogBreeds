@@ -13,13 +13,14 @@ class BreedDetailDataSource: NSObject {
 
 extension BreedDetailDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BreedDetailCellType.default.count
+//        return BreedDetailCellType.default.count
+        return BreedDetailCellType.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let vc = viewController, let breedDetail = vc.breedDetail else { return UITableViewCell() }
         
-        switch BreedDetailCellType.default[indexPath.row] {
+        switch BreedDetailCellType.allCases[indexPath.row] {
         case .title:
             let cell = tableView.dequeueReusableCell(withIdentifier: TitleViewCell.cellId, for: indexPath) as! TitleViewCell
             cell.setup(with: breedDetail.name)
