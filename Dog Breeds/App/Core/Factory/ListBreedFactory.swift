@@ -17,21 +17,17 @@ class ListBreedFactory {
     func viewController(_ type: ListBreedFactoryType) -> ListBreedViewController {
         switch type {
         case .breedList:
-            let router = ListBreedRouter()
-            
-            let interactor = ListBreedInteractor(
-                presenter: ListBreedPresenter(),
-                useCase: self.serviceLocator.listBreedUseCase
+            let presenter = ListBreedPresenter(
+                useCase: self.serviceLocator.listBreedUseCase,
+                viewModelMapper: StringToBreedViewModelMapper()
             )
             
             let view = ListBreedViewController(
-                interactor: interactor,
-                router: router
+                presenter: presenter,
+                dataSource: ListBreedDataSource(),
+                delegate: ListBreedDelegate()
             )
             view.title = "Dog Breeds"
-            
-            router.viewController = view
-            router.dataStore = interactor
             
             return view
         }

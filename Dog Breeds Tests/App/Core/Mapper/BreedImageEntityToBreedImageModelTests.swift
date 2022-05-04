@@ -9,7 +9,7 @@ import XCTest
 @testable import Dog_Breeds
 
 class BreedImageEntityToBreedImageModelTests: XCTestCase {
-    var sut: Mapper<BreedImage, Breed.LoadBreedImages.Response>!
+    var sut: Mapper<BreedImage, BreedModel.LoadBreedImages.Response>!
     
     override func setUp() {
         super.setUp()

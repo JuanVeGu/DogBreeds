@@ -9,21 +9,22 @@ import UIKit
 
 protocol ListBreedDisplayLogic: AnyObject {
     func displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel)
-    func displayBreedImages(viewModel: ListBreeds.GoToImages.ViewModel)
+    func displayBreedImages(breed: Breed)
 }
 
 class ListBreedViewController: UIViewController {
-    private let interactor: ListBreedBusinessLogic
-    let router: (NSObjectProtocol & ListBreedRoutingLogic & ListBreedDataPassing)
+    private let presenter: ListBreedPresentationLogic
+    private let dataSource: ListBreedDataSource
+    private let delegate: ListBreedDelegate
     
     var breeds: [String] = []
     
     let tableView = UITableView()
     
-    init(interactor: ListBreedBusinessLogic, router: (NSObjectProtocol & ListBreedRoutingLogic & ListBreedDataPassing)) {
-        self.interactor = interactor
-        self.router = router
-        
+    init(presenter: ListBreedPresentationLogic, dataSource: ListBreedDataSource, delegate: ListBreedDelegate) {
+        self.presenter = presenter
+        self.dataSource = dataSource
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -33,15 +34,15 @@ class ListBreedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.attach(view: self)
+        presenter.attach(view: self)
         
         prepareTableView()
         fetchDogBreeds()
     }
     
     private func prepareTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
         tableView.register(BreedViewCell.self, forCellReuseIdentifier: BreedViewCell.breedCellId)
         view.addAutoLayout(tableView)
         
@@ -51,32 +52,26 @@ class ListBreedViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+        
+        dataSource.view = self
+        delegate.view = self
     }
     
     private func fetchDogBreeds() {
-        let request = ListBreeds.LoadDogBreeds.Request()
-        interactor.loadDogBreeds(request: request)
+        presenter.presentDogBreeds()
+    }
+    
+    internal func presentBreedImages(with breedName: String) {
+        presenter.presentBreedImages(breedName: breedName)
     }
 }
 
-extension ListBreedViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return breeds.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BreedViewCell.breedCellId, for: indexPath) as! BreedViewCell
-        
-        let breed = breeds[indexPath.row]
-        cell.setup(with: breed)
-        
-        return cell
-    }
+extension ListBreedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let breedName = breeds[indexPath.row]
-        interactor.goToBreedImages(request: ListBreeds.GoToImages.Request(breedName: breedName))
         tableView.deselectRow(at: indexPath, animated: true)
+        let breedName = breeds[indexPath.row]
+        presenter.presentBreedImages(breedName: breedName)
     }
 }
 
@@ -88,8 +83,8 @@ extension ListBreedViewController: ListBreedDisplayLogic {
         }
     }
     
-    func displayBreedImages(viewModel: ListBreeds.GoToImages.ViewModel) {
-        router.routeToBreedImages()
+    func displayBreedImages(breed: Breed) {
+        let vc = ViewControllerFactory.viewController(type: .breedImagelist, breedName: breed.name)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }

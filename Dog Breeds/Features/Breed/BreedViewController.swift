@@ -8,14 +8,13 @@
 import UIKit
 
 protocol BreedDisplayLogic: AnyObject {
-    func displayBreedImages(viewModel: Breed.LoadBreedImages.ViewModel)
+    func displayBreedImages(viewModel: BreedModel.LoadBreedImages.ViewModel)
     func displayBreedDetail(viewModel: BreedDetail)
 }
 
 class BreedViewController: UIViewController {
     private let imageCache = ImageCache()
-    private let interactor: BreedBusinessLogic
-    let router: (NSObjectProtocol & BreedRoutingLogic)
+    private let presenter: BreedPresentationLogic
     
     var breedName: String?
     
@@ -29,10 +28,8 @@ class BreedViewController: UIViewController {
         return collectionView
     }()
     
-    init(interactor: BreedBusinessLogic, router: (NSObjectProtocol & BreedRoutingLogic)) {
-        self.interactor = interactor
-        self.router = router
-        
+    init(presenter: BreedPresentationLogic) {
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -43,7 +40,7 @@ class BreedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interactor.attach(view: self)
+        presenter.attach(view: self)
         prepareCollectionView()
         fetchBreedImages()
     }
@@ -63,8 +60,8 @@ class BreedViewController: UIViewController {
     }
     
     func fetchBreedImages() {
-        let request = Breed.LoadBreedImages.Request(name: breedName)
-        interactor.loadBreedImages(request: request)
+        let request = BreedModel.LoadBreedImages.Request(name: breedName)
+//        interactor.loadBreedImages(request: request)
     }
 }
 
@@ -85,14 +82,14 @@ extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let urlImage = images[indexPath.row]
-        let request = Breed.GoToBreedDetail.Request(name: title, urlImage: urlImage)
-        interactor.goToBreedDetail(request: request)
+        let request = BreedModel.GoToBreedDetail.Request(name: title, urlImage: urlImage)
+//        interactor.goToBreedDetail(request: request)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 
 extension BreedViewController: BreedDisplayLogic {
-    func displayBreedImages(viewModel: Breed.LoadBreedImages.ViewModel) {
+    func displayBreedImages(viewModel: BreedModel.LoadBreedImages.ViewModel) {
         DispatchQueue.main.async {
             self.images = viewModel.images
             self.collectionView.reloadData()

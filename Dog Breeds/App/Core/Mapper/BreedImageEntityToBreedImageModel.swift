@@ -7,8 +7,8 @@
 
 import Foundation
 
-class BreedImageEntityToBreedImageModel: Mapper<BreedImage, Breed.LoadBreedImages.Response> {
-    override func reverseMap(value: Breed.LoadBreedImages.Response) -> BreedImage {
+class BreedImageEntityToBreedImageModel: Mapper<BreedImage, BreedModel.LoadBreedImages.Response> {
+    override func reverseMap(value: BreedModel.LoadBreedImages.Response) -> BreedImage {
         return BreedImage(images: value.message)
     }
 }

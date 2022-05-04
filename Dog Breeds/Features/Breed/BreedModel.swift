@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Breed {
+enum BreedModel {
     enum LoadBreedImages {
         struct Request {
             let name: String?

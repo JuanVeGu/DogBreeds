@@ -9,8 +9,8 @@ import Foundation
 
 protocol BreedBusinessLogic {
     func attach(view: BreedDisplayLogic)
-    func loadBreedImages(request: Breed.LoadBreedImages.Request)
-    func goToBreedDetail(request: Breed.GoToBreedDetail.Request)
+    func loadBreedImages(request: BreedModel.LoadBreedImages.Request)
+    func goToBreedDetail(request: BreedModel.GoToBreedDetail.Request)
 }
 
 class BreedInteractor: BreedBusinessLogic {
@@ -26,7 +26,7 @@ class BreedInteractor: BreedBusinessLogic {
         presenter.attach(view: view)
     }
     
-    func loadBreedImages(request: Breed.LoadBreedImages.Request) {
+    func loadBreedImages(request: BreedModel.LoadBreedImages.Request) {
         guard let name = request.name else {
             return
         }
@@ -36,9 +36,9 @@ class BreedInteractor: BreedBusinessLogic {
         }
     }
     
-    func goToBreedDetail(request: Breed.GoToBreedDetail.Request) {
+    func goToBreedDetail(request: BreedModel.GoToBreedDetail.Request) {
         presenter.presentBreedDetail(
-            response: Breed.GoToBreedDetail.Response(name: request.name, urlImage: request.urlImage)
+            response: BreedModel.GoToBreedDetail.Response(name: request.name, urlImage: request.urlImage)
         )
     }
     

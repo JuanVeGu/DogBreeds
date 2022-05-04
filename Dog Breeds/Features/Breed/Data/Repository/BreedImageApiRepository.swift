@@ -9,9 +9,9 @@ import Foundation
 
 class BreedImageApiRepository: BreedImageRepository {
     private let breedImageRestApi: BreedImageRestApi
-    private let modelMapper: Mapper<BreedImage, Breed.LoadBreedImages.Response>
+    private let modelMapper: Mapper<BreedImage, BreedModel.LoadBreedImages.Response>
     
-    init(breedImageRestApi: BreedImageRestApi, modelMapper: Mapper<BreedImage, Breed.LoadBreedImages.Response>) {
+    init(breedImageRestApi: BreedImageRestApi, modelMapper: Mapper<BreedImage, BreedModel.LoadBreedImages.Response>) {
         self.breedImageRestApi = breedImageRestApi
         self.modelMapper = modelMapper
     }

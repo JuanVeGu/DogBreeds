@@ -17,19 +17,17 @@ class BreedImageFactory {
     func viewController(_ type: BreedImageFactoryType, _ breedName: String) -> BreedViewController {
         switch type {
         case .breedImagelist:
-            let router = BreedRouter()
+            let presenter = BreedPresenter(
+                useCase: self.serviceLocator.breedUseCase,
+                viewModelMapper: ImageToBreedDetailViewModelMapper()
+            )
             
             let view = BreedViewController(
-                interactor: BreedInteractor(
-                    presenter: BreedPresenter(viewModelMapper: ImageToBreedDetailViewModelMapper()),
-                    useCase: self.serviceLocator.breedUseCase
-                ),
-                router: router
+                presenter: presenter
             )
+            
             view.title = breedName
             view.breedName = breedName
-            
-            router.viewController = view
             
             return view
         }
