@@ -58,6 +58,9 @@
 		E4C7A9FB281A07D8002D890F /* BreedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7A9FA281A07D8002D890F /* BreedDetail.swift */; };
 		E4C7A9FD281AD8A7002D890F /* ImageToBreedDetailViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7A9FC281AD8A7002D890F /* ImageToBreedDetailViewModelMapper.swift */; };
 		E4C7A9FF281B0430002D890F /* ImageToBreedDetailViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C7A9FE281B0430002D890F /* ImageToBreedDetailViewModelMapperTests.swift */; };
+		E4EEDCBC2821CD5600D533FA /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EEDCBB2821CD5600D533FA /* ViewControllerFactory.swift */; };
+		E4EEDCC02821D39000D533FA /* ViewFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EEDCBF2821D39000D533FA /* ViewFactoryType.swift */; };
+		E4EEDCC22821D5F900D533FA /* BreedDetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EEDCC12821D5F900D533FA /* BreedDetailFactory.swift */; };
 		E4F195E82820283F007701A1 /* TitleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F195E72820283F007701A1 /* TitleViewCell.swift */; };
 		E4F195EA28202C34007701A1 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F195E928202C34007701A1 /* ImageViewCell.swift */; };
 		E4F195EC28203462007701A1 /* DescriptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F195EB28203462007701A1 /* DescriptionViewCell.swift */; };
@@ -138,6 +141,9 @@
 		E4C7A9FA281A07D8002D890F /* BreedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetail.swift; sourceTree = "<group>"; };
 		E4C7A9FC281AD8A7002D890F /* ImageToBreedDetailViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToBreedDetailViewModelMapper.swift; sourceTree = "<group>"; };
 		E4C7A9FE281B0430002D890F /* ImageToBreedDetailViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToBreedDetailViewModelMapperTests.swift; sourceTree = "<group>"; };
+		E4EEDCBB2821CD5600D533FA /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		E4EEDCBF2821D39000D533FA /* ViewFactoryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewFactoryType.swift; sourceTree = "<group>"; };
+		E4EEDCC12821D5F900D533FA /* BreedDetailFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailFactory.swift; sourceTree = "<group>"; };
 		E4F195E72820283F007701A1 /* TitleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewCell.swift; sourceTree = "<group>"; };
 		E4F195E928202C34007701A1 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
 		E4F195EB28203462007701A1 /* DescriptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewCell.swift; sourceTree = "<group>"; };
@@ -236,7 +242,6 @@
 				E43466592808D55500FF91F3 /* Data */,
 				E434665C2808DA2400FF91F3 /* Domain */,
 				75D4883A27EF612100BF6355 /* Cells */,
-				E42B451D280E05B400A2E4CC /* ListBreedFactory.swift */,
 				75C26FA627ED63D00047CFB7 /* ListBreedViewController.swift */,
 				E401FB9F28174A5F00E0CFAB /* ListBreedDataSource.swift */,
 				75C26FAE27ED6BF10047CFB7 /* ListBreedInteractor.swift */,
@@ -263,7 +268,6 @@
 				E434665A2808D56400FF91F3 /* Data */,
 				E434665F2808DA5800FF91F3 /* Domain */,
 				7577D60127F0FDBA0016E0C7 /* Cells */,
-				E4F3E14F280F160400F1223B /* BreedImageFactory.swift */,
 				75C26FB627EDEFC20047CFB7 /* BreedViewController.swift */,
 				75C26FBC27EDF0860047CFB7 /* BreedInteractor.swift */,
 				75C26FBE27EDF0A70047CFB7 /* BreedPresenter.swift */,
@@ -497,6 +501,18 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E4EEDCBA2821CD3F00D533FA /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				E4EEDCBB2821CD5600D533FA /* ViewControllerFactory.swift */,
+				E4EEDCBF2821D39000D533FA /* ViewFactoryType.swift */,
+				E42B451D280E05B400A2E4CC /* ListBreedFactory.swift */,
+				E4F3E14F280F160400F1223B /* BreedImageFactory.swift */,
+				E4EEDCC12821D5F900D533FA /* BreedDetailFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		E4F3E14C280EFF9600F1223B /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +524,7 @@
 		E4F3E151280F2E7700F1223B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E4EEDCBA2821CD3F00D533FA /* Factory */,
 				E4F3E152280F2E7D00F1223B /* Mapper */,
 			);
 			path = Core;
@@ -669,12 +686,14 @@
 				E4F195EC28203462007701A1 /* DescriptionViewCell.swift in Sources */,
 				E43466652808DAAE00FF91F3 /* ListBreedApiRepository.swift in Sources */,
 				E434666C2808DBAC00FF91F3 /* ListBreed.swift in Sources */,
+				E4EEDCC02821D39000D533FA /* ViewFactoryType.swift in Sources */,
 				75C26FC127EDF0B60047CFB7 /* BreedRouter.swift in Sources */,
 				75C26FBF27EDF0A70047CFB7 /* BreedPresenter.swift in Sources */,
 				7577D60427F0FDE00016E0C7 /* BreedImageViewCell.swift in Sources */,
 				E4BF0FEE28187A4E0034DFF7 /* UIImageView+DogBreeds.swift in Sources */,
 				75C26FB827EDEFC20047CFB7 /* BreedViewController.swift in Sources */,
 				E4F3E150280F160400F1223B /* BreedImageFactory.swift in Sources */,
+				E4EEDCC22821D5F900D533FA /* BreedDetailFactory.swift in Sources */,
 				E4F3E154280F2E8C00F1223B /* Mapper.swift in Sources */,
 				E4BF0FE42818456A0034DFF7 /* BreedDetailViewController.swift in Sources */,
 				7577D60827F149C00016E0C7 /* ImageCache.swift in Sources */,
@@ -709,6 +728,7 @@
 				E4C7A9F328197D44002D890F /* BreedDetailDelegate.swift in Sources */,
 				E4F195E82820283F007701A1 /* TitleViewCell.swift in Sources */,
 				E434665028075BB100FF91F3 /* ListBreedRestApi.swift in Sources */,
+				E4EEDCBC2821CD5600D533FA /* ViewControllerFactory.swift in Sources */,
 				E43466632808DAA500FF91F3 /* ListBreedRepository.swift in Sources */,
 				E42B451C280DAD3B00A2E4CC /* ListBreedServiceLocator.swift in Sources */,
 			);
