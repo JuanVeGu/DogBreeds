@@ -36,7 +36,6 @@ class BreedDetailViewController: UIViewController {
     }
     
     private func prepareTableView() {
-        tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.dataSource = dataSource
         tableView.delegate = delegate

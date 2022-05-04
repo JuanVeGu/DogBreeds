@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BreedDetailCellType {
+enum BreedDetailCellType: CaseIterable {
     case title
     case image
     case description

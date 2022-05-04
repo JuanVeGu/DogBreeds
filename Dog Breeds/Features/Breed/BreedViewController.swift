@@ -100,12 +100,7 @@ extension BreedViewController: BreedDisplayLogic {
     }
     
     func displayBreedDetail(viewModel: BreedDetail) {
-        let vc = BreedDetailViewController(
-            dataSource: BreedDetailDataSource(),
-            delegate: BreedDetailDelegate()
-        )
-        vc.breedDetail = viewModel
-        
+        let vc = ViewControllerFactory.viewController(type: .detail, detail: viewModel)
         self.navigationController?.changePrefersLargeTitles(with: false)
         self.navigationController?.pushViewController(vc, animated: true)
     }
