@@ -16,7 +16,7 @@ class ViewControllerFactory {
         return view.viewController(type)
     }
     
-    class func viewController(type: BreedImageFactoryType, breedName: String) -> BreedViewController {
+    class func viewController(type: BreedImageFactoryType, breedName: String) -> BreedImageViewController {
         let view = BreedImageFactory(serviceLocator: breedServiceLocator)
         return view.viewController(type, breedName)
     }

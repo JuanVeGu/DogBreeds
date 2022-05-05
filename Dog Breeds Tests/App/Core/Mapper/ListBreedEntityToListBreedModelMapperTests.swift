@@ -9,16 +9,16 @@ import XCTest
 @testable import Dog_Breeds
 
 class ListBreedEntityToListBreedModelMapperTests: XCTestCase {
-    var sut: Mapper<ListBreed, ListBreeds.LoadDogBreeds.Response>!
+    var sut: Mapper<ListBreedDomain, ListBreedEntity>!
     
     override func setUp() {
         super.setUp()
-        sut = ListBreedEntityToListBreedModelMapper()
+        sut = ListBreedEntityToListBreedDomainMapper()
     }
     
     func testCompareMappers() {
         let entity = Seeds.dogBreedsResponse
-        let expectedModel = ListBreed(breed: [
+        let expectedModel = ListBreedDomain(breed: [
             "affenpinscher",
             "african",
             "airedale",

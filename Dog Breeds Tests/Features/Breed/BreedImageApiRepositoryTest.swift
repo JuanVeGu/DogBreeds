@@ -15,7 +15,7 @@ class BreedImageApiRepositoryTest: XCTestCase {
     override func setUp() {
         super.setUp()
         restApi = BreedImageRestApiMock()
-        sut = BreedImageApiRepository(breedImageRestApi: restApi, modelMapper: BreedImageEntityToBreedImageModel())
+        sut = BreedImageApiRepository(breedImageRestApi: restApi, modelMapper: BreedImageEntityToBreedImageDomainMapper())
     }
     
     override func tearDown() {

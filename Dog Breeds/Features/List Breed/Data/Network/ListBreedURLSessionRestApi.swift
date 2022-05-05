@@ -16,7 +16,7 @@ class ListBreedURLSessionRestApi: ListBreedRestApi {
         self.url = url
     }
     
-    func fetchDogBreeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void) {
+    func fetchDogBreeds(completionHandler: @escaping (ListBreedEntity?) -> Void) {
         guard let url = URL(string: self.url) else {
             return completionHandler(nil)
         }
@@ -24,7 +24,7 @@ class ListBreedURLSessionRestApi: ListBreedRestApi {
         let dataTask = self.urlSession.dataTask(with: url) { (data, response, error) in
             if let _ = error {
                 completionHandler(nil)
-            } else if let data = data, let response = try? JSONDecoder().decode(ListBreeds.LoadDogBreeds.Response.self, from: data) {
+            } else if let data = data, let response = try? JSONDecoder().decode(ListBreedEntity.self, from: data) {
                 completionHandler(response)
             } else {
                 completionHandler(nil)
