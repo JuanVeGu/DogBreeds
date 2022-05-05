@@ -9,14 +9,14 @@ import Foundation
 
 class BreedImageApiRepository: BreedImageRepository {
     private let breedImageRestApi: BreedImageRestApi
-    private let modelMapper: Mapper<BreedImage, Breed.LoadBreedImages.Response>
+    private let modelMapper: Mapper<BreedImageDomain, BreedImageEntity>
     
-    init(breedImageRestApi: BreedImageRestApi, modelMapper: Mapper<BreedImage, Breed.LoadBreedImages.Response>) {
+    init(breedImageRestApi: BreedImageRestApi, modelMapper: Mapper<BreedImageDomain, BreedImageEntity>) {
         self.breedImageRestApi = breedImageRestApi
         self.modelMapper = modelMapper
     }
     
-    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImage?) -> Void) {
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImageDomain?) -> Void) {
         self.breedImageRestApi.fetchBreedImages(breedName: breedName) { response in
             if let response = response {
                 let model = self.modelMapper.reverseMap(value: response)

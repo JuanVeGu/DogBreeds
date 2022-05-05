@@ -9,10 +9,10 @@ import Foundation
 @testable import Dog_Breeds
 
 class ListBreedRepositoryMock: ListBreedRepository {
-    let modelMapper = ListBreedEntityToListBreedModelMapper()
+    let modelMapper = ListBreedEntityToListBreedDomainMapper()
     var shouldFail = false
     
-    func fetchDogBreeds(completionHandler: @escaping (ListBreed?) -> Void) {
+    func fetchDogBreeds(completionHandler: @escaping (ListBreedDomain?) -> Void) {
         if shouldFail {
             completionHandler(nil)
         } else {

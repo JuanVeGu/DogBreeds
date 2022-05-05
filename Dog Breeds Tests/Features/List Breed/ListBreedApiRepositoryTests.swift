@@ -15,7 +15,7 @@ class ListBreedApiRepositoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         restApi = ListBreedRestApiMock()
-        sut = ListBreedApiRepository(listBreedRestApi: restApi, modelMapper: ListBreedEntityToListBreedModelMapper())
+        sut = ListBreedApiRepository(listBreedRestApi: restApi, modelMapper: ListBreedEntityToListBreedDomainMapper())
     }
     
     override func tearDown() {

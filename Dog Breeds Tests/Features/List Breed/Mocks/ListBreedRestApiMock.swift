@@ -11,7 +11,7 @@ import Foundation
 class ListBreedRestApiMock: ListBreedRestApi {
     var shouldFail = false
     
-    func fetchDogBreeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void) {
+    func fetchDogBreeds(completionHandler: @escaping (ListBreedEntity?) -> Void) {
         if shouldFail {
             completionHandler(nil)
         } else {

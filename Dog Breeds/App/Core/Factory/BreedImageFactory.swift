@@ -14,22 +14,23 @@ class BreedImageFactory {
         self.serviceLocator = serviceLocator
     }
     
-    func viewController(_ type: BreedImageFactoryType, _ breedName: String) -> BreedViewController {
+    func viewController(_ type: BreedImageFactoryType, _ breedName: String) -> BreedImageViewController {
         switch type {
         case .breedImagelist:
-            let router = BreedRouter()
-            
-            let view = BreedViewController(
-                interactor: BreedInteractor(
-                    presenter: BreedPresenter(viewModelMapper: ImageToBreedDetailViewModelMapper()),
-                    useCase: self.serviceLocator.breedUseCase
-                ),
-                router: router
+            let presenter = BreedImagePresenter(
+                useCase: self.serviceLocator.breedUseCase,
+                domainToViewModelMapper: BreedImageDomainToBreedImageViewModelMapper(),
+                viewModelMapper: ImageToBreedDetailViewModelMapper()
             )
+            
+            let view = BreedImageViewController(
+                presenter: presenter,
+                dataSource: BreedImageDataSource(),
+                delegate: BreedImageDelegate()
+            )
+            
             view.title = breedName
             view.breedName = breedName
-            
-            router.viewController = view
             
             return view
         }
