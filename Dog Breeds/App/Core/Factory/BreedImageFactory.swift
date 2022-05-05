@@ -24,7 +24,9 @@ class BreedImageFactory {
             )
             
             let view = BreedImageViewController(
-                presenter: presenter
+                presenter: presenter,
+                dataSource: BreedImageDataSource(),
+                delegate: BreedImageDelegate()
             )
             
             view.title = breedName

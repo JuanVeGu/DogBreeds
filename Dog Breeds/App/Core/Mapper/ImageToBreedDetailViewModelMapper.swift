@@ -7,8 +7,8 @@
 
 import Foundation
 
-class ImageToBreedDetailViewModelMapper: Mapper<BreedDetail, BreedModel.GoToBreedDetail.Response> {
-    override func reverseMap(value: BreedModel.GoToBreedDetail.Response) -> BreedDetail {
-        return BreedDetail(name: value.name, urlImage: value.urlImage)
+class ImageToBreedDetailViewModelMapper: Mapper<BreedDetail, (String?, String)> {
+    override func reverseMap(value: (String?, String)) -> BreedDetail {
+        return BreedDetail(name: value.0, urlImage: value.1)
     }
 }

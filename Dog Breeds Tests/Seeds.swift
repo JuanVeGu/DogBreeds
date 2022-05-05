@@ -34,9 +34,9 @@ struct Seeds {
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_11006.jpg",
     ], status: "success")
     
-    static let breedImageDetail = BreedModel.GoToBreedDetail.Response(
-        name: "schnauzer",
-        urlImage: "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg"
+    static let breedImageDetail = (
+        "schnauzer",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg"
     )
     
     static let responseError = ResponseError(

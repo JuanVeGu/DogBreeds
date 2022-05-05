@@ -10,19 +10,19 @@ import Foundation
 protocol BreedImagePresentationLogic {
     func attach(view: BreedImageDisplayLogic)
     func presentBreedImages(with breedName: String?)
-    func presentBreedDetail(response: BreedModel.GoToBreedDetail.Response)
+    func presentBreedDetail(breedName: String?, image: String)
 }
 
 class BreedImagePresenter: BreedImagePresentationLogic {
     private let useCase: BreedImageUseCase
     private let domainToViewModelMapper: Mapper<BreedImageViewModel, BreedImageDomain>
-    private let viewModelMapper: Mapper<BreedDetail, BreedModel.GoToBreedDetail.Response>
+    private let viewModelMapper: Mapper<BreedDetail, (String?, String)>
     weak var view: BreedImageDisplayLogic?
     
     init(
         useCase: BreedImageUseCase,
         domainToViewModelMapper: Mapper<BreedImageViewModel, BreedImageDomain>,
-        viewModelMapper: Mapper<BreedDetail, BreedModel.GoToBreedDetail.Response>
+        viewModelMapper: Mapper<BreedDetail, (String?, String)>
     ) {
         self.useCase = useCase
         self.domainToViewModelMapper = domainToViewModelMapper
@@ -43,8 +43,8 @@ class BreedImagePresenter: BreedImagePresentationLogic {
         }
     }
     
-    func presentBreedDetail(response: BreedModel.GoToBreedDetail.Response) {
-        let viewModel = self.viewModelMapper.reverseMap(value: response)
+    func presentBreedDetail(breedName: String?, image: String) {
+        let viewModel = self.viewModelMapper.reverseMap(value: (breedName, image))
         view?.displayBreedDetail(viewModel: viewModel)
     }
 }

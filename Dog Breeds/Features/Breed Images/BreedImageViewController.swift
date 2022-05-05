@@ -15,6 +15,8 @@ protocol BreedImageDisplayLogic: AnyObject {
 class BreedImageViewController: UIViewController {
     private let imageCache = ImageCache()
     private let presenter: BreedImagePresentationLogic
+    private let dataSource: BreedImageDataSource
+    private let delegate: BreedImageDelegate
     
     var breedName: String?
     
@@ -28,8 +30,14 @@ class BreedImageViewController: UIViewController {
         return collectionView
     }()
     
-    init(presenter: BreedImagePresentationLogic) {
+    init(
+        presenter: BreedImagePresentationLogic,
+        dataSource: BreedImageDataSource,
+        delegate: BreedImageDelegate
+    ) {
         self.presenter = presenter
+        self.dataSource = dataSource
+        self.delegate = delegate
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -46,8 +54,8 @@ class BreedImageViewController: UIViewController {
     }
     
     func prepareCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        collectionView.delegate = delegate
+        collectionView.dataSource = dataSource
         collectionView.register(BreedImageViewCell.self, forCellWithReuseIdentifier: BreedImageViewCell.cellId)
         view.addAutoLayout(collectionView)
         
@@ -57,33 +65,23 @@ class BreedImageViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+        
+        dataSource.view = self
+        delegate.view = self
     }
     
     func fetchBreedImages() {
         presenter.presentBreedImages(with: breedName)
     }
-}
-
-extension BreedImageViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BreedImageViewCell.cellId, for: indexPath) as! BreedImageViewCell
-        let urlImage = images[indexPath.row]
-        self.imageCache.load(urlImage: urlImage) { image in
-            cell.setup(with: image)
+    internal func loadImage(urlImage: String, completionHandler: @escaping (UIImage) -> Void) {
+        imageCache.load(urlImage: urlImage) { image in
+            completionHandler(image)
         }
-        
-        return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let urlImage = images[indexPath.row]
-        let _ = BreedModel.GoToBreedDetail.Request(name: title, urlImage: urlImage)
-//        interactor.goToBreedDetail(request: request)
-        collectionView.deselectItem(at: indexPath, animated: true)
+    internal func presentBreedDetail(urlImage: String) {
+        presenter.presentBreedDetail(breedName: title, image: urlImage)
     }
 }
 
