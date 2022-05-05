@@ -14,8 +14,8 @@
 		75ABC77727E961F000C4F1C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75ABC77527E961F000C4F1C8 /* LaunchScreen.storyboard */; };
 		75C26FA827ED63D00047CFB7 /* ListBreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FA627ED63D00047CFB7 /* ListBreedViewController.swift */; };
 		75C26FB127ED6BFC0047CFB7 /* ListBreedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FB027ED6BFC0047CFB7 /* ListBreedPresenter.swift */; };
-		75C26FB827EDEFC20047CFB7 /* BreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FB627EDEFC20047CFB7 /* BreedViewController.swift */; };
-		75C26FBF27EDF0A70047CFB7 /* BreedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FBE27EDF0A70047CFB7 /* BreedPresenter.swift */; };
+		75C26FB827EDEFC20047CFB7 /* BreedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FB627EDEFC20047CFB7 /* BreedImageViewController.swift */; };
+		75C26FBF27EDF0A70047CFB7 /* BreedImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FBE27EDF0A70047CFB7 /* BreedImagePresenter.swift */; };
 		75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C26FE927EE40CA0047CFB7 /* Seeds.swift */; };
 		75D4883D27EF614900BF6355 /* BreedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4883B27EF614900BF6355 /* BreedViewCell.swift */; };
 		E401FBA028174A5F00E0CFAB /* ListBreedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E401FB9F28174A5F00E0CFAB /* ListBreedDataSource.swift */; };
@@ -100,8 +100,8 @@
 		75ABC77827E961F000C4F1C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75C26FA627ED63D00047CFB7 /* ListBreedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedViewController.swift; sourceTree = "<group>"; };
 		75C26FB027ED6BFC0047CFB7 /* ListBreedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedPresenter.swift; sourceTree = "<group>"; };
-		75C26FB627EDEFC20047CFB7 /* BreedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewController.swift; sourceTree = "<group>"; };
-		75C26FBE27EDF0A70047CFB7 /* BreedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedPresenter.swift; sourceTree = "<group>"; };
+		75C26FB627EDEFC20047CFB7 /* BreedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageViewController.swift; sourceTree = "<group>"; };
+		75C26FBE27EDF0A70047CFB7 /* BreedImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImagePresenter.swift; sourceTree = "<group>"; };
 		75C26FD027EE21AD0047CFB7 /* Dog Breeds Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dog Breeds Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C26FE927EE40CA0047CFB7 /* Seeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeds.swift; sourceTree = "<group>"; };
 		75D4883B27EF614900BF6355 /* BreedViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewCell.swift; sourceTree = "<group>"; };
@@ -237,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				75C26FAD27ED642F0047CFB7 /* List Breed */,
-				75C26FB527EDEF050047CFB7 /* Breed */,
+				75C26FB527EDEF050047CFB7 /* Breed Images */,
 				E49639632818198000FDFF4E /* Breed Detail */,
 			);
 			path = Features;
@@ -267,18 +267,18 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		75C26FB527EDEF050047CFB7 /* Breed */ = {
+		75C26FB527EDEF050047CFB7 /* Breed Images */ = {
 			isa = PBXGroup;
 			children = (
 				E4F3E14C280EFF9600F1223B /* DI */,
 				E434665A2808D56400FF91F3 /* Data */,
 				E434665F2808DA5800FF91F3 /* Domain */,
 				7577D60127F0FDBA0016E0C7 /* Cells */,
-				75C26FB627EDEFC20047CFB7 /* BreedViewController.swift */,
-				75C26FBE27EDF0A70047CFB7 /* BreedPresenter.swift */,
+				75C26FB627EDEFC20047CFB7 /* BreedImageViewController.swift */,
+				75C26FBE27EDF0A70047CFB7 /* BreedImagePresenter.swift */,
 				E43501AC282412CD00EC12D6 /* BreedModel.swift */,
 			);
-			path = Breed;
+			path = "Breed Images";
 			sourceTree = "<group>";
 		};
 		75C26FC727EDF37C0047CFB7 /* Resources */ = {
@@ -700,10 +700,10 @@
 				E43466652808DAAE00FF91F3 /* ListBreedApiRepository.swift in Sources */,
 				E434666C2808DBAC00FF91F3 /* ListBreedDomain.swift in Sources */,
 				E4EEDCC02821D39000D533FA /* ViewFactoryType.swift in Sources */,
-				75C26FBF27EDF0A70047CFB7 /* BreedPresenter.swift in Sources */,
+				75C26FBF27EDF0A70047CFB7 /* BreedImagePresenter.swift in Sources */,
 				7577D60427F0FDE00016E0C7 /* BreedImageViewCell.swift in Sources */,
 				E4BF0FEE28187A4E0034DFF7 /* UIImageView+DogBreeds.swift in Sources */,
-				75C26FB827EDEFC20047CFB7 /* BreedViewController.swift in Sources */,
+				75C26FB827EDEFC20047CFB7 /* BreedImageViewController.swift in Sources */,
 				E43501AB2824120D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapper.swift in Sources */,
 				E4F3E150280F160400F1223B /* BreedImageFactory.swift in Sources */,
 				E4EEDCC22821D5F900D533FA /* BreedDetailFactory.swift in Sources */,

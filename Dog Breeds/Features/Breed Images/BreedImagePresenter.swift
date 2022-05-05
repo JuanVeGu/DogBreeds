@@ -7,17 +7,17 @@
 
 import Foundation
 
-protocol BreedPresentationLogic {
-    func attach(view: BreedDisplayLogic)
+protocol BreedImagePresentationLogic {
+    func attach(view: BreedImageDisplayLogic)
     func presentBreedImages(with breedName: String?)
     func presentBreedDetail(response: BreedModel.GoToBreedDetail.Response)
 }
 
-class BreedPresenter: BreedPresentationLogic {
+class BreedImagePresenter: BreedImagePresentationLogic {
     private let useCase: BreedImageUseCase
     private let domainToViewModelMapper: Mapper<BreedImageViewModel, BreedImageDomain>
     private let viewModelMapper: Mapper<BreedDetail, BreedModel.GoToBreedDetail.Response>
-    weak var view: BreedDisplayLogic?
+    weak var view: BreedImageDisplayLogic?
     
     init(
         useCase: BreedImageUseCase,
@@ -29,7 +29,7 @@ class BreedPresenter: BreedPresentationLogic {
         self.viewModelMapper = viewModelMapper
     }
     
-    func attach(view: BreedDisplayLogic) {
+    func attach(view: BreedImageDisplayLogic) {
         self.view = view
     }
     

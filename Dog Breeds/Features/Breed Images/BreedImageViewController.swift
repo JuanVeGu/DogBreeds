@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol BreedDisplayLogic: AnyObject {
+protocol BreedImageDisplayLogic: AnyObject {
     func displayBreedImages(viewModel: BreedImageViewModel)
     func displayBreedDetail(viewModel: BreedDetail)
 }
 
-class BreedViewController: UIViewController {
+class BreedImageViewController: UIViewController {
     private let imageCache = ImageCache()
-    private let presenter: BreedPresentationLogic
+    private let presenter: BreedImagePresentationLogic
     
     var breedName: String?
     
@@ -28,7 +28,7 @@ class BreedViewController: UIViewController {
         return collectionView
     }()
     
-    init(presenter: BreedPresentationLogic) {
+    init(presenter: BreedImagePresentationLogic) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -64,7 +64,7 @@ class BreedViewController: UIViewController {
     }
 }
 
-extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension BreedImageViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
@@ -81,13 +81,13 @@ extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let urlImage = images[indexPath.row]
-        let request = BreedModel.GoToBreedDetail.Request(name: title, urlImage: urlImage)
+        let _ = BreedModel.GoToBreedDetail.Request(name: title, urlImage: urlImage)
 //        interactor.goToBreedDetail(request: request)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 
-extension BreedViewController: BreedDisplayLogic {
+extension BreedImageViewController: BreedImageDisplayLogic {
     func displayBreedImages(viewModel: BreedImageViewModel) {
         DispatchQueue.main.async {
             self.images = viewModel.images
