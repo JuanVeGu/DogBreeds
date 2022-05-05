@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ListBreedDisplayLogic: AnyObject {
-    func displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel)
+    func displayBreeds(viewModel: ListBreedViewModel)
     func displayBreedImages(breed: Breed)
 }
 
@@ -76,9 +76,9 @@ extension ListBreedViewController: UITableViewDelegate {
 }
 
 extension ListBreedViewController: ListBreedDisplayLogic {
-    func displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel) {
+    func displayBreeds(viewModel: ListBreedViewModel) {
         DispatchQueue.main.async {
-            self.breeds = viewModel.breeds
+            self.breeds = viewModel.breed
             self.tableView.reloadData()
         }
     }

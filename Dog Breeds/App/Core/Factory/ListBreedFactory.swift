@@ -19,6 +19,7 @@ class ListBreedFactory {
         case .breedList:
             let presenter = ListBreedPresenter(
                 useCase: self.serviceLocator.listBreedUseCase,
+                domainViewModelMapper: ListBreedDomainToListBreedViewModelMapper(),
                 viewModelMapper: StringToBreedViewModelMapper()
             )
             

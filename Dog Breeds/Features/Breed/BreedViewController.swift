@@ -8,7 +8,7 @@
 import UIKit
 
 protocol BreedDisplayLogic: AnyObject {
-    func displayBreedImages(viewModel: BreedModel.LoadBreedImages.ViewModel)
+    func displayBreedImages(viewModel: BreedImageViewModel)
     func displayBreedDetail(viewModel: BreedDetail)
 }
 
@@ -60,8 +60,7 @@ class BreedViewController: UIViewController {
     }
     
     func fetchBreedImages() {
-        let request = BreedModel.LoadBreedImages.Request(name: breedName)
-//        interactor.loadBreedImages(request: request)
+        presenter.presentBreedImages(with: breedName)
     }
 }
 
@@ -89,7 +88,7 @@ extension BreedViewController: UICollectionViewDelegate, UICollectionViewDataSou
 }
 
 extension BreedViewController: BreedDisplayLogic {
-    func displayBreedImages(viewModel: BreedModel.LoadBreedImages.ViewModel) {
+    func displayBreedImages(viewModel: BreedImageViewModel) {
         DispatchQueue.main.async {
             self.images = viewModel.images
             self.collectionView.reloadData()

@@ -14,7 +14,7 @@ class BreedImageURLSessionRestApi: BreedImageRestApi {
         self.urlSession = urlSession
     }
     
-    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedModel.LoadBreedImages.Response?) -> Void) {
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImageEntity?) -> Void) {
         var urlString = ""
         if breedName.isEmpty == false {
             urlString = "https://dog.ceo/api/breed/\(breedName)/images"
@@ -27,7 +27,7 @@ class BreedImageURLSessionRestApi: BreedImageRestApi {
         let dataTask = self.urlSession.dataTask(with: url) { (data, response, error) in
             if let _ = error {
                 completionHandler(nil)
-            } else if let data = data, let response = try? JSONDecoder().decode(BreedModel.LoadBreedImages.Response.self, from: data) {
+            } else if let data = data, let response = try? JSONDecoder().decode(BreedImageEntity.self, from: data) {
                 completionHandler(response)
             } else {
                 completionHandler(nil)

@@ -8,21 +8,6 @@
 import Foundation
 
 enum BreedModel {
-    enum LoadBreedImages {
-        struct Request {
-            let name: String?
-        }
-        
-        struct Response: Codable {
-            let message: [String]
-            let status: String
-        }
-        
-        struct ViewModel {
-            let images: [String]
-        }
-    }
-    
     enum GoToBreedDetail {
         struct Request {
             let name: String?

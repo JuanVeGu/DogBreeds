@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ListBreedRestApi {
-    func fetchDogBreeds(completionHandler: @escaping (ListBreeds.LoadDogBreeds.Response?) -> Void)
+    func fetchDogBreeds(completionHandler: @escaping (ListBreedEntity?) -> Void)
 }

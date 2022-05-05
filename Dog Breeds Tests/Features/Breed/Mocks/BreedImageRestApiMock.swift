@@ -11,7 +11,7 @@ import Foundation
 class BreedImageRestApiMock: BreedImageRestApi {
     var shouldFail = false
     
-    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedModel.LoadBreedImages.Response?) -> Void) {
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImageEntity?) -> Void) {
         if shouldFail {
             completionHandler(nil)
         } else {

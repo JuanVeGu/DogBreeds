@@ -16,11 +16,17 @@ protocol ListBreedPresentationLogic {
 
 class ListBreedPresenter: ListBreedPresentationLogic {
     private let useCase: ListBreedUseCase
+    private let domainViewModelMapper: Mapper<ListBreedViewModel, ListBreedDomain>
     private let viewModelMapper: Mapper<Breed, String>
     weak var view: ListBreedDisplayLogic?
     
-    init(useCase: ListBreedUseCase, viewModelMapper: Mapper<Breed, String>) {
+    init(
+        useCase: ListBreedUseCase,
+        domainViewModelMapper: Mapper<ListBreedViewModel, ListBreedDomain>,
+        viewModelMapper: Mapper<Breed, String>
+    ) {
         self.useCase = useCase
+        self.domainViewModelMapper = domainViewModelMapper
         self.viewModelMapper = viewModelMapper
     }
     
@@ -31,7 +37,8 @@ class ListBreedPresenter: ListBreedPresentationLogic {
     func presentDogBreeds() {
         useCase.breeds { [self] listBreed in
             if let listBreed = listBreed {
-                view?.displayBreeds(viewModel: ListBreeds.LoadDogBreeds.ViewModel(breeds: listBreed.breed))
+                let viewModelMapper = self.domainViewModelMapper.reverseMap(value: listBreed)
+                view?.displayBreeds(viewModel: viewModelMapper)
             }
         }
     }

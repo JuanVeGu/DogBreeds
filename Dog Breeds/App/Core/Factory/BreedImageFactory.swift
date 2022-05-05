@@ -19,6 +19,7 @@ class BreedImageFactory {
         case .breedImagelist:
             let presenter = BreedPresenter(
                 useCase: self.serviceLocator.breedUseCase,
+                domainToViewModelMapper: BreedImageDomainToBreedImageViewModelMapper(),
                 viewModelMapper: ImageToBreedDetailViewModelMapper()
             )
             

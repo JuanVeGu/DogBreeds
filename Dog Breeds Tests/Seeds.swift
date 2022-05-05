@@ -9,7 +9,7 @@ import Foundation
 @testable import Dog_Breeds
 
 struct Seeds {
-    static let dogBreedsResponse = ListBreeds.LoadDogBreeds.Response(message: [
+    static let dogBreedsResponse = ListBreedEntity(message: [
         "affenpinscher",
         "african",
         "airedale",
@@ -22,7 +22,7 @@ struct Seeds {
         "borzoi",
     ], status: "success")
     
-    static let breedImages = BreedModel.LoadBreedImages.Response(message: [
+    static let breedImages = BreedImageEntity(message: [
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg",

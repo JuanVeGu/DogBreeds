@@ -8,5 +8,5 @@
 import Foundation
 
 protocol BreedImageRestApi {
-    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedModel.LoadBreedImages.Response?) -> Void)
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImageEntity?) -> Void)
 }

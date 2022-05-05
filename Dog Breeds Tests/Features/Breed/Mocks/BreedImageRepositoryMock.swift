@@ -9,10 +9,10 @@ import Foundation
 @testable import Dog_Breeds
 
 class BreedImageRepositoryMock: BreedImageRepository {
-    let modelMapper = BreedImageEntityToBreedImageModel()
+    let modelMapper = BreedImageEntityToBreedImageDomainMapper()
     var shouldFail = false
     
-    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImage?) -> Void) {
+    func fetchBreedImages(breedName: String, completionHandler: @escaping (BreedImageDomain?) -> Void) {
         if shouldFail {
             completionHandler(nil)
         } else {

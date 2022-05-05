@@ -9,16 +9,16 @@ import XCTest
 @testable import Dog_Breeds
 
 class BreedImageEntityToBreedImageModelTests: XCTestCase {
-    var sut: Mapper<BreedImage, BreedModel.LoadBreedImages.Response>!
+    var sut: Mapper<BreedImageDomain, BreedImageEntity>!
     
     override func setUp() {
         super.setUp()
-        sut = BreedImageEntityToBreedImageModel()
+        sut = BreedImageEntityToBreedImageDomainMapper()
     }
     
     func testCompareMappers() {
         let entity = Seeds.breedImages
-        let expectedModel = BreedImage(images: [
+        let expectedModel = BreedImageDomain(images: [
             "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg",
             "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg",
             "https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg",
