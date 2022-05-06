@@ -21,7 +21,7 @@ class ViewControllerFactory {
         return view.viewController(type, breedName)
     }
     
-    class func viewController(type: BreedDetailFactoryType, detail: BreedDetail) -> UIViewController {
+    class func viewController(type: BreedDetailFactoryType, detail: BreedDetail) -> BreedDetailViewController {
         let view = BreedDetailFactory()
         return view.viewController(type, detail)
     }
