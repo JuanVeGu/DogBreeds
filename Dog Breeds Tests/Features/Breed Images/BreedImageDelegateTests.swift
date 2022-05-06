@@ -10,29 +10,36 @@ import XCTest
 
 class BreedImageDelegateTests: XCTestCase {
     var sut: BreedImageDelegate!
-    var vc: BreedImageViewController!
+    var vcMock: BreedImageViewControllerMock!
     var collectionView: UICollectionView!
     
     override func setUp() {
         super.setUp()
         sut = BreedImageDelegate()
-        vc = ViewControllerFactory.viewController(type: .breedImagelist, breedName: "schnauzer")
-        collectionView = vc.view.subviews[0] as? UICollectionView
-    }
-    
-    func testWhenTheViewIsNilItDoesNothing() {
-        sut.collectionView(collectionView, didSelectItemAt: IndexPath(row: 0, section: 0))
+        
+        vcMock = BreedImageViewControllerMock(
+            presenter: BreedImagePresenter(
+                useCase: BreedServiceLocator().breedUseCase,
+                domainToViewModelMapper: BreedImageDomainToBreedImageViewModelMapper(),
+                viewModelMapper: ImageToBreedDetailViewModelMapper()
+            ),
+            dataSource: BreedImageDataSource(),
+            delegate: sut
+        )
+        
+        collectionView = vcMock.view.subviews[0] as? UICollectionView
     }
     
     func testWhenTheViewExistItDoesSomething() {
-        sut.view = vc
-        vc.images = [""]
+        sut.view = vcMock
+        vcMock.images = [""]
         sut.collectionView(collectionView, didSelectItemAt: IndexPath(row: 0, section: 0))
+        XCTAssertTrue(vcMock.didCallPresentBreedDetail)
     }
     
     override func tearDown() {
         sut = nil
-        vc = nil
+        vcMock = nil
         collectionView = nil
         super.tearDown()
     }

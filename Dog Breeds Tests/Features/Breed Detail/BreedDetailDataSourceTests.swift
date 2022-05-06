@@ -26,6 +26,11 @@ class BreedDetailDataSourceTests: XCTestCase {
         XCTAssertGreaterThan(numberOfItems, 0)
     }
     
+    func testTheNumberOfItemsIsEqualToTheAllCasesArray() {
+        let numberOfItems = sut.tableView(tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(numberOfItems, BreedDetailCellType.allCases.count)
+    }
+    
     func testWhenViewIsNilReturnGenericCell() {
         let cell = sut.tableView(tableView, cellForRowAt: IndexPath(row: 0, section: 0))
         XCTAssertTrue((cell as Any) is UITableViewCell)
