@@ -16,7 +16,7 @@ class BreedImageRepositoryMock: BreedImageRepository {
         if shouldFail {
             completionHandler(nil)
         } else {
-            let model = modelMapper.reverseMap(value: Seeds.breedImages)
+            let model = modelMapper.reverseMap(value: Seeds.breedImageEntity)
             completionHandler(model)
         }
     }

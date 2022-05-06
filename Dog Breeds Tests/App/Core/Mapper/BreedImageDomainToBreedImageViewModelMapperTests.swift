@@ -1,24 +1,29 @@
 //
-//  BreedImageEntityToBreedImageModelTests.swift
+//  BreedImageDomainToBreedImageViewModelMapperTests.swift
 //  Dog Breeds Tests
 //
-//  Created by mobdev on 20-04-22.
+//  Created by mobdev on 06-05-22.
 //
 
 import XCTest
 @testable import Dog_Breeds
 
-class BreedImageEntityToBreedImageModelTests: XCTestCase {
-    var sut: Mapper<BreedImageDomain, BreedImageEntity>!
+class BreedImageDomainToBreedImageViewModelMapperTests: XCTestCase {
+    var sut: Mapper<BreedImageViewModel, BreedImageDomain>!
     
     override func setUp() {
         super.setUp()
-        sut = BreedImageEntityToBreedImageDomainMapper()
+        sut = BreedImageDomainToBreedImageViewModelMapper()
+    }
+    
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
     }
     
     func testCompareMappers() {
-        let entity = Seeds.breedImages
-        let expectedModel = BreedImageDomain(images: [
+        let entity = Seeds.breedImageDomain
+        let expectedModel = BreedImageViewModel(images: [
             "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg",
             "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg",
             "https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg",
@@ -33,10 +38,5 @@ class BreedImageEntityToBreedImageModelTests: XCTestCase {
         let model = sut.reverseMap(value: entity)
         
         XCTAssertEqual(expectedModel, model)
-    }
-    
-    override func tearDown() {
-        sut = nil
-        super.tearDown()
     }
 }

@@ -26,8 +26,8 @@
 		E429BCDF28107A3700F12D5D /* BreedImageRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCDE28107A3700F12D5D /* BreedImageRepositoryMock.swift */; };
 		E429BCE128107CAF00F12D5D /* BreedImageUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCE028107CAF00F12D5D /* BreedImageUseCaseTests.swift */; };
 		E429BCE328107F3A00F12D5D /* ListBreedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCE228107F3A00F12D5D /* ListBreedUseCaseTests.swift */; };
-		E429BCE92810ACDD00F12D5D /* ListBreedEntityToListBreedModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCE82810ACDD00F12D5D /* ListBreedEntityToListBreedModelMapperTests.swift */; };
-		E429BCF32810B85000F12D5D /* BreedImageEntityToBreedImageModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCF22810B85000F12D5D /* BreedImageEntityToBreedImageModelTests.swift */; };
+		E429BCE92810ACDD00F12D5D /* ListBreedEntityToListBreedDomainMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCE82810ACDD00F12D5D /* ListBreedEntityToListBreedDomainMapperTests.swift */; };
+		E429BCF32810B85000F12D5D /* BreedImageEntityToBreedImageModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCF22810B85000F12D5D /* BreedImageEntityToBreedImageModelMapperTests.swift */; };
 		E42B451C280DAD3B00A2E4CC /* ListBreedServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B451B280DAD3B00A2E4CC /* ListBreedServiceLocator.swift */; };
 		E42B451E280E05B400A2E4CC /* ListBreedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42B451D280E05B400A2E4CC /* ListBreedFactory.swift */; };
 		E434665028075BB100FF91F3 /* ListBreedRestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E434664F28075BB100FF91F3 /* ListBreedRestApi.swift */; };
@@ -50,6 +50,9 @@
 		E43501AB2824120D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43501AA2824120D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapper.swift */; };
 		E43501AF2824299400EC12D6 /* BreedImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43501AE2824299400EC12D6 /* BreedImageDataSource.swift */; };
 		E43501B128242C5600EC12D6 /* BreedImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43501B028242C5600EC12D6 /* BreedImageDelegate.swift */; };
+		E43501B328255AD700EC12D6 /* ListBreedDomainToListBreedViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43501B228255AD700EC12D6 /* ListBreedDomainToListBreedViewModelMapperTests.swift */; };
+		E43501B528255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43501B428255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift */; };
+		E43501B728255E5300EC12D6 /* StringToBreedViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43501B628255E5300EC12D6 /* StringToBreedViewModelMapperTests.swift */; };
 		E43C16FD2811DF9E00207907 /* UIView+DogBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43C16FC2811DF9E00207907 /* UIView+DogBreeds.swift */; };
 		E4BF0FE42818456A0034DFF7 /* BreedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BF0FE32818456A0034DFF7 /* BreedDetailViewController.swift */; };
 		E4BF0FE7281846280034DFF7 /* BreedDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BF0FE6281846280034DFF7 /* BreedDetailDataSource.swift */; };
@@ -114,8 +117,8 @@
 		E429BCDE28107A3700F12D5D /* BreedImageRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageRepositoryMock.swift; sourceTree = "<group>"; };
 		E429BCE028107CAF00F12D5D /* BreedImageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageUseCaseTests.swift; sourceTree = "<group>"; };
 		E429BCE228107F3A00F12D5D /* ListBreedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedUseCaseTests.swift; sourceTree = "<group>"; };
-		E429BCE82810ACDD00F12D5D /* ListBreedEntityToListBreedModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedEntityToListBreedModelMapperTests.swift; sourceTree = "<group>"; };
-		E429BCF22810B85000F12D5D /* BreedImageEntityToBreedImageModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageEntityToBreedImageModelTests.swift; sourceTree = "<group>"; };
+		E429BCE82810ACDD00F12D5D /* ListBreedEntityToListBreedDomainMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedEntityToListBreedDomainMapperTests.swift; sourceTree = "<group>"; };
+		E429BCF22810B85000F12D5D /* BreedImageEntityToBreedImageModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageEntityToBreedImageModelMapperTests.swift; sourceTree = "<group>"; };
 		E42B451B280DAD3B00A2E4CC /* ListBreedServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedServiceLocator.swift; sourceTree = "<group>"; };
 		E42B451D280E05B400A2E4CC /* ListBreedFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedFactory.swift; sourceTree = "<group>"; };
 		E434664F28075BB100FF91F3 /* ListBreedRestApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedRestApi.swift; sourceTree = "<group>"; };
@@ -138,6 +141,9 @@
 		E43501AA2824120D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageDomainToBreedImageViewModelMapper.swift; sourceTree = "<group>"; };
 		E43501AE2824299400EC12D6 /* BreedImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageDataSource.swift; sourceTree = "<group>"; };
 		E43501B028242C5600EC12D6 /* BreedImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageDelegate.swift; sourceTree = "<group>"; };
+		E43501B228255AD700EC12D6 /* ListBreedDomainToListBreedViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedDomainToListBreedViewModelMapperTests.swift; sourceTree = "<group>"; };
+		E43501B428255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageDomainToBreedImageViewModelMapperTests.swift; sourceTree = "<group>"; };
+		E43501B628255E5300EC12D6 /* StringToBreedViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToBreedViewModelMapperTests.swift; sourceTree = "<group>"; };
 		E43C16FC2811DF9E00207907 /* UIView+DogBreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DogBreeds.swift"; sourceTree = "<group>"; };
 		E4BF0FE32818456A0034DFF7 /* BreedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewController.swift; sourceTree = "<group>"; };
 		E4BF0FE6281846280034DFF7 /* BreedDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailDataSource.swift; sourceTree = "<group>"; };
@@ -349,9 +355,12 @@
 		E429BCE62810ACA000F12D5D /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
-				E429BCE82810ACDD00F12D5D /* ListBreedEntityToListBreedModelMapperTests.swift */,
-				E429BCF22810B85000F12D5D /* BreedImageEntityToBreedImageModelTests.swift */,
+				E429BCE82810ACDD00F12D5D /* ListBreedEntityToListBreedDomainMapperTests.swift */,
+				E43501B228255AD700EC12D6 /* ListBreedDomainToListBreedViewModelMapperTests.swift */,
+				E429BCF22810B85000F12D5D /* BreedImageEntityToBreedImageModelMapperTests.swift */,
+				E43501B428255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift */,
 				E4C7A9FE281B0430002D890F /* ImageToBreedDetailViewModelMapperTests.swift */,
+				E43501B628255E5300EC12D6 /* StringToBreedViewModelMapperTests.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -549,9 +558,9 @@
 				E4F3E155280F31CF00F1223B /* ListBreedEntityToListBreedDomainMapper.swift */,
 				E43501A428240AA600EC12D6 /* ListBreedDomainToListBreedViewModelMapper.swift */,
 				E4F3E15D280F64B800F1223B /* BreedImageEntityToBreedImageDomainMapper.swift */,
+				E43501AA2824120D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapper.swift */,
 				E4C7A9FC281AD8A7002D890F /* ImageToBreedDetailViewModelMapper.swift */,
 				E4FBA2D12822F776005CF228 /* StringToBreedViewModelMapper.swift */,
-				E43501AA2824120D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapper.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -758,9 +767,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43501B528255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift in Sources */,
 				E4C7A9FF281B0430002D890F /* ImageToBreedDetailViewModelMapperTests.swift in Sources */,
 				E429BCDB2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift in Sources */,
 				75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */,
+				E43501B728255E5300EC12D6 /* StringToBreedViewModelMapperTests.swift in Sources */,
 				E429BCDF28107A3700F12D5D /* BreedImageRepositoryMock.swift in Sources */,
 				E429BCD5281045F400F12D5D /* MockURLProtocol.swift in Sources */,
 				E429BCE328107F3A00F12D5D /* ListBreedUseCaseTests.swift in Sources */,
@@ -768,11 +779,12 @@
 				E429BCD92810478100F12D5D /* ListBreedURLSessionRestApiTests.swift in Sources */,
 				E4F3E164280F689D00F1223B /* BreedImageRestApiMock.swift in Sources */,
 				E429BCE128107CAF00F12D5D /* BreedImageUseCaseTests.swift in Sources */,
+				E43501B328255AD700EC12D6 /* ListBreedDomainToListBreedViewModelMapperTests.swift in Sources */,
 				E4F3E15C280F627C00F1223B /* ListBreedRestApiMock.swift in Sources */,
 				E429BCDD28107A1F00F12D5D /* ListBreedRepositoryMock.swift in Sources */,
-				E429BCE92810ACDD00F12D5D /* ListBreedEntityToListBreedModelMapperTests.swift in Sources */,
+				E429BCE92810ACDD00F12D5D /* ListBreedEntityToListBreedDomainMapperTests.swift in Sources */,
 				E4F3E159280F4F6900F1223B /* ListBreedApiRepositoryTests.swift in Sources */,
-				E429BCF32810B85000F12D5D /* BreedImageEntityToBreedImageModelTests.swift in Sources */,
+				E429BCF32810B85000F12D5D /* BreedImageEntityToBreedImageModelMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

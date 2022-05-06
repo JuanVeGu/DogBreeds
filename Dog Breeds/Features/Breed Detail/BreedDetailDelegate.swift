@@ -8,13 +8,13 @@
 import UIKit
 
 class BreedDetailDelegate: NSObject {
-    weak var viewController: BreedDetailViewController?
+    weak var view: BreedDetailViewController?
 }
 
 extension BreedDetailDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let vc = viewController, let breedDetail = vc.breedDetail, let breedName = breedDetail.name else { return }
+        guard let vc = view, let breedDetail = vc.breedDetail, let breedName = breedDetail.name else { return }
         
         switch BreedDetailCellType.allCases[indexPath.row] {
         case .title:
