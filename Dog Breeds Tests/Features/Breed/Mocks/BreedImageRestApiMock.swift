@@ -15,7 +15,7 @@ class BreedImageRestApiMock: BreedImageRestApi {
         if shouldFail {
             completionHandler(nil)
         } else {
-            completionHandler(Seeds.breedImages)
+            completionHandler(Seeds.breedImageEntity)
         }
     }
 }

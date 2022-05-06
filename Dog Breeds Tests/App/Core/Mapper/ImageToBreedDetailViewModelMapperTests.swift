@@ -9,7 +9,7 @@ import XCTest
 @testable import Dog_Breeds
 
 class ImageToBreedDetailViewModelMapperTests: XCTestCase {
-    var sut: ImageToBreedDetailViewModelMapper!
+    var sut: Mapper<BreedDetail, (String?, String)>!
 
     override func setUp() {
         super.setUp()

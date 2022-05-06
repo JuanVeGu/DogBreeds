@@ -31,7 +31,7 @@ class ListBreedURLSessionRestApiTests: XCTestCase {
     
     func test_WhenReceiveSuccessfullResponse_ReturnsResponseWithListBreed() {
         let expectation = expectation(description: "test_WhenReceiveSuccessfullResponse_ReturnsResponseWithListBreed")
-        let stubResponseData = try? JSONEncoder().encode(Seeds.breedImages)
+        let stubResponseData = try? JSONEncoder().encode(Seeds.breedImageEntity)
         MockURLProtocol.stubResponseData = stubResponseData
         
         sut.fetchDogBreeds { response in
@@ -61,7 +61,7 @@ class ListBreedURLSessionRestApiTests: XCTestCase {
     
     func test_WhenEmptyURLStringProvided_ReturnsNil() {
         let expectation = expectation(description: "test_WhenEmptyURLStringProvided_ReturnsNil")
-        let stubResponseData = try? JSONEncoder().encode(Seeds.breedImages)
+        let stubResponseData = try? JSONEncoder().encode(Seeds.breedImageEntity)
         MockURLProtocol.stubResponseData = stubResponseData
         sut = ListBreedURLSessionRestApi(url: "")
         

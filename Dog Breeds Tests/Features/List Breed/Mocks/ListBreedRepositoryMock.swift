@@ -16,7 +16,7 @@ class ListBreedRepositoryMock: ListBreedRepository {
         if shouldFail {
             completionHandler(nil)
         } else {
-            let model = modelMapper.reverseMap(value: Seeds.dogBreedsResponse)
+            let model = modelMapper.reverseMap(value: Seeds.listBreedEntity)
             completionHandler(model)
         }
     }
