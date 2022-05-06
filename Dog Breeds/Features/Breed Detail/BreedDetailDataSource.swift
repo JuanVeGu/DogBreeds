@@ -8,7 +8,7 @@
 import UIKit
 
 class BreedDetailDataSource: NSObject {
-    weak var viewController: BreedDetailViewController?
+    weak var view: BreedDetailViewController?
 }
 
 extension BreedDetailDataSource: UITableViewDataSource {
@@ -18,7 +18,7 @@ extension BreedDetailDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let vc = viewController, let breedDetail = vc.breedDetail else { return UITableViewCell() }
+        guard let vc = view, let breedDetail = vc.breedDetail else { return UITableViewCell() }
         
         switch BreedDetailCellType.allCases[indexPath.row] {
         case .title:

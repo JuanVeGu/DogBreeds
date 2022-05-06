@@ -44,8 +44,7 @@ class BreedDetailViewController: UIViewController {
         tableView.register(ImageViewCell.self, forCellReuseIdentifier: ImageViewCell.cellId)
         tableView.register(DescriptionViewCell.self, forCellReuseIdentifier: DescriptionViewCell.cellId)
         
-        dataSource.viewController = self
-        delegate.viewController = self
+        
         view.addAutoLayout(tableView)
         
         NSLayoutConstraint.activate([
@@ -54,6 +53,9 @@ class BreedDetailViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+        
+        dataSource.view = self
+        delegate.view = self
     }
 
 }

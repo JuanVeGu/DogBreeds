@@ -8,7 +8,7 @@
 import XCTest
 @testable import Dog_Breeds
 
-class ListBreedEntityToListBreedModelMapperTests: XCTestCase {
+class ListBreedEntityToListBreedDomainMapperTests: XCTestCase {
     var sut: Mapper<ListBreedDomain, ListBreedEntity>!
     
     override func setUp() {
@@ -16,8 +16,13 @@ class ListBreedEntityToListBreedModelMapperTests: XCTestCase {
         sut = ListBreedEntityToListBreedDomainMapper()
     }
     
+    override func tearDown() {
+        sut = nil
+        super.tearDown()
+    }
+    
     func testCompareMappers() {
-        let entity = Seeds.dogBreedsResponse
+        let entity = Seeds.listBreedEntity
         let expectedModel = ListBreedDomain(breed: [
             "affenpinscher",
             "african",
@@ -33,10 +38,5 @@ class ListBreedEntityToListBreedModelMapperTests: XCTestCase {
         let model = sut.reverseMap(value: entity)
         
         XCTAssertEqual(expectedModel, model)
-    }
-    
-    override func tearDown() {
-        sut = nil
-        super.tearDown()
     }
 }

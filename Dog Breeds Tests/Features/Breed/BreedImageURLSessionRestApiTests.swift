@@ -31,7 +31,7 @@ class BreedImageURLSessionRestApiTests: XCTestCase {
     
     func test_WhenReceiveSuccessfullResponse_ReturnsResponseWithListImages() {
         let expectation = expectation(description: "test_WhenReceiveSuccessfullResponse_ReturnsResponseWithListImages")
-        let stubResponseData = try? JSONEncoder().encode(Seeds.breedImages)
+        let stubResponseData = try? JSONEncoder().encode(Seeds.breedImageEntity)
         MockURLProtocol.stubResponseData = stubResponseData
         
         sut.fetchBreedImages(breedName: "schnauzer") { response in
@@ -61,7 +61,7 @@ class BreedImageURLSessionRestApiTests: XCTestCase {
     
     func test_WhenEmptyBreedNameProvided_ReturnsNil() {
         let expectation = expectation(description: "test_WhenEmptyBreedNameProvided_ReturnsNil")
-        let stubResponseData = try? JSONEncoder().encode(Seeds.breedImages)
+        let stubResponseData = try? JSONEncoder().encode(Seeds.breedImageEntity)
         MockURLProtocol.stubResponseData = stubResponseData
         
         sut.fetchBreedImages(breedName: "") { response in

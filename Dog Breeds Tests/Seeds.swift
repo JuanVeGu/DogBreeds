@@ -9,7 +9,7 @@ import Foundation
 @testable import Dog_Breeds
 
 struct Seeds {
-    static let dogBreedsResponse = ListBreedEntity(message: [
+    static let listBreedEntity = ListBreedEntity(message: [
         "affenpinscher",
         "african",
         "airedale",
@@ -22,7 +22,20 @@ struct Seeds {
         "borzoi",
     ], status: "success")
     
-    static let breedImages = BreedImageEntity(message: [
+    static let listBreedDomain = ListBreedDomain(breed: [
+        "affenpinscher",
+        "african",
+        "airedale",
+        "akita",
+        "appenzeller",
+        "australian",
+        "basenji",
+        "beagle",
+        "bluetick",
+        "borzoi",
+    ])
+    
+    static let breedImageEntity = BreedImageEntity(message: [
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg",
@@ -34,6 +47,18 @@ struct Seeds {
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_11006.jpg",
     ], status: "success")
     
+    static let breedImageDomain = BreedImageDomain(images: [
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10263.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10715.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10822.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10832.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10982.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_11006.jpg",
+    ])
+    
     static let breedImageDetail = (
         "schnauzer",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg"
@@ -44,6 +69,8 @@ struct Seeds {
         status: "error",
         message: "Breed not found (master breed does not exist)"
     )
+    
+    static let breedName = "schnauzer"
 }
 
 struct ResponseError: Codable {

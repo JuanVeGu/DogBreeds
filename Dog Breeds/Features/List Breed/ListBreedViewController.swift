@@ -66,15 +66,6 @@ class ListBreedViewController: UIViewController {
     }
 }
 
-extension ListBreedViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let breedName = breeds[indexPath.row]
-        presenter.presentBreedImages(breedName: breedName)
-    }
-}
-
 extension ListBreedViewController: ListBreedDisplayLogic {
     func displayBreeds(viewModel: ListBreedViewModel) {
         DispatchQueue.main.async {

@@ -15,7 +15,7 @@ class ListBreedRestApiMock: ListBreedRestApi {
         if shouldFail {
             completionHandler(nil)
         } else {
-            completionHandler(Seeds.dogBreedsResponse)
+            completionHandler(Seeds.listBreedEntity)
         }
     }
 }
