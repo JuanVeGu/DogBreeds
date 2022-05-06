@@ -35,6 +35,19 @@ struct Seeds {
         "borzoi",
     ])
     
+    static let listBreedViewModel = ListBreedViewModel(breed: [
+        "affenpinscher",
+        "african",
+        "airedale",
+        "akita",
+        "appenzeller",
+        "australian",
+        "basenji",
+        "beagle",
+        "bluetick",
+        "borzoi",
+    ])
+    
     static let breedImageEntity = BreedImageEntity(message: [
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg",
@@ -48,6 +61,18 @@ struct Seeds {
     ], status: "success")
     
     static let breedImageDomain = BreedImageDomain(images: [
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10263.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10715.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10822.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10832.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_10982.jpg",
+        "https://images.dog.ceo/breeds/hound-afghan/n02088094_11006.jpg",
+    ])
+    
+    static let breedImageViewModel = BreedImageViewModel(images: [
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1003.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1007.jpg",
         "https://images.dog.ceo/breeds/hound-afghan/n02088094_1023.jpg",

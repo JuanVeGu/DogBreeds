@@ -19,7 +19,6 @@ class BreedImageViewController: UIViewController {
     private let delegate: BreedImageDelegate
     
     var breedName: String?
-    
     var images: [String] = []
     
     private let collectionView: UICollectionView = {
@@ -74,13 +73,13 @@ class BreedImageViewController: UIViewController {
         presenter.presentBreedImages(with: breedName)
     }
     
-    internal func loadImage(urlImage: String, completionHandler: @escaping (UIImage) -> Void) {
+    func loadImage(urlImage: String, completionHandler: @escaping (UIImage) -> Void) {
         imageCache.load(urlImage: urlImage) { image in
             completionHandler(image)
         }
     }
     
-    internal func presentBreedDetail(urlImage: String) {
+    func presentBreedDetail(urlImage: String) {
         presenter.presentBreedDetail(breedName: title, image: urlImage)
     }
 }
