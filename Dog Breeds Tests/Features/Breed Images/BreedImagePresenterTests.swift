@@ -13,6 +13,11 @@ class BreedImagePresenterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        sut = BreedImagePresenter(
+            useCase: BreedServiceLocator().breedUseCase,
+            domainToViewModelMapper: BreedImageDomainToBreedImageViewModelMapper(),
+            viewModelMapper: ImageToBreedDetailViewModelMapper()
+        )
     }
     
     override func tearDown() {

@@ -30,11 +30,17 @@ class BreedImageDelegateTests: XCTestCase {
         collectionView = vcMock.view.subviews[0] as? UICollectionView
     }
     
-    func testWhenTheViewExistItDoesSomething() {
+    func testWhenTheViewExistAndAnItemIsSelectedTheBreedDetailViewIsDisplayed() {
         sut.view = vcMock
         vcMock.images = [""]
         sut.collectionView(collectionView, didSelectItemAt: IndexPath(row: 0, section: 0))
         XCTAssertTrue(vcMock.didCallPresentBreedDetail)
+    }
+    
+    func testWhenViewIsNilAndARowIsSelectedPresentBreedDetailIsNeverCalled() {
+        sut.view = nil
+        sut.collectionView(collectionView, didSelectItemAt: IndexPath(row: 0, section: 0))
+        XCTAssertFalse(vcMock.didCallPresentBreedDetail)
     }
     
     override func tearDown() {

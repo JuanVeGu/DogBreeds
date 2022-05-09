@@ -13,6 +13,11 @@ class ListBreedPresenterTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        sut = ListBreedPresenter(
+            useCase: ListBreedServiceLocator().listBreedUseCase,
+            domainViewModelMapper: ListBreedDomainToListBreedViewModelMapper(),
+            viewModelMapper: StringToBreedViewModelMapper()
+        )
     }
     
     override func tearDown() {
