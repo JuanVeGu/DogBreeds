@@ -21,6 +21,8 @@
 		E401FBA028174A5F00E0CFAB /* ListBreedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E401FB9F28174A5F00E0CFAB /* ListBreedDataSource.swift */; };
 		E42650B828297A9600221494 /* ListBreedViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42650B728297A9600221494 /* ListBreedViewControllerMock.swift */; };
 		E42650BA2829852900221494 /* BreedDetailViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42650B92829852900221494 /* BreedDetailViewControllerMock.swift */; };
+		E42650BF28299D2400221494 /* ListBreedDisplayLogicMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42650BE28299D2400221494 /* ListBreedDisplayLogicMock.swift */; };
+		E42650C12829A1EA00221494 /* BreedImageDisplayLogicMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42650C02829A1EA00221494 /* BreedImageDisplayLogicMock.swift */; };
 		E429BCD5281045F400F12D5D /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCD4281045F400F12D5D /* MockURLProtocol.swift */; };
 		E429BCD92810478100F12D5D /* ListBreedURLSessionRestApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCD82810478100F12D5D /* ListBreedURLSessionRestApiTests.swift */; };
 		E429BCDB2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429BCDA2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift */; };
@@ -122,6 +124,8 @@
 		E401FB9F28174A5F00E0CFAB /* ListBreedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedDataSource.swift; sourceTree = "<group>"; };
 		E42650B728297A9600221494 /* ListBreedViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedViewControllerMock.swift; sourceTree = "<group>"; };
 		E42650B92829852900221494 /* BreedDetailViewControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailViewControllerMock.swift; sourceTree = "<group>"; };
+		E42650BE28299D2400221494 /* ListBreedDisplayLogicMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedDisplayLogicMock.swift; sourceTree = "<group>"; };
+		E42650C02829A1EA00221494 /* BreedImageDisplayLogicMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageDisplayLogicMock.swift; sourceTree = "<group>"; };
 		E429BCD4281045F400F12D5D /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		E429BCD82810478100F12D5D /* ListBreedURLSessionRestApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedURLSessionRestApiTests.swift; sourceTree = "<group>"; };
 		E429BCDA2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageURLSessionRestApiTests.swift; sourceTree = "<group>"; };
@@ -656,6 +660,7 @@
 				E429BCDC28107A1F00F12D5D /* ListBreedRepositoryMock.swift */,
 				E4F3E15B280F627C00F1223B /* ListBreedRestApiMock.swift */,
 				E42650B728297A9600221494 /* ListBreedViewControllerMock.swift */,
+				E42650BE28299D2400221494 /* ListBreedDisplayLogicMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -679,6 +684,7 @@
 				E429BCDE28107A3700F12D5D /* BreedImageRepositoryMock.swift */,
 				E4F3E163280F689D00F1223B /* BreedImageRestApiMock.swift */,
 				E4B516842825CE3A00D79696 /* BreedImageViewControllerMock.swift */,
+				E42650C02829A1EA00221494 /* BreedImageDisplayLogicMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -870,8 +876,10 @@
 				E4B516752825720300D79696 /* ListBreedDelegateTests.swift in Sources */,
 				E429BCDD28107A1F00F12D5D /* ListBreedRepositoryMock.swift in Sources */,
 				E429BCE92810ACDD00F12D5D /* ListBreedEntityToListBreedDomainMapperTests.swift in Sources */,
+				E42650BF28299D2400221494 /* ListBreedDisplayLogicMock.swift in Sources */,
 				E4B516852825CE3A00D79696 /* BreedImageViewControllerMock.swift in Sources */,
 				E4F3E159280F4F6900F1223B /* ListBreedApiRepositoryTests.swift in Sources */,
+				E42650C12829A1EA00221494 /* BreedImageDisplayLogicMock.swift in Sources */,
 				E429BCF32810B85000F12D5D /* BreedImageEntityToBreedImageModelMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

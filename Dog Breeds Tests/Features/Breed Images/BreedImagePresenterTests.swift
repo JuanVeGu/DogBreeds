@@ -10,14 +10,46 @@ import XCTest
 
 class BreedImagePresenterTests: XCTestCase {
     var sut: BreedImagePresenter!
+    var vcMock: BreedImageDisplayLogicMock!
+    var repository: BreedImageRepositoryMock!
     
     override func setUp() {
         super.setUp()
+        repository = BreedImageRepositoryMock()
         sut = BreedImagePresenter(
-            useCase: BreedServiceLocator().breedUseCase,
+            useCase: BreedImageUseCase(breedImageRepository: repository),
             domainToViewModelMapper: BreedImageDomainToBreedImageViewModelMapper(),
             viewModelMapper: ImageToBreedDetailViewModelMapper()
         )
+        vcMock = BreedImageDisplayLogicMock()
+    }
+    
+    func testWhenViewIsAttached() {
+        sut.attach(view: vcMock)
+        XCTAssertNotNil(sut.view)
+    }
+    
+    func testWhenBreedIsNotNilPresenterCalledDisplayBreedImagesMethod() {
+        sut.attach(view: vcMock)
+        sut.presentBreedImages(with: "schnauzer")
+        XCTAssertTrue(vcMock.didCallDisplayBreedImages)
+    }
+    
+    func testWhenBreedIsNotNil_ButUseCaseReturnNil_DisplayBreedImagesMethodIsNeverCalled() {
+        repository.shouldFail = true
+        sut.presentBreedImages(with: "schnauzer")
+        XCTAssertFalse(vcMock.didCallDisplayBreedImages)
+    }
+    
+    func testWhenBreedIsNilDisplayBreedImagesMethodIsNeverCalled() {
+        sut.presentBreedImages(with: nil)
+        XCTAssertFalse(vcMock.didCallDisplayBreedImages)
+    }
+    
+    func testWhenAValidParametersIsPassedPresenterCalledDisplayBreedDetail() {
+        sut.attach(view: vcMock)
+        sut.presentBreedDetail(breedName: "", image: "")
+        XCTAssertTrue(vcMock.didCallDisplayBreedDetail)
     }
     
     override func tearDown() {
