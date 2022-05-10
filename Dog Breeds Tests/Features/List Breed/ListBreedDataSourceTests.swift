@@ -20,6 +20,13 @@ class ListBreedDataSourceTests: XCTestCase {
         tableView = vc.view.subviews[0] as? UITableView
     }
     
+    override func tearDown() {
+        sut = nil
+        vc = nil
+        tableView = nil
+        super.tearDown()
+    }
+    
     func test_rowShowsCorrect() {
         vc.breeds = Seeds.listBreedViewModel.breed
         sut.view = vc
@@ -44,12 +51,5 @@ class ListBreedDataSourceTests: XCTestCase {
         
         let cell = sut.tableView(tableView, cellForRowAt: IndexPath(row: 0, section: 0))
         XCTAssertTrue((cell as Any) is BreedViewCell)
-    }
-    
-    override func tearDown() {
-        sut = nil
-        vc = nil
-        tableView = nil
-        super.tearDown()
     }
 }

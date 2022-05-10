@@ -58,6 +58,11 @@
 		E43501B528255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43501B428255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift */; };
 		E43501B728255E5300EC12D6 /* StringToBreedViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43501B628255E5300EC12D6 /* StringToBreedViewModelMapperTests.swift */; };
 		E43C16FD2811DF9E00207907 /* UIView+DogBreeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43C16FC2811DF9E00207907 /* UIView+DogBreeds.swift */; };
+		E48A2555282AA226007966E1 /* BreedViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A2554282AA226007966E1 /* BreedViewCellTests.swift */; };
+		E48A2558282AA3AD007966E1 /* BreedImageViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A2557282AA3AD007966E1 /* BreedImageViewCellTests.swift */; };
+		E48A255B282AA444007966E1 /* TitleViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A255A282AA444007966E1 /* TitleViewCellTests.swift */; };
+		E48A255D282AA455007966E1 /* ImageViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A255C282AA455007966E1 /* ImageViewCellTests.swift */; };
+		E48A255F282AA462007966E1 /* DescriptionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48A255E282AA462007966E1 /* DescriptionViewCellTests.swift */; };
 		E4B516732825719000D79696 /* ListBreedDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B516722825719000D79696 /* ListBreedDataSourceTests.swift */; };
 		E4B516752825720300D79696 /* ListBreedDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B516742825720300D79696 /* ListBreedDelegateTests.swift */; };
 		E4B516772825727800D79696 /* ListBreedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B516762825727800D79696 /* ListBreedPresenterTests.swift */; };
@@ -161,6 +166,11 @@
 		E43501B428255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageDomainToBreedImageViewModelMapperTests.swift; sourceTree = "<group>"; };
 		E43501B628255E5300EC12D6 /* StringToBreedViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToBreedViewModelMapperTests.swift; sourceTree = "<group>"; };
 		E43C16FC2811DF9E00207907 /* UIView+DogBreeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DogBreeds.swift"; sourceTree = "<group>"; };
+		E48A2554282AA226007966E1 /* BreedViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewCellTests.swift; sourceTree = "<group>"; };
+		E48A2557282AA3AD007966E1 /* BreedImageViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageViewCellTests.swift; sourceTree = "<group>"; };
+		E48A255A282AA444007966E1 /* TitleViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewCellTests.swift; sourceTree = "<group>"; };
+		E48A255C282AA455007966E1 /* ImageViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCellTests.swift; sourceTree = "<group>"; };
+		E48A255E282AA462007966E1 /* DescriptionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewCellTests.swift; sourceTree = "<group>"; };
 		E4B516722825719000D79696 /* ListBreedDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedDataSourceTests.swift; sourceTree = "<group>"; };
 		E4B516742825720300D79696 /* ListBreedDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedDelegateTests.swift; sourceTree = "<group>"; };
 		E4B516762825727800D79696 /* ListBreedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBreedPresenterTests.swift; sourceTree = "<group>"; };
@@ -515,6 +525,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E48A2553282AA205007966E1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E48A2554282AA226007966E1 /* BreedViewCellTests.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E48A2556282AA395007966E1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E48A2557282AA3AD007966E1 /* BreedImageViewCellTests.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		E48A2559282AA42F007966E1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E48A255A282AA444007966E1 /* TitleViewCellTests.swift */,
+				E48A255C282AA455007966E1 /* ImageViewCellTests.swift */,
+				E48A255E282AA462007966E1 /* DescriptionViewCellTests.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		E49639632818198000FDFF4E /* Breed Detail */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +568,7 @@
 			isa = PBXGroup;
 			children = (
 				E42650BB282985E600221494 /* Mocks */,
+				E48A2559282AA42F007966E1 /* Cells */,
 				E4B51678282572FF00D79696 /* BreedDetailDataSourceTests.swift */,
 				E4B5167A2825731800D79696 /* BreedDetailDelegateTests.swift */,
 			);
@@ -647,6 +684,7 @@
 				E4F3E15A280F616F00F1223B /* Mocks */,
 				E4B516702825714100D79696 /* Data */,
 				E4B516712825714F00D79696 /* Domain */,
+				E48A2553282AA205007966E1 /* Cells */,
 				E4B516722825719000D79696 /* ListBreedDataSourceTests.swift */,
 				E4B516742825720300D79696 /* ListBreedDelegateTests.swift */,
 				E4B516762825727800D79696 /* ListBreedPresenterTests.swift */,
@@ -671,6 +709,7 @@
 				E4F3E160280F686500F1223B /* Mocks */,
 				E4B5167C2825734D00D79696 /* Data */,
 				E4B5167D2825735300D79696 /* Domain */,
+				E48A2556282AA395007966E1 /* Cells */,
 				E4B5167E2825740F00D79696 /* BreedImageDataSourceTests.swift */,
 				E4B51680282574B500D79696 /* BreedImageDelegateTests.swift */,
 				E4B516822825752200D79696 /* BreedImagePresenterTests.swift */,
@@ -853,6 +892,7 @@
 				E43501B528255D5D00EC12D6 /* BreedImageDomainToBreedImageViewModelMapperTests.swift in Sources */,
 				E4C7A9FF281B0430002D890F /* ImageToBreedDetailViewModelMapperTests.swift in Sources */,
 				E429BCDB2810533700F12D5D /* BreedImageURLSessionRestApiTests.swift in Sources */,
+				E48A2555282AA226007966E1 /* BreedViewCellTests.swift in Sources */,
 				75C26FEA27EE40CA0047CFB7 /* Seeds.swift in Sources */,
 				E4B51679282572FF00D79696 /* BreedDetailDataSourceTests.swift in Sources */,
 				E4B5167F2825740F00D79696 /* BreedImageDataSourceTests.swift in Sources */,
@@ -863,17 +903,21 @@
 				E429BCD5281045F400F12D5D /* MockURLProtocol.swift in Sources */,
 				E429BCE328107F3A00F12D5D /* ListBreedUseCaseTests.swift in Sources */,
 				E4B516832825752200D79696 /* BreedImagePresenterTests.swift in Sources */,
+				E48A255D282AA455007966E1 /* ImageViewCellTests.swift in Sources */,
 				E4F3E166280F68E400F1223B /* BreedImageApiRepositoryTest.swift in Sources */,
 				E42650B828297A9600221494 /* ListBreedViewControllerMock.swift in Sources */,
 				E429BCD92810478100F12D5D /* ListBreedURLSessionRestApiTests.swift in Sources */,
 				E4F3E164280F689D00F1223B /* BreedImageRestApiMock.swift in Sources */,
+				E48A255F282AA462007966E1 /* DescriptionViewCellTests.swift in Sources */,
 				E429BCE128107CAF00F12D5D /* BreedImageUseCaseTests.swift in Sources */,
 				E4B5167B2825731800D79696 /* BreedDetailDelegateTests.swift in Sources */,
 				E43501B328255AD700EC12D6 /* ListBreedDomainToListBreedViewModelMapperTests.swift in Sources */,
 				E4F3E15C280F627C00F1223B /* ListBreedRestApiMock.swift in Sources */,
 				E4B516732825719000D79696 /* ListBreedDataSourceTests.swift in Sources */,
+				E48A255B282AA444007966E1 /* TitleViewCellTests.swift in Sources */,
 				E4B51681282574B500D79696 /* BreedImageDelegateTests.swift in Sources */,
 				E4B516752825720300D79696 /* ListBreedDelegateTests.swift in Sources */,
+				E48A2558282AA3AD007966E1 /* BreedImageViewCellTests.swift in Sources */,
 				E429BCDD28107A1F00F12D5D /* ListBreedRepositoryMock.swift in Sources */,
 				E429BCE92810ACDD00F12D5D /* ListBreedEntityToListBreedDomainMapperTests.swift in Sources */,
 				E42650BF28299D2400221494 /* ListBreedDisplayLogicMock.swift in Sources */,

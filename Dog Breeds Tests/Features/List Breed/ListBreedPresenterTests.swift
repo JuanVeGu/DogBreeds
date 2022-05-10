@@ -23,6 +23,12 @@ class ListBreedPresenterTests: XCTestCase {
         vcMock = ListBreedDisplayLogicMock()
     }
     
+    override func tearDown() {
+        sut = nil
+        vcMock = nil
+        super.tearDown()
+    }
+    
     func testWhenViewIsAttached() {
         sut.attach(view: vcMock)
         XCTAssertNotNil(sut.view)
@@ -38,11 +44,5 @@ class ListBreedPresenterTests: XCTestCase {
         sut.attach(view: vcMock)
         sut.presentBreedImages(breedName: "schnauzer")
         XCTAssertTrue(vcMock.didCallDisplayBreedImages)
-    }
-    
-    override func tearDown() {
-        sut = nil
-        vcMock = nil
-        super.tearDown()
     }
 }

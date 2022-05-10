@@ -20,6 +20,13 @@ class BreedImageDataSourceTests: XCTestCase {
         collectionView = vc.view.subviews[0] as? UICollectionView
     }
     
+    override func tearDown() {
+        sut = nil
+        vc = nil
+        collectionView = nil
+        super.tearDown()
+    }
+    
     func test_rowShowsCorrect() {
         vc.images = Seeds.breedImageViewModel.images
         sut.view = vc
@@ -44,12 +51,5 @@ class BreedImageDataSourceTests: XCTestCase {
         
         let cell = sut.collectionView(collectionView, cellForItemAt: IndexPath(row: 0, section: 0))
         XCTAssertTrue((cell as Any) is BreedImageViewCell)
-    }
-    
-    override func tearDown() {
-        sut = nil
-        vc = nil
-        collectionView = nil
-        super.tearDown()
     }
 }

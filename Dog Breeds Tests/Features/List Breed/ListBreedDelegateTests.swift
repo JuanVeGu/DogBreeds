@@ -30,6 +30,13 @@ class ListBreedDelegateTests: XCTestCase {
         tableView = vcMock.view.subviews[0] as? UITableView
     }
     
+    override func tearDown() {
+        sut = nil
+        vcMock = nil
+        tableView = nil
+        super.tearDown()
+    }
+    
     func testWhenTheViewExistAndARowIsSelectedTheBreedImageViewIsDisplayed() {
         sut.view = vcMock
         vcMock.breeds = [""]
@@ -41,11 +48,5 @@ class ListBreedDelegateTests: XCTestCase {
         sut.view = nil
         sut.tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
         XCTAssertFalse(vcMock.didCallPresentBreedImages)
-    }
-    
-    override func tearDown() {
-        sut = nil
-        vcMock = nil
-        super.tearDown()
     }
 }

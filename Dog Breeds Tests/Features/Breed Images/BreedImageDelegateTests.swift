@@ -30,6 +30,13 @@ class BreedImageDelegateTests: XCTestCase {
         collectionView = vcMock.view.subviews[0] as? UICollectionView
     }
     
+    override func tearDown() {
+        sut = nil
+        vcMock = nil
+        collectionView = nil
+        super.tearDown()
+    }
+    
     func testWhenTheViewExistAndAnItemIsSelectedTheBreedDetailViewIsDisplayed() {
         sut.view = vcMock
         vcMock.images = [""]
@@ -41,12 +48,5 @@ class BreedImageDelegateTests: XCTestCase {
         sut.view = nil
         sut.collectionView(collectionView, didSelectItemAt: IndexPath(row: 0, section: 0))
         XCTAssertFalse(vcMock.didCallPresentBreedDetail)
-    }
-    
-    override func tearDown() {
-        sut = nil
-        vcMock = nil
-        collectionView = nil
-        super.tearDown()
     }
 }
