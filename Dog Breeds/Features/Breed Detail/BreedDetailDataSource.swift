@@ -13,7 +13,6 @@ class BreedDetailDataSource: NSObject {
 
 extension BreedDetailDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return BreedDetailCellType.default.count
         return BreedDetailCellType.allCases.count
     }
     

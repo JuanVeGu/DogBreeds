@@ -12,14 +12,14 @@ class BreedServiceLocator {
         return BreedImageUseCase(breedImageRepository: breedImageRepository)
     }
 
-    var breedImageRepository: BreedImageRepository {
+    private var breedImageRepository: BreedImageRepository {
         return BreedImageApiRepository(
             breedImageRestApi: breedImageRestApi,
             modelMapper: BreedImageEntityToBreedImageDomainMapper()
         )
     }
     
-    var breedImageRestApi: BreedImageRestApi {
+    private var breedImageRestApi: BreedImageRestApi {
         return BreedImageURLSessionRestApi()
     }
 }
