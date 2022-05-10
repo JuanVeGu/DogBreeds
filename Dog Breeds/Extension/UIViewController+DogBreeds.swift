@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func presentAlert(
+    @objc func presentAlert(
         title: String? = nil,
         message: String? = nil,
         actions: [UIAlertAction]? = nil,

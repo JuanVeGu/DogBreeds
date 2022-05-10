@@ -61,7 +61,7 @@ class ListBreedViewController: UIViewController {
         presenter.presentDogBreeds()
     }
     
-    internal func presentBreedImages(with breedName: String) {
+    func presentBreedImages(with breedName: String) {
         presenter.presentBreedImages(breedName: breedName)
     }
 }

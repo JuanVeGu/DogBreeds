@@ -18,6 +18,12 @@ class ListBreedUseCaseTests: XCTestCase {
         sut = ListBreedUseCase(listBreedRepository: repository)
     }
     
+    override func tearDown() {
+        repository = nil
+        sut = nil
+        super.tearDown()
+    }
+    
     func testListBreedShouldBeReturnNil() {
         let expectation = expectation(description: "testListBreedShouldBeReturnNil")
         
@@ -41,11 +47,5 @@ class ListBreedUseCaseTests: XCTestCase {
         }
         
         wait(for: [expectation], timeout: 1)
-    }
-
-    override func tearDown() {
-        repository = nil
-        sut = nil
-        super.tearDown()
     }
 }
